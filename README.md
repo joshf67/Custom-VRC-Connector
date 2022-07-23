@@ -1,4 +1,6 @@
 # Custom-VRC-Connector
+
+## THIS IS STILL A WIP, IT SHOULD WORK CURRENTLY BUT THERE ARE NO GUARANTEES ANY OF THE IMPLEMENTATIONS ARE GOOD TO USE
  
 HTTP Server - Base NPM VSCode project to respond to any connection with green/red video
 
