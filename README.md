@@ -1,6 +1,8 @@
 # Custom-VRC-Connector
+
+## THIS IS STILL A WIP, IT SHOULD WORK CURRENTLY BUT THERE ARE NO GUARANTEES ANY OF THE IMPLEMENTATIONS ARE GOOD TO USE
  
-HTTP Server - Base NPM VSCode project to respond to any connection with green/red video
+HTTP Server - Base NPM project to respond to any connection with green/red video
 
 Unity - All code and materials (Hopefully shouldn't be broken as it just uses VRCSDK stuff and U#, everything else should be included)
 
