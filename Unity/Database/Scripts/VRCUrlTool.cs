@@ -6,7 +6,7 @@ namespace VRCDatabase
 {
     public class VRCUrlTool : UdonSharpBehaviour
     {
-        public VRCUrl ConvertMessageToVRCUrl(ushort input)
+        public VRCUrl ConvertMessageToVRCUrl(int input)
         {
             if (input > urls.Length)
             {
@@ -18,9 +18,6 @@ namespace VRCDatabase
 
         [HideInInspector]
         public VRCUrl[] urls = new VRCUrl[0];
-        
-        [HideInInspector]
-        public string urlPrefix = "";
     }
 
 }

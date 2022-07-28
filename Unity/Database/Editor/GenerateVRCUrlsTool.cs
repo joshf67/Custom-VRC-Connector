@@ -32,21 +32,51 @@ namespace VRCDatabase.Editors
 
                 if (GUILayout.Button("Generate URLs"))
                 {
-                    VRCUrlTool objTool = urlObject.GetComponent<VRCUrlTool>();
-                    if (objTool == null) objTool = urlObject.AddComponent<VRCUrlTool>();
 
-                    VRCUrl[] urls = new VRCUrl[urlsToGenerate];
+                    const int MAX_ARRAY_CAPACITY = 8192;
 
-                    for (int i = 0; i < urlsToGenerate; i++)
+                    PrefabUtility.UnpackPrefabInstanceAndReturnNewOutermostRoots(urlObject.transform.parent.gameObject, PrefabUnpackMode.OutermostRoot);
+                    VrcUrlToolManager urlManager = urlObject.GetComponent<VrcUrlToolManager>();
+                    for(int i = 0; i < urlManager.urlCollections.Length; i++)
                     {
-                        urls[i] = new VRCUrl(startingURL + Convert.ToString(i, 16));
+                        if (urlManager?.urlCollections[i] != null)
+                        {
+                            VRCUrlTool urlTool = urlManager?.urlCollections[i];
+                            DestroyImmediate(urlTool?.gameObject);
+                        }
                     }
 
-                    Undo.RecordObject(objTool, "Modify VRCDatabase URLs");
-                    objTool.urls = urls;
-                    objTool.urlPrefix = startingURL;
-                    EditorUtility.SetDirty(objTool);
-                    PrefabUtility.RecordPrefabInstancePropertyModifications(objTool);
+                    int urlTopLevel = Mathf.CeilToInt(urlsToGenerate / (float)MAX_ARRAY_CAPACITY);
+                    urlManager.urlCollections = new VRCUrlTool[urlTopLevel];
+
+                    GameObject urlToolObj = new GameObject("0 - " + (urlsToGenerate).ToString());
+                    urlToolObj.transform.parent = urlObject.transform;
+
+                    Undo.RecordObject(urlManager.gameObject, "Add VRCDatabase URLs");
+                    
+                    for (int topLevel = 0; topLevel < urlTopLevel; topLevel++)
+                    {
+                        int topLevelMin = (topLevel * MAX_ARRAY_CAPACITY);
+                        int topLevelMax = (topLevel + 1) * MAX_ARRAY_CAPACITY <= urlsToGenerate ? (topLevel + 1) * MAX_ARRAY_CAPACITY : topLevelMin + (urlsToGenerate - topLevelMin);
+                        VRCUrl[] urls = new VRCUrl[topLevelMax - topLevelMin];
+                        //GameObject urlToolObj = new GameObject(topLevelMin.ToString() + " - " + (topLevelMax - 1).ToString());
+                        //urlToolObj.transform.parent = urlObject.transform;
+
+                        VRCUrlTool urlTool = urlToolObj.AddComponent<VRCUrlTool>();
+
+                        for (int i = 0; i < urls.Length; i++)
+                        {
+                            urls[i] = new VRCUrl(startingURL + Convert.ToString(topLevelMin + i, 16));
+                        }
+
+                        urlTool.urls = urls;
+                        urlManager.urlCollections[topLevel] = urlTool;
+                        EditorUtility.SetDirty(urlTool);
+                    }
+
+                    urlManager.urlCount = urlsToGenerate;
+                    urlManager.urlPrefix = startingURL;
+                    EditorUtility.SetDirty(urlManager);
                 }
             }
         }
