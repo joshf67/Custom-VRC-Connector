@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DatabaseMessageTypes
+namespace VRCDatabase
 {
-    LoginUsername = 0,
-    LoginPassword = 1,
-    GeneralMessage = 2
+    
+    public enum DatabaseMessageTypes
+    {
+        LoginUsername = 0,
+        LoginPassword = 1,
+        GeneralMessage = 2,
+        MessageFinished = 15
+    }
+
 }

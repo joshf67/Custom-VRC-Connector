@@ -27,10 +27,11 @@ namespace VRCDatabase
 
             for (int i = 0; i < usernameHash.Length; i++)
             {
-                usernameBytes[i] = (byte)usernameHash[i];
+                //usernameBytes[i] = (byte)usernameHash[i];
+                usernameBytes[i] = 255;
             }
 
-            AddMessagesToBuffer(PackMessageBytes(usernameBytes, DatabaseMessageTypes.LoginUsername));
+            AddMessagesToBuffer(MessagePacker.PackMessageBytes(usernameBytes, DatabaseMessageTypes.LoginUsername, packingMessageBitSize));
         }
 
         public override void HandleMessage(Color32[] pixles)

@@ -14,19 +14,20 @@ namespace VRCDatabase
     public abstract class DatabaseBase : UdonSharpBehaviour
     {
         public VRCUrl currentlySelectedURL;
-        public VRCUrlTool urlLookup;
+        public VrcUrlToolManager urlLookup;
         public VRCUnityVideoPlayer player;
         public ReadRenderTexture response;
 
         public UdonHashLib hasher;
+        public byte packingMessageBitSize;
 
         //const float CONNECTION_TIMEOUT_RATE = 5f;
         public float CONNECTION_TIMEOUT_RATE = 5f;
         float sendMessageWait = 0;
         bool sendingMessage = false;
 
-        
-        public ushort[] messageBuffer = new ushort[0];
+
+        public int[] messageBuffer = new int[0];
 
         public void Start()
         {
@@ -43,7 +44,7 @@ namespace VRCDatabase
                 {
                     sendingMessage = true;
                     currentlySelectedURL = urlLookup.ConvertMessageToVRCUrl(messageBuffer[0]);
-                    player.PlayURL(currentlySelectedURL);
+                    if (currentlySelectedURL != null) player.PlayURL(currentlySelectedURL);
                 }
             }
 
@@ -115,66 +116,12 @@ namespace VRCDatabase
             return new string(new char[] { hash[0], hash[15], hash[31], hash[47], hash[63], hash[79], hash[95], hash[111], hash[127] });
         }
 
-        public ushort[] PackMessageBytes(byte[] message, DatabaseMessageTypes messageType)
-        {
-            if (message.Length == 0) return null;
-
-            //Calculate the total amount of ushorts needed for both the message and messageType
-            float ushortNeededForMessage = message.Length / 2f;
-            float ushortNeededForMessageTypes = ushortNeededForMessage / 4f;
-            int ushortNeededForTotal = Mathf.CeilToInt(ushortNeededForMessage + ushortNeededForMessageTypes);
-
-            ushort[] ret = new ushort[ushortNeededForTotal];
-
-            const int MESSAGE_TYPE_OFFSET = 4;
-            int MESSAGE_TYPE = ((int)messageType);
-
-            int currentMessageBitsPacked = 0;
-            int currentMessageBytesPacked = 0;
-            int currentMessage;
-
-            for (int currentMessagesPacked = 0; currentMessagesPacked < ushortNeededForTotal; currentMessagesPacked++)
-            {
-                //setup message and pack type into the first 4 bits
-                currentMessage = MESSAGE_TYPE;
-
-                //switch based on if current pack is half finished
-                if (currentMessageBitsPacked % 8 == 4)
-                {
-                    //lop off first 4 bits then left-shift by 4 to apply message offset
-                    currentMessage |= message[currentMessageBytesPacked] >> 4 << MESSAGE_TYPE_OFFSET;
-                    currentMessageBytesPacked++;
-
-                    //left-shift by 8 to apply message offset and previous bit pack offset
-                    currentMessage |= message[currentMessageBytesPacked] << 8;
-                    currentMessageBytesPacked++;
-                }
-                else
-                {
-                    //left-shift by 4 to apply message offset
-                    currentMessage |= message[currentMessageBytesPacked] << MESSAGE_TYPE_OFFSET;
-                    currentMessageBytesPacked += 1;
-
-                    //lop off last 4 bits of next byte by masking the last 4 bits
-                    //left-shift by 4 to apply message offset
-                    //then left-shift by 4 to offset to just after previous message
-                    currentMessage |= (message[currentMessageBytesPacked] & 0b11110000) << MESSAGE_TYPE_OFFSET << 4;
-                }
-
-
-                currentMessageBitsPacked += 12;
-                ret[currentMessagesPacked] = (ushort)currentMessage;
-            }
-
-            return ret;
-        }
-
-        public void AddMessageToBuffer(ushort message)
+        public void AddMessageToBuffer(int message)
         {
             ArrayUtilities.AddToArray(ref messageBuffer, message);
         }
 
-        public void AddMessagesToBuffer(ushort[] messages)
+        public void AddMessagesToBuffer(int[] messages)
         {
             ArrayUtilities.AddRangeToArray(ref messageBuffer, messages);
         }

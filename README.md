@@ -12,7 +12,7 @@ Unity - All code and materials (Hopefully shouldn't be broken as it just uses VR
 
 Gorialis - UdonHashLib used for hashing login data
 
-Hax - General help and suggestions on methods to use
+Hax - For the MessagePacker script, general help and suggestions on methods to use
 
 @Merlin - Creating UdonSharp and for general help with bugs/issues
 
