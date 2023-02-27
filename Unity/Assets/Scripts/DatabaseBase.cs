@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.SDK3.StringLoading;
 using VRC.Udon.Common.Interfaces;
+using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System;
 
@@ -24,6 +25,7 @@ namespace VRCDatabase
 	    bool sendingMessage = false;
 
 	    public int[] messageBuffer = new int[0];
+	    private int[] sentMessageBuffer = new int[0];
 
         public void Start()
 	    {
@@ -55,6 +57,7 @@ namespace VRCDatabase
         {
             if (connectionSuccess)
             {
+	            ArrayUtilities.AddToArray(ref sentMessageBuffer, messageBuffer[0]);
                 ArrayUtilities.RemoveValueFromArrayAtIndex(ref messageBuffer, 0);
                 sendingMessage = false;
             }
