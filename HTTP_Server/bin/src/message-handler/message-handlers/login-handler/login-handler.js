@@ -1,8 +1,10 @@
 const LoginMessage = require("./login-message");
 const DatabaseHandler = require("../../../database-handler/database-handler");
 var path = require("path");
-const UserConnectionData = require("../../../connection-handler/UserConnectionData");
+const UserConnectionData = require("../../../connection-handler/user-connection-data");
 const VRCMessage = require("../../vrc-message");
+const ResponseHandler = require("../../../response-handler/response-handler");
+const ResponseData = require("../../../response-handler/response-data");
 
 class LoginHandler {
   /**
@@ -38,49 +40,65 @@ class LoginHandler {
       return LoginHandler.HandleLogin(user, res);
     } else {
       //Continue listening to data
-      user.GenericResponse(`Awaiting ${awaitingBits} bits`, res);
+      ResponseHandler.HandleResponse(
+        user,
+        res,
+        new ResponseData(
+          "Login Hash Part Recieved",
+          `Awaiting ${awaitingBits} bits`
+        )
+      );
     }
   }
 
   /**
    * Sends off a request to the database to get a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user 
+   * @param {*} res - The express response for the user
    */
   static HandleLogin(user, res) {
     DatabaseHandler.getUserData(user.userHash)
       .then((userData) => {
         user.databaseData = userData;
-        user.GenericResponse(userData, res);
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData("Login Complete", userData)
+        );
       })
       .catch((error) => {
         //Fail due to account not existing or another error
         console.error(error);
         if (error.indexOf("Unable to find user") != -1)
-          user.GenericResponse(
-            `User does not exist, please create an account first.`,
-            res
+          ResponseHandler.HandleResponse(
+            user,
+            res,
+            new ResponseData("Login Complete", "User does not exist")
           );
-        user.FailedResponse(res);
+        ResponseHandler.FailResponse(user, res);
       });
   }
 
   /**
    * Sends off a request to the database to generate a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user 
+   * @param {*} res - The express response for the user
    */
   static HandleAccountCreation(user, res) {
     DatabaseHandler.addUserData(user.userHash)
       .then((userData) => {
         user.databaseData = userData;
 
-        user.GenericResponse(userData, res);
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData("Account Creation Complete", userData)
+        );
       })
       .catch((error) => {
         //Fail due to account not being able to be created
         console.error(error);
-        user.FailedResponse(res);
+        ResponseHandler.FailResponse(user, res);
       });
   }
 }

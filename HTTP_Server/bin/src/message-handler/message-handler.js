@@ -1,6 +1,6 @@
 const logger = require("../logger");
 const { UnpackHexMessage } = require("./message-unpacker");
-const UserConnectionData = require("../connection-handler/UserConnectionData");
+const UserConnectionData = require("../connection-handler/user-connection-data");
 const { MessageTypes } = require("./message-types");
 
 //Message handlers
@@ -20,9 +20,14 @@ class MessageHandler {
     logger.log(`${user.ipHash} has tried to send a message`);
 
     if (user.expectingData != null)
-      return user.expectingData(user, res, UnpackHexMessage(req.params["0"]).Message);
+      return user.expectingData(
+        user,
+        res,
+        UnpackHexMessage(req.params["0"]).Message
+      );
 
     let unpackedMessage = UnpackHexMessage(req.params["0"], true);
+    //Switch statement that handles all different types of messages
     switch (unpackedMessage.Type) {
       case MessageTypes.Login:
         LoginHandler.HandleInitialMessage(user, res, unpackedMessage.Message);
@@ -34,6 +39,9 @@ class MessageHandler {
           unpackedMessage.Message,
           true
         );
+        break;
+      case MessageTypes.AcknowledgeMessage:
+        user.lastMessageTime = Date.now();
         break;
       default:
         console.error(

@@ -8,6 +8,7 @@ var nocache = require('nocache');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ServerConnector = require('./bin/src/server-connector');
+const ConnectionHandler = require("./bin/src/connection-handler/connection-handler");
 
 const { randomBytes, createHash } = require("crypto");
 
@@ -15,6 +16,16 @@ var app = express();
 
 //Create custom server logic
 ServerConnector = new ServerConnector(app);
+
+//Set up a timer to prune all inactive users after a certain time
+setInterval(() => {
+  //Put inside a try catch to ensure the server doesn't randomly crash if something breaks
+  try {
+    ConnectionHandler.PruneInactiveUsers()
+  } catch (e) {
+    console.error(e);
+  }
+}, 60000);
 
 //Setup current server instance salt
 process.env.HASH_SALT = createHash("sha3-256").update(randomBytes(16).toString("hex")).digest("hex");

@@ -14,7 +14,7 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.1",
     "esm": "^3.2.25",
-    "express": "~4.16.1",
+    "express": "^4.18.2",
     "ffmpeg-static": "^5.0.2",
     "fluent-ffmpeg": "^2.1.2",
     "http-errors": "~1.6.3",
@@ -25,6 +25,7 @@
     "morgan": "~1.9.1",
     "nocache": "^3.0.4",
     "npm": "^8.15.1",
-    "tsdoc": "^0.0.4"
+    "tsdoc": "^0.0.4",
+    "xml-js": "^1.6.11"
   }
 }

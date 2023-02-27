@@ -1,6 +1,6 @@
 const { createHash } = require("crypto");
 const logger = require("./logger");
-const ConnectionManager = require("./connection-handler/ConnectionManager");
+const ConnectionManager = require("./connection-handler/connection-handler");
 const MessageHandler = require("./message-handler/message-handler")
 
 /**
