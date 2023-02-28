@@ -5,6 +5,7 @@ const UserConnectionData = require("../../../connection-handler/user-connection-
 const VRCMessage = require("../../vrc-message");
 const ResponseHandler = require("../../../response-handler/response-handler");
 const ResponseData = require("../../../response-handler/response-data");
+const { ResponseTypes } = require("../../../response-handler/response-types");
 
 class LoginHandler {
   /**
@@ -44,8 +45,8 @@ class LoginHandler {
         user,
         res,
         new ResponseData(
-          "Login Hash Part Recieved",
-          `Awaiting ${awaitingBits} bits`
+          ResponseTypes.Login_Updated,
+          `Login Hash Part Recieved, Awaiting ${awaitingBits} bits`
         )
       );
     }
@@ -60,20 +61,23 @@ class LoginHandler {
     DatabaseHandler.getUserData(user.userHash)
       .then((userData) => {
         user.databaseData = userData;
-        ResponseHandler.HandleResponse(
+        return ResponseHandler.HandleResponse(
           user,
           res,
-          new ResponseData("Login Complete", userData)
+          new ResponseData(ResponseTypes.Login_Complete, userData)
         );
       })
       .catch((error) => {
         //Fail due to account not existing or another error
         console.error(error);
         if (error.indexOf("Unable to find user") != -1)
-          ResponseHandler.HandleResponse(
+          return ResponseHandler.HandleResponse(
             user,
             res,
-            new ResponseData("Login Complete", "User does not exist")
+            new ResponseData(
+              ResponseTypes.Login_Complete,
+              "User does not exist"
+            )
           );
         ResponseHandler.FailResponse(user, res);
       });
@@ -92,7 +96,7 @@ class LoginHandler {
         ResponseHandler.HandleResponse(
           user,
           res,
-          new ResponseData("Account Creation Complete", userData)
+          new ResponseData(ResponseTypes.Account_Creation_Complete, userData)
         );
       })
       .catch((error) => {

@@ -1,5 +1,9 @@
 const ResponseData = require("./response-data");
 const UserConnectionData = require("../connection-handler/user-connection-data");
+const { ResponseTypes } = require("./response-types");
+const XMLBuilder = new (require("fast-xml-parser").XMLBuilder)();
+
+const resendData = new ResponseData(ResponseTypes.Failed_To_Parse, null);
 
 /**
  * Class that handles responding to a user
@@ -12,8 +16,17 @@ module.exports = class ResponseHandler {
    * @param {*} res - The express response
    */
   static HandleResponse(user, res, response) {
+    //Add try catch to reset the current user if it fails
+
     user.lastMessage = (res) => {
-      res.send(JSON.stringify(response)).end();
+      try {
+        //Convert to XML until VRC release JSON parsing, converted to JSON then to JS then to XML to stop XML parsing issues
+        res.send(XMLBuilder.build(JSON.parse(JSON.stringify(response)))).end();
+      } catch (e) {
+        //If an error occurs send back a message requesting a resend of the current batch of data
+        console.error(e);
+        res.send(XMLBuilder.build(resendData)).end();
+      }
     };
     user.lastMessage(res);
   }
@@ -26,7 +39,7 @@ module.exports = class ResponseHandler {
   static SucceedResponse(user, res) {
     ResponseHandler.HandleResponse(
       user,
-      new ResponseData("succeeded", null),
+      new ResponseData(ResponseTypes.Succeeded, null),
       res
     );
   }
@@ -37,6 +50,10 @@ module.exports = class ResponseHandler {
    * @param {*} res
    */
   static FailResponse(user, res) {
-    ResponseHandler.HandleResponse(user, new ResponseData("failed", null), res);
+    ResponseHandler.HandleResponse(
+      user,
+      new ResponseData(ResponseTypes.Failed, null),
+      res
+    );
   }
 };

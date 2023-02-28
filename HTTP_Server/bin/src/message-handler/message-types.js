@@ -1,4 +1,5 @@
 const MessageTypes = Object.freeze({
+        Invalid: -1,
         Login: 0,
         AccountCreation: 1,
         GeneralMessage: 2,
