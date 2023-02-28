@@ -43,7 +43,7 @@ namespace VRCDatabase
 	                sendingMessage = true;
 	                currentlySelectedURL = urlLookup.ConvertMessageToVRCUrl(messageBuffer[0]);
 	                if (currentlySelectedURL != null) {
-	                	Debug.Log($"Sending message of {messageBuffer[0]}");
+	                	Debug.Log($"Sending message of {messageBuffer[0]} to {currentlySelectedURL}");
 		                sendMessageWait = CONNECTION_TIMEOUT_RATE;
 	                	VRCStringDownloader.LoadUrl(currentlySelectedURL, (UdonBehaviour)(object)this);
 	                }
@@ -72,7 +72,7 @@ namespace VRCDatabase
 	    	base.OnStringLoadSuccess(result);
 		    HandleConnectionAttempt(true);
 	    	HandleMessage(result.Result);
-	    	Debug.Log(result.Result);
+	    	Debug.Log($"String loaded successfully: {result.Result}");
 	    }
 	    
 	    public override void OnStringLoadError(IVRCStringDownload result)

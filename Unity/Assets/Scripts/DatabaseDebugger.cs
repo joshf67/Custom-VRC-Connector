@@ -13,6 +13,7 @@ namespace VRCDatabase
         public InputField usernameField;
 	    public InputField passwordField;
 	    public Text responseField;
+	    public ServerLoginResponse ConvertToManager;
         public int read = 0;
 
         public void Login()
@@ -45,7 +46,13 @@ namespace VRCDatabase
         {
             read++;
 	        Debug.Log(read);
-	        responseField.text = $"Messages Recieved: {read},\n Current Message: {response}";
+	        if (ServerResponse.GetMessageType(response) == ServerResponseType.Login_Updated) {
+	        	ConvertToManager.Parse(response);
+		        responseField.text = $"Recieved a login update message with the response: {ConvertToManager.Response.ToString()}";
+	        } else if (ServerResponse.GetMessageType(response) == ServerResponseType.Login_Complete) {
+	        	ConvertToManager.Parse(response);
+		        responseField.text = $"Recieved a login complete message with the response: {ConvertToManager.Response.ToString()}";
+	        }
         }
 
         //public override void HandleUntrustedError()
