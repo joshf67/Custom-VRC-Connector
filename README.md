@@ -12,6 +12,8 @@ Unity - All code and demo scene (Hopefully shouldn't be broken as it just uses V
 
 Gorialis - UdonHashLib used for hashing login data
 
+Foorack - UdonXML used for parsing the server response
+
 Hax - For the MessagePacker script, general help and suggestions on methods to use
 
 @Merlin - Creating UdonSharp and for general help with bugs/issues
