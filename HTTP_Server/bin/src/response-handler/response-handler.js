@@ -19,6 +19,8 @@ module.exports = class ResponseHandler {
     //Add try catch to reset the current user if it fails
 
     user.lastMessage = (res) => {
+      res.setHeader("Content-Type", "text/plain");
+
       try {
         //Convert to XML until VRC release JSON parsing, converted to JSON then to JS then to XML to stop XML parsing issues
         res.send(XMLBuilder.build(JSON.parse(JSON.stringify(response)))).end();

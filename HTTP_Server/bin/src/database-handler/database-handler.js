@@ -3,8 +3,20 @@ const mongoose = require("mongoose");
 const fs = require("fs");
 const path = require("path");
 const logger = require("../logger");
-const UserSchema = require("./database-schema/user-schema");
-const UserModel = require("./database-schema/user-model");
+
+//Remove excess data not needed from the database
+mongoose.plugin((schema) => {
+  schema.options.toJSON = {
+    virtuals: true,
+    versionKey: false,
+    transform(doc, ret) {
+      delete ret._id;
+      delete ret.id;
+    }
+  };
+});
+
+const UserModel = require("./database-schema/user/user-model");
 
 class DatabaseHandler {
   client;

@@ -4,6 +4,7 @@ const UserConnectionData = require("../connection-handler/user-connection-data")
 const { MessageTypes } = require("./message-types");
 
 //Message handlers
+const ResponseHandler = require("../response-handler/response-handler");
 const LoginHandler = require("./message-handlers/login-handler/login-handler");
 
 /**
@@ -48,7 +49,7 @@ class MessageHandler {
           "No valid option has been setup for message type: " +
             unpackedMessage.Type
         );
-        res.send("No handler has been set up for current message type").end();
+        ResponseHandler.FailResponse(user, res);
         break;
     }
   }

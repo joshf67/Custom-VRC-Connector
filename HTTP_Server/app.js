@@ -52,7 +52,7 @@ app.use("/favicon.ico", function() {
 });
 
 //Bind all messages to custom server logic
-app.use('/sendMessage=*', ServerConnector.HandleConnection.bind(ServerConnector));
+app.use('/sendMessage=*', ServerConnector.HandleConnection);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

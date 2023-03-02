@@ -14,7 +14,6 @@ class ServerConnector {
 
     //Convert the incomming ip to a hash and pass that onto the server logic instead of storing the IP
     HandleConnection(req, res) {
-        res.setHeader("Content-Type", "text/plain");
         let ipHashed = createHash("sha3-256").update(req.socket.remoteAddress).update(process.env.HASH_SALT).digest("hex");
 
         //Get/Add the user from the hashed ip
@@ -26,6 +25,7 @@ class ServerConnector {
 
         //Ensure url has only 1 message
         if (Object.keys(req.params).length != 1) return;
+
         MessageHandler.HandleMessage(userConnection, req, res)
     }
 
