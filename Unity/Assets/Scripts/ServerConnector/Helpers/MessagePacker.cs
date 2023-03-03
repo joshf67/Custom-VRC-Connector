@@ -32,11 +32,12 @@ namespace ServerConnector
 
                 currentChunk = 0;
                 chunkRemainingBits = chunkSize;
+                //TODO add message type included bit at the start of every message
                 AddMessageBits(packedChunks, bits, remainder, ref currentMessage, chunkSize, ref currentChunk, ref chunkRemainingBits);
             }
         }
 
-        public static int[] PackMessageBytes(byte[] message, DatabaseMessageTypes messageType, byte packedMessageBitSize)
+        public static int[] PackMessageBytes(byte[] message, ConnectorMessageType messageType, byte packedMessageBitSize)
         {
             if (packedMessageBitSize <= MESSAGE_TYPE_SIZE || packedMessageBitSize > 31) return null;
             byte currentMessage = 0;
@@ -46,6 +47,7 @@ namespace ServerConnector
             int[] packedChunks = new int[Mathf.CeilToInt((message.Length * 8f / packedMessageBitSize) + ((MESSAGE_TYPE_SIZE * 2) / packedMessageBitSize))];
             if (packedChunks.Length > 255) return null;
 
+            //TODO add message type included bit at the start of every message
             AddMessageBits(packedChunks, (int)messageType, MESSAGE_TYPE_SIZE, ref currentMessage, packedMessageBitSize, ref currentChunk, ref chunkRemainingBits);
 
             foreach (byte messageByte in message)
@@ -53,10 +55,10 @@ namespace ServerConnector
                 AddMessageBits(packedChunks, messageByte, 8, ref currentMessage, packedMessageBitSize, ref currentChunk, ref chunkRemainingBits);
             }
 
-            AddMessageBits(packedChunks, (int)DatabaseMessageTypes.MessageFinished, MESSAGE_TYPE_SIZE, ref currentMessage, packedMessageBitSize, ref currentChunk, ref chunkRemainingBits);
-
+            //This was used to naively pack messages to a full length message
+	        //AddMessageBits(packedChunks, (int)ConnectorMessageType.MessageFinished, MESSAGE_TYPE_SIZE, ref currentMessage, packedMessageBitSize, ref currentChunk, ref chunkRemainingBits);
+            
             packedChunks[packedChunks.Length - 1] = currentChunk;
-
             return packedChunks;
         }
 
