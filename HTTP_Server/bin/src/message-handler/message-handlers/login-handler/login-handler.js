@@ -75,7 +75,7 @@ class LoginHandler {
             user,
             res,
             new ResponseData(
-              ResponseTypes.Login_Complete,
+              ResponseTypes.Login_Failed,
               "User does not exist"
             )
           );

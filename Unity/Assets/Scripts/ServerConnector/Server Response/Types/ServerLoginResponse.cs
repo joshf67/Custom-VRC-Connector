@@ -15,7 +15,9 @@ namespace ServerConnector.Response
 			//Ensure Response is reset when a new parse happens
 			Response = "";
 			
-			if (Type == ServerResponseType.Login_Updated) {
+			if (Type == ServerResponseType.Login_Failed) {
+				Response = "Login credentials are invalid, please try again or create an account";
+			} else if (Type == ServerResponseType.Login_Updated) {
 				Response = UdonXML.GetNodeValue(response);
 			} else if (Type == ServerResponseType.Login_Complete) {
 				Response = UdonXML.GetNodeValue(UdonXML.GetChildNode(response, 1)).ToString();

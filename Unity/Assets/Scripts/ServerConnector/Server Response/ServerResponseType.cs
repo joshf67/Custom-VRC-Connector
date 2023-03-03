@@ -12,8 +12,9 @@ namespace ServerConnector.Response
 		Failed = -1,
 		Succeeded = 0,
 		Login_Updated = 1,
-		Login_Complete = 2,
-		Account_Creation_Complete = 3,
+		Login_Failed = 2,
+		Login_Complete = 3,
+		Account_Creation_Complete = 4,
 	}
 
 }

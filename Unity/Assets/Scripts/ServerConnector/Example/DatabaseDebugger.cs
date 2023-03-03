@@ -42,16 +42,22 @@ public class DatabaseDebugger : Connector
     public override void HandleMessage(string response)
     {
         read++;
-        Debug.Log(read);
-        if (ServerResponse.GetMessageType(response) == ServerResponseType.Login_Updated)
-        {
-            ConvertToManager.Parse(response);
-            responseField.text = $"Recieved a login update message with the response: {ConvertToManager.Response.ToString()}";
-        }
-        else if (ServerResponse.GetMessageType(response) == ServerResponseType.Login_Complete)
-        {
-            ConvertToManager.Parse(response);
-            responseField.text = $"Recieved a login complete message with the response: {ConvertToManager.Response.ToString()}";
-        }
+	    Debug.Log(read);
+	    
+	    ServerResponseType loginResponse = ServerResponse.GetMessageType(response);
+	    switch (loginResponse) {
+		    case ServerResponseType.Login_Updated:
+			    ConvertToManager.Parse(response);
+			    responseField.text = $"Recieved a login update message with the response: {ConvertToManager.Response.ToString()}";
+			    break;
+		    case ServerResponseType.Login_Complete:
+			    ConvertToManager.Parse(response);
+			    responseField.text = $"Recieved a login complete message with the response: {ConvertToManager.Response.ToString()}";
+			    break;
+		    case ServerResponseType.Login_Failed:
+			    ConvertToManager.Parse(response);
+			    responseField.text = $"Recieved a login failed message with the response: {ConvertToManager.Response.ToString()}";
+			    break;
+		}
     }
 }
