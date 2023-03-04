@@ -36,7 +36,10 @@ namespace ServerConnector
         protected byte packingMessageBitSize;
 
         //Used to make sure only 1 message is used by each type every 5 seconds
-        private readonly float CONNECTION_TIMEOUT_RATE = 5;
+	    private readonly float CONNECTION_TIMEOUT_RATE = 5;
+        
+	    //Used to retry a message if the server doesn't respond
+	    private readonly float CONNECTION_RETRY_RATE = 15;
 
         //Variables to handle StringDownloader requests
         [SerializeField]
@@ -83,30 +86,8 @@ namespace ServerConnector
 
         private void Update()
         {
-	        if (stringRequestTimeout > 0) stringRequestTimeout -= Time.deltaTime;
-	        if (imageRequestTimeout > 0) imageRequestTimeout -= Time.deltaTime;
-            
-	        //Check if a String Downloader has recieved a response from the message
-	        if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Message_Sent) {
-	        	stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
-	        	sendingStringMessage = false;
-	        	HandleMessage(stringDownloaderListener.RequestResult.Result);
-	        	IncrementMessage();
-	        }
-	        
-	        //Check if a String Downloader has recieved failed response from the message
-	        if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Failed_To_Send) {
-	        	stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
-	        	sendingStringMessage = false;
-	        	currentMessageIndex = 0;
-	        }
-	        
-	        //Check if a Image Downloader has recieved a response from the message
-	        if (imageDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Request_Error) {
-	        	imageDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
-	        	sendingImageMessage = false;
-	        	IncrementMessage();
-	        }
+	        UpdateStringDownloader();
+	        UpdateImageDownloader();
             
             if (ReadyToSendMessage())
             {
@@ -115,6 +96,68 @@ namespace ServerConnector
 
             ManagerUpdate();
         }
+        
+	    //Check if the a response from the server has been returned and update the image downloader variable
+	    private void UpdateStringDownloader() {
+	    	
+	    	//Update the String Downloaders timeout
+		    if (stringRequestTimeout > -CONNECTION_RETRY_RATE) {
+			    stringRequestTimeout -= Time.deltaTime;
+		    } else if (sendingStringMessage) {
+			    sendingStringMessage = false;
+		    }
+	        
+		    //Check if a String Downloader has been returned recieved a response from the message
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Message_Sent) {
+			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingStringMessage = false;
+			    HandleMessage(stringDownloaderListener.RequestResult.Result);
+			    IncrementMessage();
+		    }
+	        
+		    //Check if a String Downloader has recieved failed response from the message
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Failed_To_Send) {
+			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingStringMessage = false;
+			    currentMessageIndex = 0;
+		    }
+	        
+		    //Check if a String Downloader has recieved type doesn't exist response from the message
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Type_Fail) {
+		    	
+		    	//TODO Potentially break as world is not up to date.
+			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingStringMessage = false;
+			    currentMessageIndex = 0;
+		    }
+		    
+		    //Check if a String Downloader has recieved type doesn't exist response from the message
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Unexpected_Request) {
+		    	
+		    	//TODO Figure out what this error means
+			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingStringMessage = false;
+			    currentMessageIndex = 0;
+		    }
+	    }
+	    
+	    //Check if the a response from the server has been returned and update the image downloader variable
+	    private void UpdateImageDownloader() {
+	    	
+	    	//Update the Image Downloaders timeout
+		    if (imageRequestTimeout > -CONNECTION_RETRY_RATE) {
+			    imageRequestTimeout -= Time.deltaTime;
+		    } else if (sendingImageMessage) {
+			    sendingImageMessage = false;
+		    }
+	        
+		    //Check if a Image Downloader has recieved a response from the message
+		    if (imageDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Request_Error) {
+			    imageDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingImageMessage = false;
+			    IncrementMessage();
+		    }
+	    }
 
         //Make sure that everything is ready to send off a message before sending off a message
         private bool ReadyToSendMessage()
