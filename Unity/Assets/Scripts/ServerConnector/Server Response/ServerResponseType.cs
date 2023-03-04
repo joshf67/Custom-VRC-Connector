@@ -8,6 +8,8 @@ namespace ServerConnector.Response
 	public enum ServerResponseType
 	{
 		None = -100,
+		Unexpected_Request = -4,
+		Type_Fail = -3,
 		Failed_To_Parse = -2,
 		Failed = -1,
 		Succeeded = 0,

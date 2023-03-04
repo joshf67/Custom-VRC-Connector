@@ -31,19 +31,29 @@ namespace ServerConnector.Downloader
 		public override void OnStringLoadSuccess(IVRCStringDownload result)
 		{
 			base.OnStringLoadSuccess(result);
-	
-			//If the response is that it failed on the server end, retry the messsage until it works
-			if (ServerResponse.GetMessageType(result.Result) == ServerResponseType.Failed_To_Parse)
-			{
-				DownloaderStatus = DownloaderMessageStatus.Failed_To_Send;
-				return;
-			}
 			
-			DownloaderStatus = DownloaderMessageStatus.Message_Sent;
-	
-			requestResult = result;
 			if (DevelopmentMode)
 				Debug.Log($"String loaded successfully: {result.Result}");
+			
+			switch(ServerResponse.GetMessageType(result.Result)) {
+				case ServerResponseType.Unexpected_Request:
+					//If the response is that the server wasnt expecting a message, not sure when this would ever be valid
+					DownloaderStatus = DownloaderMessageStatus.Unexpected_Request;
+					return;
+				case ServerResponseType.Failed_To_Parse:
+					//If the response is that it failed on the server end
+					DownloaderStatus = DownloaderMessageStatus.Failed_To_Send;
+					return;
+				case ServerResponseType.Type_Fail:
+					//If the response is that the server doesn't handle this type
+					DownloaderStatus = DownloaderMessageStatus.Type_Fail;
+					return;
+				default:
+					DownloaderStatus = DownloaderMessageStatus.Message_Sent;
+	
+					requestResult = result;
+					return;
+			}
 		}
 	
 		//Handle String Downloader error message
