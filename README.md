@@ -23,11 +23,12 @@ Hax - For the MessagePacker script, general help and suggestions on methods to u
 # Modify the url to send data
 ```
     Inside app.js on line 44:
-    app.use('/sendMessage=*', ServerConnector.HandleConnection.bind(ServerConnector));
+    app.use('/sendMessage=*', ServerConnector.HandleConnection);
     change '/sendMessage=*' to whatever you want your messages to be recieved on
 ```
 
 # Setup Server .env file
+![Env file location](/README/Env%20Location.png)
 ```
 PORT=(string) - The port you want to host the server on
 
@@ -41,21 +42,21 @@ DATABASE_USER_CERT=(string) - The location of the mongodb login certificate rela
 
 LOGIN_HASH_CHARACTERS=(int) - The amount of characters your login hash will have
 
-PRUNE_INACTIVE_TIME_MINUTES=(int) - Unused at the moment but will be used to remove inactive players from the user connection
+PRUNE_INACTIVE_TIME_MINUTES=(int) - The amount of time a user has to be inactive (no messages sent to the server) to remove them and clear their user connection
 
 DEVELOPMENT_MODE=(boolean) - Enables logging throughout the server
 ```
 
 # Setup URLS:
 
-## VRC URL Tool
+## Connector URL Tool
 Supply a starting URL, a number of URLs and the "Generate URLs" will appear
 
-![URL TOOL OBJECT](/README/VRCURLs.png)
+![URL TOOL OBJECT](/README/ConnectorURLs.png)
 
-![URL TOOL](/README/VRC%20URL%20Tool.png)
+![URL TOOL](/README/Connector%20URL%20Tool.png)
 
-## Generate VRCUrl Tool
+## Generate ConnectorUrl Tool
 Supply a gameObject object to hold URLs, starting URL, a number of URLs and the "Generate URLs" button will appear
 
-![URL GENERATOR TOOL](/README/Generate%20VRCUrls.png)
+![URL GENERATOR TOOL](/README/Generate%20ConnectorUrls.png)
