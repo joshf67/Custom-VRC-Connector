@@ -17,7 +17,7 @@ var app = express();
 //Create custom server logic
 ServerConnector = new ServerConnector(app);
 
-//Set up a timer to prune all inactive users after a certain time
+//Set up a timer to prune all inactive users after a certain time, checks every minute
 setInterval(() => {
   //Put inside a try catch to ensure the server doesn't randomly crash if something breaks
   try {
