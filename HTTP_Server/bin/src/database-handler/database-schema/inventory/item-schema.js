@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const ItemSchema = new mongoose.Schema({
   itemID: {
     type: Number,
-    unique: true,
+    unique: false,
     default: -1,
   },
 });

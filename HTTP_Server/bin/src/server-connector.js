@@ -4,16 +4,12 @@ const ConnectionManager = require("./connection-handler/connection-handler");
 const MessageHandler = require("./message-handler/message-handler")
 
 /**
- * Class tha handles the entry point for a connection from VRC to the Server
+ * Class that handles the entry point for a connection from VRC to the Server
  */
 class ServerConnector {
 
-    constructor(app) {
-        this.app = app;
-    }
-
-    //Convert the incomming ip to a hash and pass that onto the server logic instead of storing the IP
-    HandleConnection(req, res) {
+    //Convert the incomming ip to a hash and pass that onto the message handler instead of storing the IP
+    static HandleConnection(req, res) {
         let ipHashed = createHash("sha3-256").update(req.socket.remoteAddress).update(process.env.HASH_SALT).digest("hex");
 
         //Get/Add the user from the hashed ip

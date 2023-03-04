@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 const InventorySchema = new mongoose.Schema({
   Currency: {
     type: Number,
-    unique: true,
+    unique: false,
     default: 0,
   },
   Items: {
     type: Array,
-    unique: true,
+    unique: false,
     default: [],
   },
 });

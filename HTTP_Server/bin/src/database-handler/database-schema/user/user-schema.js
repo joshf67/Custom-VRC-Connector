@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
   },
   Inventory: {
     type: InventorySchema,
-    unique: true,
+    unique: false,
     default: new InventorySchemaJS(),
   },
 });

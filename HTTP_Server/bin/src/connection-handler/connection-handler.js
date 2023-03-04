@@ -1,5 +1,8 @@
 var UserConnectionData = require("./user-connection-data");
 
+/**
+ * Class that handles all of the current active users on the server
+ */
 class ConnectionHandler {
   static _users = new Map();
   static get Users() {
@@ -61,7 +64,7 @@ class ConnectionHandler {
   static PruneInactiveUsers() {
     let currentSearchTime = Date.now();
     let pruneIfAfterMS = process.env.PRUNE_INACTIVE_TIME_MINUTES * 60000;
-    for (var [key, user] of ConnectionHandler.Users) {
+    for (var user of ConnectionHandler.Users.values()) {
       if (currentSearchTime - user.lastMessageTime > pruneIfAfterMS)
         this.RemoveUser(user.ipHash);
     }

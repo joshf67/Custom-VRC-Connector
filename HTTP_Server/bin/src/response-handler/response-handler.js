@@ -41,8 +41,8 @@ module.exports = class ResponseHandler {
   static SucceedResponse(user, res) {
     ResponseHandler.HandleResponse(
       user,
-      new ResponseData(ResponseTypes.Succeeded, null),
-      res
+      res,
+      new ResponseData(ResponseTypes.Succeeded, null)
     );
   }
 
@@ -54,8 +54,21 @@ module.exports = class ResponseHandler {
   static FailResponse(user, res) {
     ResponseHandler.HandleResponse(
       user,
-      new ResponseData(ResponseTypes.Failed, null),
-      res
+      res,
+      new ResponseData(ResponseTypes.Failed, null)
+    );
+  }
+
+  /**
+   * Responds to a user's request with a static resend value
+   * @param {UserConnectionData} user - The user to send the response to
+   * @param {*} res
+   */
+  static ResendResponse(user, res) {
+    ResponseHandler.HandleResponse(
+      user,
+      res,
+      resendData
     );
   }
 };

@@ -7,15 +7,12 @@ var nocache = require('nocache');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var ServerConnector = require('./bin/src/server-connector');
-const ConnectionHandler = require("./bin/src/connection-handler/connection-handler");
 
+const ServerConnector = require('./bin/src/server-connector');
+const ConnectionHandler = require("./bin/src/connection-handler/connection-handler");
 const { randomBytes, createHash } = require("crypto");
 
 var app = express();
-
-//Create custom server logic
-ServerConnector = new ServerConnector(app);
 
 //Set up a timer to prune all inactive users after a certain time, checks every minute
 setInterval(() => {
