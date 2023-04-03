@@ -33,10 +33,12 @@ namespace ServerConnector
 	    [SerializeField]
 	    protected UdonHashLib hasher;
 	    [SerializeField]
-        protected byte packingMessageBitSize;
+        protected byte packingMessageBitSize = 20;
+        [SerializeField]
+        protected byte messageTypeSize = 4;
 
         //Used to make sure only 1 message is used by each type every 5 seconds
-	    private readonly float CONNECTION_TIMEOUT_RATE = 5;
+        private readonly float CONNECTION_TIMEOUT_RATE = 5;
         
 	    //Used to retry a message if the server doesn't respond
 	    private readonly float CONNECTION_RETRY_RATE = 15;
@@ -131,13 +133,28 @@ namespace ServerConnector
 			    currentMessageIndex = 0;
 		    }
 		    
-		    //Check if a String Downloader has recieved type doesn't exist response from the message
+		    //Check if a String Downloader has recieved unexpected message response from the message
 		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Unexpected_Request) {
 		    	
 		    	//TODO Figure out what this error means
 			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
 			    sendingStringMessage = false;
 			    currentMessageIndex = 0;
+		    }
+		    
+		    //Check if a String Downloader has recieved user not logged in response from the message
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.User_Not_Logged_In) {
+		    	
+			    //TODO Figure out what to do when this error occurs
+			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
+			    sendingStringMessage = false;
+			    currentMessageIndex = 0;
+		    }
+		    
+		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.Server_Error) {
+		    	
+			    //TODO Figure out what to do when this error occurs
+			    Debug.Log("An error has occured on the server side...");
 		    }
 	    }
 	    
