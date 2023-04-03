@@ -48,6 +48,14 @@ namespace ServerConnector.Downloader
 					//If the response is that the server doesn't handle this type
 					DownloaderStatus = DownloaderMessageStatus.Type_Fail;
 					return;
+				case ServerResponseType.User_Not_Logged_In:
+					//If the response is that the user isn't logged in
+					DownloaderStatus = DownloaderMessageStatus.User_Not_Logged_In;
+					return;
+				case ServerResponseType.Server_Error:
+					//If the response is that the server has run into an issue
+					DownloaderStatus = DownloaderMessageStatus.Server_Error;
+					return;
 				default:
 					DownloaderStatus = DownloaderMessageStatus.Message_Sent;
 	
