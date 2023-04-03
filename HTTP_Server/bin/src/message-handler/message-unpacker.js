@@ -1,16 +1,12 @@
 const logger = require("../logger");
-const VRCMessage = require("./vrc-message")
+const URLMessage = require("./url-message");
 
 /**
- *
+ * Unpack a hex URL into the binary equivalent
  * @param {number} message - The binary message encoded into a number
- * @param {boolean} includesType - Determines if this message has the type included
- * @returns {VRCMessage} - The parsed message
+ * @returns {URLMessage} - The parsed message
  */
-module.exports.UnpackHexMessage = function UnpackHexMessage(
-  message,
-  includesType = false
-) {
+module.exports.UnpackHexMessage = function UnpackHexMessage(message) {
   messageBitArray = parseInt(message, 16).toString(2).split("");
 
   //Pack message to be the same length as MESSAGE_BITS_LENGTH to combat 0s being removed from end
@@ -20,15 +16,16 @@ module.exports.UnpackHexMessage = function UnpackHexMessage(
     .fill("0")
     .concat(messageBitArray);
 
-  if (includesType) {
-    return new VRCMessage(
-      messageBitArray.slice(process.env.MESSAGE_TYPE_BITS),
+  //The first bit is used to determine if the type was sent along with the message
+  if (messageBitArray[0] == "1") {
+    return new URLMessage(
+      messageBitArray.slice(process.env.MESSAGE_TYPE_BITS + 1),
       parseInt(
-        messageBitArray.slice(0, process.env.MESSAGE_TYPE_BITS).join(""),
+        messageBitArray.slice(1, process.env.MESSAGE_TYPE_BITS + 1).join(""),
         2
       )
     );
   } else {
-    return new VRCMessage(messageBitArray);
+    return new URLMessage(messageBitArray.slice(1));
   }
 };
