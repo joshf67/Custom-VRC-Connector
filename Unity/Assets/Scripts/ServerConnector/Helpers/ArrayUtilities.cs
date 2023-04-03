@@ -52,8 +52,19 @@ public static class ArrayUtilities
         if (_index > _array.Length || _index < 0) { Debug.LogError("_index is not valid: " + _index); return; }
 
         T[] tempArray = new T[_array.Length + 1];
-        Array.Copy(_array, 0, tempArray, 0, _index);
-        Array.Copy(_array, _index, tempArray, _index + 1, tempArray.Length - _index);
+        if (_index == 0)
+        {
+            Array.Copy(_array, 0, tempArray, 1, _array.Length);
+        }
+        else if (_index == _array.Length)
+        {
+            Array.Copy(_array, 0, tempArray, 0, _array.Length);
+        }
+        else
+        {
+            Array.Copy(_array, 0, tempArray, 0, _index);
+            Array.Copy(_array, _index, tempArray, _index + 1, tempArray.Length - _index);
+        }
 
         tempArray[_index] = _value;
         _array = tempArray;
@@ -64,10 +75,22 @@ public static class ArrayUtilities
         if (_index > _array.Length || _index < 0) { Debug.LogError("_index is not valid: " + _index); return; }
 
         T[] tempArray = new T[_array.Length + _values.Length];
-
-        Array.Copy(_array, 0, tempArray, 0, _index);
-        Array.Copy(_values, 0, _array, _index, _values.Length);
-        Array.Copy(_array, _index, tempArray, _index + _values.Length, tempArray.Length - _values.Length - _index);
+        if (_index == 0)
+        {
+            Array.Copy(_values, 0, tempArray, 0, _index);
+            Array.Copy(_array, 0, tempArray, _values.Length, _array.Length);
+        }
+        else if (_index == _array.Length)
+        {
+            Array.Copy(_array, 0, tempArray, 0, _array.Length);
+            Array.Copy(_values, 0, tempArray, _values.Length, _values.Length);
+        }
+        else
+        {
+            Array.Copy(_array, 0, tempArray, 0, _index);
+            Array.Copy(_values, 0, tempArray, _index, _values.Length);
+            Array.Copy(_array, _index, tempArray, _index + _values.Length, tempArray.Length - _values.Length - _index);
+        }
 
         _array = tempArray;
     }
