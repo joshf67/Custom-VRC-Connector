@@ -1,22 +1,30 @@
-const LoginMessage = require("./login-message");
+const logger = require("../../../logger");
 const DatabaseHandler = require("../../../database-handler/database-handler");
 var path = require("path");
 const UserConnectionData = require("../../../connection-handler/user-connection-data");
-const VRCMessage = require("../../vrc-message");
+const URLMessage = require("../../url-message");
 const ResponseHandler = require("../../../response-handler/response-handler");
 const ResponseData = require("../../../response-handler/response-data");
 const { ResponseTypes } = require("../../../response-handler/response-types");
+const MessageBuilder = require("../../message-builder");
+const { MessageLength } = require("../../message-length");
 
 class LoginHandler {
   /**
    * Handles the first login related message and sets up a user's expecting data
    * @param {UserConnectionData} user - The user this message is for
    * @param {*} res
-   * @param {VRCMessage} message - The parsed message from the connection
+   * @param {URLMessage} message - The parsed message from the connection
+   * @param {bool} creatingAccount - Controls if the login hash will be used to create a new user
    */
   static HandleInitialMessage(user, res, message, creatingAccount = false) {
-    user.userHashData = new LoginMessage(creatingAccount);
-    user.expectingData = LoginHandler.HandleMessage;
+    user.expectingDataState = new MessageBuilder(
+      LoginHandler.HandleMessageUpdate,
+      LoginHandler.HandleMessageFinish,
+      MessageLength.Login,
+      { creatingAccount: creatingAccount }
+    );
+    user.expectingDataCallback = LoginHandler.HandleMessage;
     LoginHandler.HandleMessage(user, res, message);
   }
 
@@ -24,32 +32,62 @@ class LoginHandler {
    * Handles login related messages to build up a user login hash
    * @param {UserConnectionData} user - The user this message is for
    * @param {*} res
-   * @param {VRCMessage} message - The parsed message from the connection
+   * @param {String[]} message - The parsed message from the connection
    */
   static HandleMessage(user, res, message) {
-    let awaitingBits = user.userHashData.AddMessageBytes(message);
-
-    //If expecting data is false, that means it has enough data to complete the hash
-    if (user.userHashData.expectingData == false) {
-      //Handle finishing up userHashData message
-      user.expectingData = null;
-      user.userHash = user.userHashData.loginHash;
-
-      if (user.userHashData.creatingAccount)
-        return LoginHandler.HandleAccountCreation(user, res);
-
+    //If the user is already logged in, return the correct log in
+    if (user.loginHash != null) {
       return LoginHandler.HandleLogin(user, res);
-    } else {
-      //Continue listening to data
-      ResponseHandler.HandleResponse(
-        user,
-        res,
-        new ResponseData(
-          ResponseTypes.Login_Updated,
-          `Login Hash Part Recieved, Awaiting ${awaitingBits} bits`
-        )
+    }
+
+    //Handle the current message
+    return user.expectingDataState.AddMessageBytes(user, res, message);
+  }
+
+  /**
+   * Handles login related messages that add to the login hash
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {*} bitsRemaining - The bits remaining until the message is complete
+   */
+  static HandleMessageUpdate(user, res, bitsRemaining) {
+    //Continue listening to data
+    ResponseHandler.HandleResponse(
+      user,
+      res,
+      new ResponseData(
+        ResponseTypes.Login_Updated,
+        `Login Hash Part Recieved, Awaiting ${bitsRemaining} bits`
+      )
+    );
+  }
+
+  /**
+   * Handles finishing up login related messages to build up a user login hash
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {string[]} fullMessageBits - The message in a string binary array
+   * @param {*} options - The options passed to the message builder on creation
+   */
+  static HandleMessageFinish(user, res, fullMessageBits, options) {
+    let loginHash = "";
+    for (let i = 0; i < MessageLength.Login; i += 8) {
+      loginHash += String.fromCharCode(
+        parseInt(fullMessageBits.slice(i, i + 8).join(""), 2)
       );
     }
+
+    logger.log(loginHash);
+
+    //Handle finishing up userHashData message
+    user.expectingDataCallback = null;
+    user.expectingDataState = null;
+    user.userHash = loginHash;
+
+    if (options?.creatingAccount)
+      return LoginHandler.HandleAccountCreation(user, res);
+
+    return LoginHandler.HandleLogin(user, res);
   }
 
   /**
@@ -60,7 +98,7 @@ class LoginHandler {
   static HandleLogin(user, res) {
     DatabaseHandler.getUserData(user.userHash)
       .then((userData) => {
-        user.databaseData = userData;
+        user.databaseData = userData[0];
         return ResponseHandler.HandleResponse(
           user,
           res,
@@ -74,10 +112,7 @@ class LoginHandler {
           return ResponseHandler.HandleResponse(
             user,
             res,
-            new ResponseData(
-              ResponseTypes.Login_Failed,
-              "User does not exist"
-            )
+            new ResponseData(ResponseTypes.Login_Failed, "User does not exist")
           );
         ResponseHandler.FailResponse(user, res);
       });
@@ -91,7 +126,7 @@ class LoginHandler {
   static HandleAccountCreation(user, res) {
     DatabaseHandler.addUserData(user.userHash)
       .then((userData) => {
-        user.databaseData = userData;
+        user.databaseData = userData[0];
 
         ResponseHandler.HandleResponse(
           user,
