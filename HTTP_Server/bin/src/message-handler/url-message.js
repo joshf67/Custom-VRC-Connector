@@ -1,8 +1,14 @@
 /**
- * Class to contain any parsed messages from VRC
+ * Class to contain any parsed messages from VRC connection URL
  */
-module.exports = class VRCMessage {
+module.exports = class URLMessage {
+  /**
+   * @type { String[] } - Binary string
+   */
   _message = null;
+  /**
+   * @type { String[] } - Binary string
+   */
   get Message() {
     return this._message;
   }
@@ -14,7 +20,7 @@ module.exports = class VRCMessage {
 
   /**
    * 
-   * @param {number} message - The binary message encoded into a number
+   * @param {string[]} message - The binary message encoded into a string
    * @param {number} type - The binary message type encoded into a number
    */
   constructor(message, type = null) {
