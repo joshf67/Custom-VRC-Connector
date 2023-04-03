@@ -87,8 +87,8 @@ namespace ServerConnector.Editors
             startingURL = EditorGUILayout.TextField("Starting URL: ", startingURL);
 	        urlsToGenerate = EditorGUILayout.IntField("URLs To Generate: ", urlsToGenerate);
             
-	        if (GUILayout.Button("Populate 20 bit URL count")) {
-	        	urlsToGenerate = Mathf.RoundToInt(Mathf.Pow(2, 20));
+	        if (GUILayout.Button("Populate 21 bit URL count")) {
+	        	urlsToGenerate = Mathf.RoundToInt(Mathf.Pow(2, 21));
 	        }
 	        
             GenerateURLs(urlObject, urlsToGenerate, startingURL);
