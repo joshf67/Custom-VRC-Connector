@@ -28,7 +28,7 @@ class MessageHandler {
     try {
       //ResponseHandler.HandleResponse(user, res, new ResponseData(ResponseTypes.Unexpected_Request));
 
-      let unpackedMessage = UnpackHexMessage(req.params["0"], true);
+      let unpackedMessage = UnpackHexMessage(req.params["0"]);
 
       //TODO check if the response includes a type, if so ignore the last request and continue
       if (user.expectingDataCallback != null) {
