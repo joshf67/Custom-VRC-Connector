@@ -26,9 +26,6 @@ namespace Joshf67.ServerConnector
 	    [SerializeField]
 	    private ImageDownloaderListener imageDownloaderListener;
 
-	    //Used to hash any messages for simple encryption
-	    [SerializeField]
-	    protected UdonHashLib hasher;
 	    [SerializeField]
         protected byte packingMessageBitSize = 21;
         [SerializeField]

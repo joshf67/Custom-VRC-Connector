@@ -1,5 +1,4 @@
-﻿
-using Joshf67.ServerConnector.Development;
+﻿using Joshf67.ServerConnector.Development;
 using UnityEngine;
 using VRC.SDK3.Data;
 using Joshf67.ServerConnector.Server;
@@ -7,7 +6,10 @@ using Joshf67.ServerConnector.Server;
 namespace Joshf67.ServerConnector.Example
 {
 
-    public class ServerExampleResponse : ServerResponse
+    /// <summary>
+    /// Example response to show how to handle server responses
+    /// </summary>
+    public class ExampleServerResponse : ServerResponse
     {
 
         /// <summary>
