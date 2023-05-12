@@ -1,18 +1,15 @@
 ﻿using UdonSharp;
 using VRC.Udon;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.SDK3.StringLoading;
 using VRC.SDK3.Image;
-using VRC.Udon.Common.Interfaces;
-using Newtonsoft.Json;
-using System.Runtime.InteropServices;
-using System;
 
-using ServerConnector.Downloader;
+using Joshf67.ServerConnector.Development;
+using Joshf67.ServerConnector.Downloader;
+using VRC.SDK3.Data;
 
-namespace ServerConnector
+namespace Joshf67.ServerConnector
 {
 
 	[RequireComponent(typeof(ImageDownloaderListener), typeof(StringDownloaderListener))]
@@ -33,7 +30,7 @@ namespace ServerConnector
 	    [SerializeField]
 	    protected UdonHashLib hasher;
 	    [SerializeField]
-        protected byte packingMessageBitSize = 20;
+        protected byte packingMessageBitSize = 21;
         [SerializeField]
         protected byte messageTypeSize = 4;
 
@@ -58,21 +55,9 @@ namespace ServerConnector
 
         //Variables to hold all messaging data
         [SerializeField]
-        private int messageToSend = -1;
-        public int[] messageBuffer = new int[0];
+        private DataList messageBuffer = new DataList();
         [SerializeField]
         private int currentMessageIndex = 0;
-        [SerializeField]
-        private int currentMessageEndIndex = -1;
-
-        //Toggling this will allow debug outputs
-	    private bool developmentMode = true;
-	    public bool DevelopmentMode {
-		    get { return developmentMode;}
-	    }
-	    
-        //Toggling this will force the system to use the String Downloader resulting in double the message time but allow debugging the result message
-        private bool forceStringLoader = false;
 
         public void Start()
 	    {
@@ -98,9 +83,11 @@ namespace ServerConnector
 
             ManagerUpdate();
         }
-        
-	    //Check if the a response from the server has been returned and update the image downloader variable
-	    private void UpdateStringDownloader() {
+
+        /// <summary>
+        /// Check if the a response from the server has been returned and update the string downloader variable
+        /// </summary>
+        private void UpdateStringDownloader() {
 	    	
 	    	//Update the String Downloaders timeout
 		    if (stringRequestTimeout > -CONNECTION_RETRY_RATE) {
@@ -145,7 +132,7 @@ namespace ServerConnector
 		    //Check if a String Downloader has recieved user not logged in response from the message
 		    if (stringDownloaderListener.DownloaderStatus == DownloaderMessageStatus.User_Not_Logged_In) {
 		    	
-			    //TODO Figure out what to do when this error occurs
+			    //TODO: Initiate requsting user to log in
 			    stringDownloaderListener.DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
 			    sendingStringMessage = false;
 			    currentMessageIndex = 0;
@@ -157,9 +144,11 @@ namespace ServerConnector
 			    Debug.Log("An error has occured on the server side...");
 		    }
 	    }
-	    
-	    //Check if the a response from the server has been returned and update the image downloader variable
-	    private void UpdateImageDownloader() {
+
+        /// <summary>
+        /// Check if the a response from the server has been returned and update the image downloader variable
+        /// </summary>
+        private void UpdateImageDownloader() {
 	    	
 	    	//Update the Image Downloaders timeout
 		    if (imageRequestTimeout > -CONNECTION_RETRY_RATE) {
@@ -176,10 +165,13 @@ namespace ServerConnector
 		    }
 	    }
 
-        //Make sure that everything is ready to send off a message before sending off a message
+        /// <summary>
+        /// Make sure that everything is ready to send off a message before sending off a message
+        /// </summary>
+        /// <returns> If the message is ready to be sent </returns>
         private bool ReadyToSendMessage()
         {
-            if (messageBuffer.Length == 0) return false;
+            if (messageBuffer.Count == 0) return false;
 
             //A message hasn't been accepted/rejected so await for it to go through
             if (sendingImageMessage || sendingStringMessage) return false;
@@ -189,7 +181,9 @@ namespace ServerConnector
             return SelectMessengerType() ? stringRequestTimeout < 0 : imageRequestTimeout < 0;
         }
 
-        //Handle sending a message to a server if available
+        /// <summary>
+        /// Handle sending a message to a server if available
+        /// </summary>
         private void SendMessage()
         {
             int message = SelectMessage();
@@ -204,12 +198,14 @@ namespace ServerConnector
             {
                 if (currentlySelectedURL == null)
                 {
-                    if (DevelopmentMode)
+                    if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
                         Debug.LogError($"Invalid String URL for message {message}, please ensure this is set up correctly");
+
+                    //Implement an error handler here for when your URLs are setup incorrectly
                     return;
                 }
 
-                if (DevelopmentMode)
+                if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
                     Debug.Log($"Sending String Downloader message of {message} to {currentlySelectedURL}");
 
                 //Send off a request to the String Downloader
@@ -221,12 +217,14 @@ namespace ServerConnector
             {
                 if (currentlySelectedURL == null)
                 {
-                    if (DevelopmentMode)
+                    if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
                         Debug.LogError($"Invalid Image URL for message {message}, please ensure this is set up correctly");
+
+                    //Implement an error handler here for when your URLs are setup incorrectly
                     return;
                 }
 
-	            if (DevelopmentMode)
+	            if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
                     Debug.Log($"Sending Image Downloader message of {message} to {currentlySelectedURL}");
 
                 //Send off a request to the Image Downloader
@@ -238,103 +236,115 @@ namespace ServerConnector
             }
         }
 
-	    //Select which type of downloader can be used for this part, 
-	    //StringDownloader will always be used on the first and last message to ensure the message was recieved
-	    //This will mean that messages may be delayed by up to 5 seconds on the first message if a previous message was sent within that time
-	    //A message that consists of two requests will not benefit from the Image Downloader optimization and may take up to, above delay + 5s, max 10s
-	    //Anything above two requests will have: (potential delay from above) + request sent out every 2.5s
-        //True means String Downloader
-        //False means Video Downloader
+        /// <summary>
+        /// <para> 
+        /// Select which type of downloader can be used for this part of the message.
+        /// </para>
+        /// <para>
+        /// StringDownloader will always be used on the first and last message to ensure the message was recieved
+        /// This will mean that messages may be delayed by up to 5 seconds on the first message if a previous message was sent within that time
+        /// A message that consists of two requests will not benefit from the Image Downloader optimization and may take up to, above delay + 5s, max 10s
+        /// Anything above two requests will have: (potential delay from above) + request sent out every 2.5s
+        /// </para>
+        /// </summary>
+        /// <returns> The type of Downloader to use, True means String Downloader, False means Video Downloader</returns>
         private bool SelectMessengerType()
         {
-            if (forceStringLoader) return true;
-
             //If this message is the last one then use the String Downloader
-            if (currentMessageIndex == currentMessageEndIndex) return true;
+            if (currentMessageIndex == 0 || currentMessageIndex == messageBuffer[0].DataList.Count - 1) return true;
 
             //Alternate between String Downloader and Image Downloader
-            //Starting with the Image Downloader to ensure no wait time for String Downloader on the final message
-            return (currentMessageEndIndex - currentMessageIndex) % 2 != 0;
+            //Starting with the Image Downloader on index 1
+            return currentMessageIndex % 2 == 0;
         }
 
-        //Select the next available message in the buffer if available
+        /// <summary>
+        /// Select the next available message in the buffer if available
+        /// </summary>
+        /// <returns> The message/url to send </returns>
         private int SelectMessage()
         {
-            if (messageBuffer.Length == 0 || currentMessageIndex >= messageBuffer.Length) return -1;
-            return messageBuffer[currentMessageIndex];
+            if (messageBuffer.Count == 0 || currentMessageIndex >= messageBuffer[0].DataList.Count) return -1;
+
+            DataToken message;
+            if (messageBuffer[0].DataList.TryGetValue(currentMessageIndex, out message))
+            {
+                return message.Int;
+            }
+            return -1;
         }
 
-	    //Increment the current message index and run any checks on the message buffer
-	    private void IncrementMessage()
+        /// <summary>
+        /// Increment the current message index and run any checks on the message buffer
+        /// </summary>
+        private void IncrementMessage()
         {
             //Message buffer shouldn't ever be empty but just in case
-            if (messageBuffer.Length == 0) return;
+            if (messageBuffer.Count == 0) return;
             currentMessageIndex++;
 
             //Check if the next message is not the end of this message buffer
-            if (currentMessageIndex < currentMessageEndIndex) return;
+            if (currentMessageIndex < messageBuffer[0].DataList.Count) return;
 
             //reset the current message index and remove the first message buffer from the current message buffer
-            if (currentMessageEndIndex + 1 == messageBuffer.Length)
-            {
-                messageBuffer = new int[0];
-            }
-            else
-            {
-                ArrayUtilities.RemoveRangeFromArray(ref messageBuffer, 0, currentMessageEndIndex + 1);
-            }
+            messageBuffer.RemoveAt(0);
             currentMessageIndex = 0;
-            currentMessageEndIndex = -1;
-
-            if (messageBuffer.Length == 0) return;
-
-            //find the next currentMessageEndIndex if there are more messages
-            currentMessageEndIndex = ArrayUtilities.ReturnFirstIndexOfValueFromArray(messageBuffer, -1);
         }
 
-	    //Virtual function for any children to add onto the Start function
-        protected virtual void ManagerStart()
-        {
+        /// <summary>
+        /// Virtual function for any children to add onto the Start function
+        /// </summary>
+        protected virtual void ManagerStart() {}
 
-        }
+        /// <summary>
+        /// Virtual function for any children to add onto the Update function
+        /// </summary>
+        protected virtual void ManagerUpdate() {}
 
-	    //Virtual function for any children to add onto the Update function
-        protected virtual void ManagerUpdate()
-        {
-
-        }
-
-	    //Required function for any children to implement to recieve messages
+        /// <summary>
+        /// Required function for any children to implement to recieve messages
+        /// </summary>
+        /// <param name="response"> The server XML response </param>
         public abstract void HandleMessage(string response);
 
-	    //Converts a text to SHA512 using UdonHashLib
-        public string ConvertTextToHash(string text)
-        {
-            return hasher.SHA512_UTF8(text);
-        }
-
-        // Convert a SHA256 hash into a shorter 9 character hash to decrease login message time
-        // This decreases the security and increase the chance of collision but due to 5s rate limiting this is required to make it reasonable
-        public string ConvertSHA256ToMessage(string hash)
-        {
-            if (hash.Length != 128) return "";
-            return new string(new char[] { hash[0], hash[15], hash[31], hash[47], hash[63], hash[79], hash[95], hash[111], hash[127] });
-        }
-
-	    //Adds a single message to the buffer to be sent
+        /// <summary>
+        /// Adds a single message to the buffer to be sent
+        /// </summary>
+        /// <param name="message"> The message to add </param>
         public void AddMessageToBuffer(int message)
         {
-            ArrayUtilities.AddToArray(ref messageBuffer, message);
-            ArrayUtilities.AddToArray(ref messageBuffer, -1);
-            if (currentMessageEndIndex == -1) currentMessageEndIndex = messageBuffer.Length - 1;
+            DataList newMessage = new DataList();
+            newMessage.Add(message);
+            messageBuffer.Add(newMessage);
         }
 
-	    //Adds multiple messages to the buffer to be sent (usually batched with a single response type on the first message)
-        public void AddMessagesToBuffer(int[] messages)
+        /// <summary>
+        /// Adds multiple messages to the buffer to be sent (usually batched with a single response type on the first message)
+        /// </summary>
+        /// <param name="messages"> The messages to add </param>
+        public void AddMessagesToBuffer(DataList messages)
         {
-            ArrayUtilities.AddRangeToArray(ref messageBuffer, messages);
-            ArrayUtilities.AddToArray(ref messageBuffer, -1);
-            if (currentMessageEndIndex == -1) currentMessageEndIndex = messageBuffer.Length - 1;
+            //Ensure all messages are of type int
+            for (int messageIndex = 0; messageIndex < messages.Count; messageIndex++) 
+            {
+                if (messages[messageIndex].TokenType == TokenType.Int)
+                    continue;
+
+                if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+                    Debug.Log("Message being added to Connector's message buffer is in an invalid format");
+
+                return;
+            }
+
+            if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+            {
+                Debug.Log("Messages have been added to Connector");
+                for (int messageIndex = 0; messageIndex < messages.Count; messageIndex++)
+                {
+                    Debug.Log(messages[messageIndex].Int);
+                }
+            }
+            messageBuffer.Add(messages);
         }
     }
 
