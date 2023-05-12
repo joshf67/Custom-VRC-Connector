@@ -1,6 +1,4 @@
 ﻿using Joshf67.ServerConnector.Packing;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Data;
