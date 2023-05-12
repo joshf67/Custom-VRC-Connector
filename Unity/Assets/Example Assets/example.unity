@@ -6423,7 +6423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0 <= Index <= 15
+  m_Text: 0 <= Index <= 255
 --- !u!222 &1876709674
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7699,25 +7699,22 @@ MonoBehaviour:
   stringDownloaderListener: {fileID: 8954193691083412188}
   imageDownloaderListener: {fileID: 8954193691083412186}
   hasher: {fileID: 8954193691083412185}
-  packingMessageBitSize: 20
+  packingMessageBitSize: 21
   messageTypeSize: 4
   stringRequestTimeout: 0
   sendingStringMessage: 0
   imageRequestTimeout: 0
   sendingImageMessage: 0
-  messageToSend: -1
-  messageBuffer: 
+  messageBuffer:
+    _values: []
   currentMessageIndex: 0
-  currentMessageEndIndex: -1
   usernameField: {fileID: 8954193688992317696}
   passwordField: {fileID: 8954193691036204813}
   responseField: {fileID: 756578669}
   ExampleResponseParser: {fileID: 8954193691083412189}
-  items: 
   itemField: {fileID: 2041127325}
   AddItemField: {fileID: 749235416}
   RemoveItemField: {fileID: 1382221262}
-  read: 0
 --- !u!114 &8954193691083412181
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -7840,7 +7837,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8954193691083412183}
-  DevelopmentMode: 0
   DownloaderStatus: 0
 --- !u!114 &8954193691083412187
 MonoBehaviour:
@@ -7890,7 +7886,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8954193691083412187}
-  DevelopmentMode: 0
   DownloaderStatus: 0
 --- !u!114 &8954193691083412189
 MonoBehaviour:
@@ -7912,14 +7907,5 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: Response
-      Entry: 7
-      Data: 0|System.String, mscorlib
-    - Name: 
-      Entry: 1
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 8954193691083412181}
