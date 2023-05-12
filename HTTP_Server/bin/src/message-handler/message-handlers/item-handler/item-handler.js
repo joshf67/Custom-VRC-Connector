@@ -22,9 +22,10 @@ class ItemHandler {
     //First bit of a Item message is use to determine if it should be adding or removing
     let addingItems = message[0] == "1";
 
-    //The next 7 bits are used to store how many items are in the message
-    let items = parseInt(message.slice(1, 9).join(""), 2);
+    //The next 7 bits are used to store how many items/indices are in the message
+    let items = parseInt(message.slice(1, 8).join(""), 2);
 
+    //Build the message listener data
     user.expectingDataState = new MessageBuilder(
       ItemHandler.HandleMessageUpdate,
       ItemHandler.HandleMessageFinish,
@@ -36,8 +37,10 @@ class ItemHandler {
         items: items,
       }
     );
+
+    //Setup the message listener and then send the remaining message bits into it
     user.expectingDataCallback = user.expectingDataState.AddMessageBytes;
-    user.expectingDataCallback(user, res, message);
+    user.expectingDataCallback(user, res, message.slice(8));
   }
 
   /**
@@ -68,17 +71,12 @@ class ItemHandler {
   static HandleMessageFinish(user, res, fullMessageBits, options) {
     if (options.addingItems) {
       let items = [];
-      for (
-        let i = 0;
-        i < options.items * MessageLength.Item;
-        i += MessageLength.Item
-      ) {
+
+      //Build up all of the items to add from the message bits
+      for (let i = 0; i < options.items * MessageLength.Item; i += MessageLength.Item) {
         items.push(
           new ItemSchemaJS(
-            parseInt(
-              fullMessageBits.slice(i, i + MessageLength.Item).join(""),
-              2
-            )
+            parseInt(fullMessageBits.slice(i, i + MessageLength.Item).join(""), 2)
           )
         );
       }
@@ -87,16 +85,11 @@ class ItemHandler {
       ItemHandler.AddItems(user, res, items);
     } else {
       let indices = [];
-      for (
-        let i = 0;
-        i < options.items * MessageLength.Item;
-        i += MessageLength.Item
-      ) {
+
+      //Build up all of the indices from the message bits
+      for (let i = 0; i < options.items * MessageLength.Item; i += MessageLength.Item) {
         indices.push(
-          parseInt(
-            fullMessageBits.slice(i, i + MessageLength.ItemIndex).join(""),
-            2
-          )
+          parseInt(fullMessageBits.slice(i, i + MessageLength.ItemIndex).join(""), 2)
         );
       }
 
@@ -112,11 +105,15 @@ class ItemHandler {
    * @param {ItemSchemaJS[]} items - The items to be added
    */
   static AddItems(user, res, items) {
-    user.databaseData.Inventory.items =
-      user.databaseData.Inventory.items.concat(items);
+    //Update the local inventory items
+    user.databaseData.Inventory.Items =
+      user.databaseData?.Inventory?.Items?.concat?.(items);
+
+    //Fire off a request to save the data into the database
     user.databaseData
       .save()
       .then((saved) => {
+        //If it saved then respond with succeeded message
         ResponseHandler.HandleResponse(
           user,
           res,
@@ -140,17 +137,34 @@ class ItemHandler {
    * @param {int[]} indices - The item indexes to be removed
    */
   static RemoveItems(user, res, indices) {
+    /* sort all of the indices by largets first so that when we remove
+       any items it wont affect the rest of the indices position
+       and remove any indices that are above the actual inventory item count */
     indices = indices.sort((a, b) => {
       return a - b;
-    });
+    }).filter(
+      (index) => index < (user.databaseData?.Inventory?.Items.length ?? 0)
+    );
 
+    //If there are no indices left then we don't need to message the database, so respond
+    if (indices.length == 0) {
+      return ResponseHandler.HandleResponse(
+        user,
+        res,
+        new ResponseData(ResponseTypes.Removed_item, indices)
+      );
+    }  
+
+    //Remove all of the incides
     indices.forEach((index) => {
-      user.databaseData.Inventory.items.splice(index, 1);
+      user.databaseData?.Inventory?.Items?.splice?.(index, 1);
     });
 
+    //Fire off a request to save the data into the database
     user.databaseData
       .save()
       .then((saved) => {
+        //If it saved then respond with succeeded message
         ResponseHandler.HandleResponse(
           user,
           res,
