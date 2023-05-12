@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEditor;
 using VRC.SDKBase;
 
-using ServerConnector.Downloader;
+using Joshf67.ServerConnector.Downloader;
 
-namespace ServerConnector.Editors
+namespace Joshf67.ServerConnector.Editors
 {
 
     public class GenerateConnectorUrlsTool : EditorWindow

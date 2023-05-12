@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace ServerConnector.Downloader
+﻿namespace Joshf67.ServerConnector.Downloader
 {
     
 	public enum DownloaderMessageStatus

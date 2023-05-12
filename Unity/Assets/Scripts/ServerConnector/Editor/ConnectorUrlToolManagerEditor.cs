@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-using ServerConnector.Downloader;
+using Joshf67.ServerConnector.Downloader;
 
-namespace ServerConnector.Editors
+namespace Joshf67.ServerConnector.Editors
 {
 	[CustomEditor(typeof(ConnectorUrlToolManager))]
 	public class ConnectorUrlToolManagerEditor : Editor

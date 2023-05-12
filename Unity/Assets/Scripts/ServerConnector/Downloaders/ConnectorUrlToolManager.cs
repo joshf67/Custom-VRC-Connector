@@ -1,9 +1,8 @@
 ﻿using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
-using VRC.Udon;
 
-namespace ServerConnector.Downloader
+namespace Joshf67.ServerConnector.Downloader
 {
 
 	public class ConnectorUrlToolManager : UdonSharpBehaviour

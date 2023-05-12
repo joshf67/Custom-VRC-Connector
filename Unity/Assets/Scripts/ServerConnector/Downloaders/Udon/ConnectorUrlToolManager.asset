@@ -21,7 +21,7 @@ MonoBehaviour:
   compiledVersion: 2
   behaviourSyncMode: 0
   hasInteractEvent: 0
-  scriptID: -2801550188776058034
+  scriptID: 3306689025483479739
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -182,7 +182,7 @@ MonoBehaviour:
       Data: 11|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: ServerConnector.Downloader.ConnectorUrlTool[], Assembly-CSharp
+      Data: Joshf67.ServerConnector.Downloader.ConnectorUrlTool[], Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 

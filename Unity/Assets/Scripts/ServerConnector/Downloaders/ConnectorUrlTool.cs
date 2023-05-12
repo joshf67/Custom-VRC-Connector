@@ -2,7 +2,7 @@
 using UnityEngine;
 using VRC.SDKBase;
 
-namespace ServerConnector.Downloader
+namespace Joshf67.ServerConnector.Downloader
 {
 	public class ConnectorUrlTool : UdonSharpBehaviour
 	{
