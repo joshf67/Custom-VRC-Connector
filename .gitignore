@@ -142,6 +142,10 @@ Unity/[Bb]uilds/
 Unity/[Ll]ogs/
 Unity/[Uu]ser[Ss]ettings/
 
+##VRC Unity git ignore
+Unity/Assets/SerializedUdonPrograms/*
+Unity/Assets/UdonSharp/*
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 Unity/[Mm]emoryCaptures/
