@@ -18,14 +18,18 @@ class LoginHandler {
    * @param {bool} creatingAccount - Controls if the login hash will be used to create a new user
    */
   static HandleInitialMessage(user, res, message, creatingAccount = false) {
+    
+    //Build the message listener data
     user.expectingDataState = new MessageBuilder(
       LoginHandler.HandleMessageUpdate,
       LoginHandler.HandleMessageFinish,
       MessageLength.Login,
       { creatingAccount: creatingAccount }
     );
+    
+    //Setup the message listener and then send the remaining message bits into it
     user.expectingDataCallback = LoginHandler.HandleMessage;
-    LoginHandler.HandleMessage(user, res, message);
+    user.expectingDataCallback(user, res, message);
   }
 
   /**
@@ -70,12 +74,12 @@ class LoginHandler {
    * @param {*} options - The options passed to the message builder on creation
    */
   static HandleMessageFinish(user, res, fullMessageBits, options) {
-    let loginHash = "";
+    let loginBytes = [];
     for (let i = 0; i < MessageLength.Login; i += 8) {
-      loginHash += String.fromCharCode(
-        parseInt(fullMessageBits.slice(i, i + 8).join(""), 2)
-      );
+      loginBytes.push(parseInt(fullMessageBits.slice(i, i + 8).join(""), 2));
     }
+
+    const loginHash = new TextDecoder().decode(new Uint8Array(loginBytes));
 
     logger.log(loginHash);
 
@@ -102,7 +106,7 @@ class LoginHandler {
         return ResponseHandler.HandleResponse(
           user,
           res,
-          new ResponseData(ResponseTypes.Login_Complete, userData)
+          new ResponseData(ResponseTypes.Login_Complete, userData[0])
         );
       })
       .catch((error) => {
@@ -131,7 +135,7 @@ class LoginHandler {
         ResponseHandler.HandleResponse(
           user,
           res,
-          new ResponseData(ResponseTypes.Account_Creation_Complete, userData)
+          new ResponseData(ResponseTypes.Account_Creation_Complete, userData[0])
         );
       })
       .catch((error) => {
