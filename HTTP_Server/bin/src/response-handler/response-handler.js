@@ -23,11 +23,11 @@ module.exports = class ResponseHandler {
 
       try {
         //Convert to XML until VRC release JSON parsing, converted to JSON then to JS then to XML to stop XML parsing issues
-        res.send(XMLBuilder.build(JSON.parse(JSON.stringify(response)))).end();
+        res.send(JSON.stringify(response)).end();
       } catch (e) {
         //If an error occurs send back a message requesting a resend of the current batch of data
         console.error(e);
-        res.send(XMLBuilder.build(resendData)).end();
+        res.send(JSON.stringify(resendData)).end();
       }
     };
     user.lastMessage(res);
