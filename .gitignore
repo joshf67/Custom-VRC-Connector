@@ -206,3 +206,11 @@ Unity/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 Unity/[Aa]ssets/[Ss]treamingAssets/aa.meta
 Unity/[Aa]ssets/[Ss]treamingAssets/aa/*
+Unity/Assets/Scripts/ServerConnector/Helpers/MessagePacker.cs
+Unity/Assets/UdonSharp/UtilityScripts/BoneFollower.asset
+Unity/Assets/UdonSharp/UtilityScripts/InteractToggle.asset
+Unity/Assets/UdonSharp/UtilityScripts/PlayerModSetter.asset
+Unity/Assets/UdonSharp/UtilityScripts/Synced/GlobalToggleObject.asset
+Unity/Assets/UdonSharp/UtilityScripts/Synced/MasterToggleObject.asset
+Unity/Assets/UdonSharp/UtilityScripts/TrackingDataFollower.asset
+Unity/Assets/UdonSharp/UtilityScripts/WorldAudioSettings.asset
