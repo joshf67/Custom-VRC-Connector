@@ -5,17 +5,16 @@ using VRC.SDKBase;
 using VRC.Udon;
 using VRC.SDK3.StringLoading;
 
-using ServerConnector.Response;
+using Joshf67.ServerConnector.Server;
+using Joshf67.ServerConnector.Development;
 
-namespace ServerConnector.Downloader
+namespace Joshf67.ServerConnector.Downloader
 {
 	
 	//This class is needed as there is an error with the Image Downloader where it can read erros from different threads
 	//The solution is to extract the onsuccess/onerror to another script and report back to the main script
 	public class StringDownloaderListener : UdonSharpBehaviour
 	{		
-		[SerializeField]
-		private bool DevelopmentMode = false;
 		
 		[SerializeField]
 		//Stores if a message has recieved a response from a server
@@ -32,7 +31,7 @@ namespace ServerConnector.Downloader
 		{
 			base.OnStringLoadSuccess(result);
 			
-			if (DevelopmentMode)
+			if (DevelopmentManager.IsStringListenerEnabled(DevelopmentMode.Basic))
 				Debug.Log($"String loaded successfully: {result.Result}");
 			
 			switch(ServerResponse.GetMessageType(result.Result)) {
@@ -71,7 +70,7 @@ namespace ServerConnector.Downloader
 			DownloaderStatus = DownloaderMessageStatus.Request_Error;
 	
 			requestResult = result;
-			if (DevelopmentMode)
+			if (DevelopmentManager.IsStringListenerEnabled(DevelopmentMode.Basic))
 				Debug.Log($"Error result: ${result.Error} with error code: {result.ErrorCode}");
 		}
 	}
