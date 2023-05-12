@@ -26,15 +26,30 @@ class MessageBuilder {
    * @param {byte[]} message - the character bytes to add to the message
    */
   AddMessageBytes(user, res, message) {
-    user.expectingDataState.messageBits = user.expectingDataState.messageBits.concat(message);
-    if (user.expectingDataState.messageBits.length >= user.expectingDataState.messageLength) {
-      return user.expectingDataState?.finishCallback?.(user, res, user.expectingDataState.messageBits, user.expectingDataState.options);
+    //Add the additional message onto the end of the user's message data state
+    user.expectingDataState.messageBits =
+      user.expectingDataState.messageBits.concat(message);
+
+    //Check if the message is the size that is expected
+    if (
+      user.expectingDataState.messageBits.length >=
+      user.expectingDataState.messageLength
+    ) {
+      //Finish up the message as no more data is required
+      return user.expectingDataState?.finishCallback?.(
+        user,
+        res,
+        user.expectingDataState.messageBits,
+        user.expectingDataState.options
+      );
     }
 
+    //If the message is still expecting data then update and await further data
     return user.expectingDataState?.updateCallback?.(
       user,
       res,
-      user.expectingDataState.messageLength - user.expectingDataState.messageBits.length
+      user.expectingDataState.messageLength -
+        user.expectingDataState.messageBits.length
     );
   }
 }
