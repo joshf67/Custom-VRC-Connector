@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace ServerConnector.Response
+﻿namespace Joshf67.ServerConnector.Server
 {
     
 	public enum ServerResponseType
