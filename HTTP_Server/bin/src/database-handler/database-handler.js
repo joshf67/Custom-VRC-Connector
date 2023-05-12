@@ -104,6 +104,7 @@ module.exports = new DatabaseHandler();
  */
 function Connect(uri, cert) {
   return new Promise((resolve) => {
+    logger.log("Initiating  connection to database");
     mongoose
       .connect(uri, {
         ssl: true,
@@ -113,6 +114,7 @@ function Connect(uri, cert) {
         authMechanism: "MONGODB-X509",
       })
       .then((client) => {
+        logger.log("Connected to database successfully");
         resolve(client);
       })
       .catch((error) => {

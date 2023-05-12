@@ -16,4 +16,4 @@ function error(message, throwable) {
     }
 }
 
-module.exports = { log, error };
+module.exports = { log, warn, error };
