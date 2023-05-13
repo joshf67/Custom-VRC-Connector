@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Connector
+    <title>Class StringDownloaderListener
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Connector
+    <meta name="title" content="Class StringDownloaderListener
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,37 +78,40 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Connector">
+            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener">
   
   
-  <h1 id="Joshf67_ServerConnector_Connector" data-uid="Joshf67.ServerConnector.Connector" class="text-break">Class Connector
+  <h1 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener" class="text-break">Class StringDownloaderListener
   </h1>
-  <div class="markdown level0 summary"><p>Abstract base class to enable easy connections to for servers</p>
+  <div class="markdown level0 summary"><p>This class was generated because of an issue with the Image Downloader where it can read erros from different threads,
+The solution was to extract the onsuccess/onerror to another script and report back to the main script.
+<p>
+This is no longer needed however does split up the code for downloaders and connectors
+</p></p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">Connector</span></div>
-      <div class="level2"><a class="xref" href="Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html">ExampleDatabaseConnector</a></div>
+    <div class="level1"><span class="xref">StringDownloaderListener</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.html">Joshf67.ServerConnector</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Downloader.html">Joshf67.ServerConnector.Downloader</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Joshf67_ServerConnector_Connector_syntax">Syntax</h5>
+  <h5 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Connector : UdonSharpBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class StringDownloaderListener : UdonSharpBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Joshf67_ServerConnector_Connector_messageTypeSize" data-uid="Joshf67.ServerConnector.Connector.messageTypeSize">messageTypeSize</h4>
-  <div class="markdown level1 summary"><p>Controls how many bits are used for specifying the message type</p>
+  <h4 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_DownloaderStatus" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.DownloaderStatus">DownloaderStatus</h4>
+  <div class="markdown level1 summary"><p>Stores if a message has recieved a response from a server</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected byte messageTypeSize</code></pre>
+    <pre><code class="lang-csharp hljs">public DownloaderMessageStatus DownloaderStatus</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,22 +123,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><a class="xref" href="Joshf67.ServerConnector.Downloader.DownloaderMessageStatus.html">DownloaderMessageStatus</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="properties">Properties
+  </h3>
   
   
-  <h4 id="Joshf67_ServerConnector_Connector_packingMessageBitSize" data-uid="Joshf67.ServerConnector.Connector.packingMessageBitSize">packingMessageBitSize</h4>
-  <div class="markdown level1 summary"><p>Controls how many bits are packed into each message</p>
+  <a id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_RequestResult_" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.RequestResult*"></a>
+  <h4 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_RequestResult" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.RequestResult">RequestResult</h4>
+  <div class="markdown level1 summary"><p>Public getter for the last recieved response</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected byte packingMessageBitSize</code></pre>
+    <pre><code class="lang-csharp hljs">public IVRCStringDownload RequestResult { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -145,7 +151,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="xref">IVRCStringDownload</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -154,14 +160,14 @@
   </h3>
   
   
-  <a id="Joshf67_ServerConnector_Connector_AddMessagesToBuffer_" data-uid="Joshf67.ServerConnector.Connector.AddMessagesToBuffer*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_AddMessagesToBuffer_DataList_" data-uid="Joshf67.ServerConnector.Connector.AddMessagesToBuffer(DataList)">AddMessagesToBuffer(DataList)</h4>
-  <div class="markdown level1 summary"><p>Adds multiple messages to the buffer to be sent (usually batched with a single response type on the first message)</p>
+  <a id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_OnStringLoadError_" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.OnStringLoadError*"></a>
+  <h4 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_OnStringLoadError_IVRCStringDownload_" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.OnStringLoadError(IVRCStringDownload)">OnStringLoadError(IVRCStringDownload)</h4>
+  <div class="markdown level1 summary"><p>Handle String Downloader error message</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddMessagesToBuffer(DataList messages)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnStringLoadError(IVRCStringDownload result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,23 +180,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DataList</span></td>
-        <td><span class="parametername">messages</span></td>
-        <td><p>The messages to add </p>
+        <td><span class="xref">IVRCStringDownload</span></td>
+        <td><span class="parametername">result</span></td>
+        <td><p>The response from the server </p>
 </td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Connector_AddMessageToBuffer_" data-uid="Joshf67.ServerConnector.Connector.AddMessageToBuffer*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_AddMessageToBuffer_System_Int32_" data-uid="Joshf67.ServerConnector.Connector.AddMessageToBuffer(System.Int32)">AddMessageToBuffer(Int32)</h4>
-  <div class="markdown level1 summary"><p>Adds a single message to the buffer to be sent</p>
+  <a id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_OnStringLoadSuccess_" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.OnStringLoadSuccess*"></a>
+  <h4 id="Joshf67_ServerConnector_Downloader_StringDownloaderListener_OnStringLoadSuccess_IVRCStringDownload_" data-uid="Joshf67.ServerConnector.Downloader.StringDownloaderListener.OnStringLoadSuccess(IVRCStringDownload)">OnStringLoadSuccess(IVRCStringDownload)</h4>
+  <div class="markdown level1 summary"><p>Handle String Downloader successful message </p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddMessageToBuffer(int message)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnStringLoadSuccess(IVRCStringDownload result)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -203,75 +209,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to add </p>
+        <td><span class="xref">IVRCStringDownload</span></td>
+        <td><span class="parametername">result</span></td>
+        <td><p>The response from the server </p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_HandleMessage_" data-uid="Joshf67.ServerConnector.Connector.HandleMessage*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_HandleMessage_System_String_" data-uid="Joshf67.ServerConnector.Connector.HandleMessage(System.String)">HandleMessage(String)</h4>
-  <div class="markdown level1 summary"><p>Required function for any children to implement to recieve messages</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void HandleMessage(string response)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">response</span></td>
-        <td><p>The server XML response </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_ManagerStart_" data-uid="Joshf67.ServerConnector.Connector.ManagerStart*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_ManagerStart" data-uid="Joshf67.ServerConnector.Connector.ManagerStart">ManagerStart()</h4>
-  <div class="markdown level1 summary"><p>Virtual function for any children to add onto the Start function</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void ManagerStart()</code></pre>
-  </div>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_ManagerUpdate_" data-uid="Joshf67.ServerConnector.Connector.ManagerUpdate*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_ManagerUpdate" data-uid="Joshf67.ServerConnector.Connector.ManagerUpdate">ManagerUpdate()</h4>
-  <div class="markdown level1 summary"><p>Virtual function for any children to add onto the Update function</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void ManagerUpdate()</code></pre>
-  </div>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_Start_" data-uid="Joshf67.ServerConnector.Connector.Start*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_Start" data-uid="Joshf67.ServerConnector.Connector.Start">Start()</h4>
-  <div class="markdown level1 summary"><p>Setup all the required downloader variables when initiated</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
-  </div>
 </article>
           </div>
           

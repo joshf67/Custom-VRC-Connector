@@ -24,11 +24,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.UdonHashLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.UdonHashLib.html",
+          "hash": "R8UigUxAIRBTjqAsQPx94zKfx8CcQCkRJy/n7DNxK50="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.html",
+          "hash": "UaZWJ9b8nMR8ohAHE4aafVB1/LTQl8EI/78gB8u568Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Joshf67.ServerConnector.Connector.yml",
       "output": {
         ".html": {
           "relative_path": "api/Joshf67.ServerConnector.Connector.html",
-          "hash": "6v0DsnfrBBHtnlbnA7doov8AfddFFmkTb5sdOgoQrLc="
+          "hash": "fG38ZY8cv1HxlpjVHprsXHBWH+8C78SahCDux3e0rxo="
         }
       },
       "is_incremental": false,
@@ -41,6 +65,342 @@
         ".html": {
           "relative_path": "api/Joshf67.ServerConnector.ConnectorMessageType.html",
           "hash": "KRDMIViCBPZpt91y0kUnpQXo4xcmNwm0mBNsjWL8tiA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Development.DevelopmentManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Development.DevelopmentManager.html",
+          "hash": "EzhNc0JrK8lVTqT2Zx9X5MHxu+mgC9Okli98MTCo6N4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Development.DevelopmentMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Development.DevelopmentMode.html",
+          "hash": "syR6Q2Qix/NJpC8YzatPuRUzbKcxzDtGBrpzIkLHx9U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.html",
+          "hash": "sbQYUN+wSb2Yr4+3CMYk2ms5rz+RMpJfY0ZTR+Eok5E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Development.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Development.Tests.html",
+          "hash": "GOxE/jmTn8sRAAAkFSALOYdv/X5NmOq4aZO7aKGNgXM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Development.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Development.html",
+          "hash": "aDxWM/hzLsGWnCYYzlapBgHMsbB/kygTxNZeGpssqF8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.ConnectorUrlTool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.ConnectorUrlTool.html",
+          "hash": "AfSn/SwoAscq/x01gKCpp0zFlN/hx7l9qozhwkZsjmg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.html",
+          "hash": "JCbB1c/ZB5SilB6umrc+2TzEs7MVV6DPp9ajXEQFyKU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.DownloaderMessageStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.DownloaderMessageStatus.html",
+          "hash": "5iYqIFfKv/kgbtXT75REz/efaFqVjs/lWKnleQJel2U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.ImageDownloaderListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.ImageDownloaderListener.html",
+          "hash": "ijOZAdfPcN//PaMqN4D3sb0Zr/Qd/SHlI9HmFSZCciE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.StringDownloaderListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.StringDownloaderListener.html",
+          "hash": "l0ZcwpsdW3jcUA9phMIWwfk2XalESpiU44QZDedMXMg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Downloader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Downloader.html",
+          "hash": "2B14G7YsxClFWlzzCq9l3YSRS1DJkCklx+ys6fzZoE0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolEditor.html",
+          "hash": "GkUQXJmPOf8X0SX2m2esQ6ps7ewGmz4KPvJPJPmaJbc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolManagerEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolManagerEditor.html",
+          "hash": "fx/tmgoejE5WUNhXA9hmQzEoPu8lLYWTPrjYet8Nds8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Editors.GenerateConnectorUrlsTool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Editors.GenerateConnectorUrlsTool.html",
+          "hash": "uQmSgcfsT+CwsTXu/5CVSNPZJk6oQzfw8GTIwk2Ud0g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Editors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Editors.html",
+          "hash": "dwHohfYbOMACnjwgnkcTtOwvDkgmhhUg28uRoMmE+64="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html",
+          "hash": "kqi/28i4789QOGBmLawToTrPp06swEq0+TCK6Jjkhno="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ExampleServerResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ExampleServerResponse.html",
+          "hash": "Ukwa3uCjK8Ygzgk8FDVicNRHY3TzF/www4hnpgf5PDs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.InvetorySchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.InvetorySchema.html",
+          "hash": "kwFnuV/asHtCcgswWi4/WwkeDfRHknoW7Q3zVdkvE1s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ItemSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ItemSchema.html",
+          "hash": "PpICJvCpv69P1zwtrfyGJ6PaTXht46JeKiTbrA+Lyuk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.UserSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.UserSchema.html",
+          "hash": "i0+U3Ectot6UJ2I/jm6EW+8+HYXhVuw7+e3AY+NX3+A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.html",
+          "hash": "uJaeUCFQRyAJz2CzWZeqf6lBrIf3QXT+jHi2Qh9xeJU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Packing.ByteConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Packing.ByteConverter.html",
+          "hash": "xqfaslnhCHM0nWL2NApEjiQvhgeSAGRZBR0vIeB6wLA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Packing.MessagePacker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Packing.MessagePacker.html",
+          "hash": "QliP1oTTQUtr+b/jh3okGdEKJqL494OVX+Slw2qqdIE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Packing.PackingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Packing.PackingType.html",
+          "hash": "WYghE7YDpxRHRg3z+fK3H8Tz3hZ6Ck/O6jSMhgEM8xA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Packing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Packing.html",
+          "hash": "568opfiKjEQ6OwM2mnCtny14zE/p2pqX/nzwC8d2Bz8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Server.ServerResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Server.ServerResponse.html",
+          "hash": "ZTsJJqs1ZJ0ilKmN0/w4o83c3tgu07X3+kimyCpggus="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Server.ServerResponseType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Server.ServerResponseType.html",
+          "hash": "TIibknuKesySjVRqOTzlwVb/zsizii1j81dm1ux48RM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Server.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Server.html",
+          "hash": "ujJ9ZdUtSRnzmamUmvKZC32taTxicAktidjoHjbxuKQ="
         }
       },
       "is_incremental": false,
@@ -64,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "umDmawwzzNqislgsJTCy8D0DBZBBD7TLI8OK/1ViIkk="
+          "hash": "JjbaVJP7aohRbjXHXcRNC/wDeBrVzK+RbnQ+h406mOs="
         }
       },
       "is_incremental": false,
@@ -134,7 +494,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "4qsYjKH/xaTABY/QPQkbI6lCR3yS/lzUJEHVq0qUMe4="
+          "hash": "yJmrE3yX1pNdaVuwjza5/7HGejso5LoAwSufMStobAY="
         }
       },
       "is_incremental": false,
@@ -161,7 +521,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 33,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

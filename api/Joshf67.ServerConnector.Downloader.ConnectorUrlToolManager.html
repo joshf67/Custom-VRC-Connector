@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Connector
+    <title>Class ConnectorUrlToolManager
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Connector
+    <meta name="title" content="Class ConnectorUrlToolManager
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,37 +78,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Connector">
+            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager">
   
   
-  <h1 id="Joshf67_ServerConnector_Connector" data-uid="Joshf67.ServerConnector.Connector" class="text-break">Class Connector
+  <h1 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager" class="text-break">Class ConnectorUrlToolManager
   </h1>
-  <div class="markdown level0 summary"><p>Abstract base class to enable easy connections to for servers</p>
+  <div class="markdown level0 summary"><p>Used to store all of the sub URL containers to enable better VRC world build speed</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">Connector</span></div>
-      <div class="level2"><a class="xref" href="Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html">ExampleDatabaseConnector</a></div>
+    <div class="level1"><span class="xref">ConnectorUrlToolManager</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.html">Joshf67.ServerConnector</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Downloader.html">Joshf67.ServerConnector.Downloader</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Joshf67_ServerConnector_Connector_syntax">Syntax</h5>
+  <h5 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Connector : UdonSharpBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public class ConnectorUrlToolManager : UdonSharpBehaviour</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
   
   
-  <h4 id="Joshf67_ServerConnector_Connector_messageTypeSize" data-uid="Joshf67.ServerConnector.Connector.messageTypeSize">messageTypeSize</h4>
-  <div class="markdown level1 summary"><p>Controls how many bits are used for specifying the message type</p>
+  <h4 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_urlCollections" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.urlCollections">urlCollections</h4>
+  <div class="markdown level1 summary"><p>Contains every URL container assosiated with this manager</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected byte messageTypeSize</code></pre>
+    <pre><code class="lang-csharp hljs">public ConnectorUrlTool[] urlCollections</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,20 +119,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><a class="xref" href="Joshf67.ServerConnector.Downloader.ConnectorUrlTool.html">ConnectorUrlTool</a>[]</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Joshf67_ServerConnector_Connector_packingMessageBitSize" data-uid="Joshf67.ServerConnector.Connector.packingMessageBitSize">packingMessageBitSize</h4>
-  <div class="markdown level1 summary"><p>Controls how many bits are packed into each message</p>
+  <h4 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_urlCount" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.urlCount">urlCount</h4>
+  <div class="markdown level1 summary"><p>The total URLs currently stored/generated</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected byte packingMessageBitSize</code></pre>
+    <pre><code class="lang-csharp hljs">public int urlCount</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,7 +144,32 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_urlPrefix" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.urlPrefix">urlPrefix</h4>
+  <div class="markdown level1 summary"><p>The starting URL prefix for messages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string urlPrefix</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -154,43 +178,14 @@
   </h3>
   
   
-  <a id="Joshf67_ServerConnector_Connector_AddMessagesToBuffer_" data-uid="Joshf67.ServerConnector.Connector.AddMessagesToBuffer*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_AddMessagesToBuffer_DataList_" data-uid="Joshf67.ServerConnector.Connector.AddMessagesToBuffer(DataList)">AddMessagesToBuffer(DataList)</h4>
-  <div class="markdown level1 summary"><p>Adds multiple messages to the buffer to be sent (usually batched with a single response type on the first message)</p>
+  <a id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_ConvertMessageToVRCUrl_" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.ConvertMessageToVRCUrl*"></a>
+  <h4 id="Joshf67_ServerConnector_Downloader_ConnectorUrlToolManager_ConvertMessageToVRCUrl_System_Int32_" data-uid="Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.ConvertMessageToVRCUrl(System.Int32)">ConvertMessageToVRCUrl(Int32)</h4>
+  <div class="markdown level1 summary"><p>Converts an int into the correct URL container index and requests the URL from it</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddMessagesToBuffer(DataList messages)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DataList</span></td>
-        <td><span class="parametername">messages</span></td>
-        <td><p>The messages to add </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_AddMessageToBuffer_" data-uid="Joshf67.ServerConnector.Connector.AddMessageToBuffer*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_AddMessageToBuffer_System_Int32_" data-uid="Joshf67.ServerConnector.Connector.AddMessageToBuffer(System.Int32)">AddMessageToBuffer(Int32)</h4>
-  <div class="markdown level1 summary"><p>Adds a single message to the buffer to be sent</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddMessageToBuffer(int message)</code></pre>
+    <pre><code class="lang-csharp hljs">public VRCUrl ConvertMessageToVRCUrl(int input)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -204,74 +199,28 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
-        <td><span class="parametername">message</span></td>
-        <td><p>The message to add </p>
+        <td><span class="parametername">input</span></td>
+        <td><p>The VRCUrl index to look for </p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_HandleMessage_" data-uid="Joshf67.ServerConnector.Connector.HandleMessage*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_HandleMessage_System_String_" data-uid="Joshf67.ServerConnector.Connector.HandleMessage(System.String)">HandleMessage(String)</h4>
-  <div class="markdown level1 summary"><p>Required function for any children to implement to recieve messages</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void HandleMessage(string response)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">response</span></td>
-        <td><p>The server XML response </p>
+        <td><span class="xref">VRCUrl</span></td>
+        <td><p>A VRCUrl with the input message </p>
 </td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_ManagerStart_" data-uid="Joshf67.ServerConnector.Connector.ManagerStart*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_ManagerStart" data-uid="Joshf67.ServerConnector.Connector.ManagerStart">ManagerStart()</h4>
-  <div class="markdown level1 summary"><p>Virtual function for any children to add onto the Start function</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void ManagerStart()</code></pre>
-  </div>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_ManagerUpdate_" data-uid="Joshf67.ServerConnector.Connector.ManagerUpdate*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_ManagerUpdate" data-uid="Joshf67.ServerConnector.Connector.ManagerUpdate">ManagerUpdate()</h4>
-  <div class="markdown level1 summary"><p>Virtual function for any children to add onto the Update function</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void ManagerUpdate()</code></pre>
-  </div>
-  
-  
-  <a id="Joshf67_ServerConnector_Connector_Start_" data-uid="Joshf67.ServerConnector.Connector.Start*"></a>
-  <h4 id="Joshf67_ServerConnector_Connector_Start" data-uid="Joshf67.ServerConnector.Connector.Start">Start()</h4>
-  <div class="markdown level1 summary"><p>Setup all the required downloader variables when initiated</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Start()</code></pre>
-  </div>
 </article>
           </div>
           
