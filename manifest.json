@@ -335,6 +335,102 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html",
+          "hash": "jwYMr8HRkMcRlwq5cFSh8QrAvxr9ZIWVOC9hymO77M4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleServerResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleServerResponse.html",
+          "hash": "amIIYseCHsVzxT40lRWom+QjubYXk7MLd5ssd0c3yZ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.InvetorySchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.InvetorySchema.html",
+          "hash": "H9U6roxReP3Lroq/vmG3Fjul5vbA0LBrBupW0u4JUCA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.ItemSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.ItemSchema.html",
+          "hash": "DLzf+qpqMrMAVQrEezYCM1UC1MUMB+hQmjj8YQSr9oE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.UdonHashLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.UdonHashLib.html",
+          "hash": "5Siso8qDJvVti7K3RWlkNOxOlLA4Q5y8cNdTtyxUq78="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.UserSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.UserSchema.html",
+          "hash": "lSBkwvr8j0rmwWV9J+mjRC1quBSS8nD+g8GjjnyZoFY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "example_api/Joshf67.ServerConnector.Example.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/Joshf67.ServerConnector.Example.html",
+          "hash": "QOaZTqATadg5Iw81nh9gk9yKMPACHBAGL3c2VQt09xw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "example_api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example_api/toc.html",
+          "hash": "/BjWXdlY/iHcexw5A+PdGH9gDGP+tla99EfyjpXuVK4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
@@ -410,7 +506,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "955Klpf/WCKNBQRXeW7/UE3dx3CvrearTRnK02KQL7k="
+          "hash": "bxuNwX23gxSFC4D5fsiBXdCFLqk1PeWSjV7Md50M9ks="
         }
       },
       "is_incremental": false,
@@ -437,7 +533,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 25,
+          "total_file_count": 32,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
