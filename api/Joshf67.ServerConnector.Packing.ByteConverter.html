@@ -1,0 +1,2979 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ByteConverter
+   | Server Connector documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ByteConverter
+   | Server Connector documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Packing.ByteConverter">
+  
+  
+  <h1 id="Joshf67_ServerConnector_Packing_ByteConverter" data-uid="Joshf67.ServerConnector.Packing.ByteConverter" class="text-break">Class ByteConverter
+  </h1>
+  <div class="markdown level0 summary"><p>This class is a one-way converter to byte arrays, it doesn&apos;t not have a way to revert this
+This class is not optimized with generic objects so use DataTokens due to using typeof search which means we can&apos;t use switches because it&apos;s not const
+This is class is a combination of two different methods of converting to make generating server requests easier.
+<p>
+<a href="https://github.com/Xytabich/UNet/blob/master/UNet/ByteBufferWriter.cs">https://github.com/Xytabich/UNet/blob/master/UNet/ByteBufferWriter.cs</a>
+</p>
+<p>
+<a href="https://github.com/Miner28/NetworkedEventCaller">https://github.com/Miner28/NetworkedEventCaller</a>
+</p></p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ByteConverter</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Packing.html">Joshf67.ServerConnector.Packing</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="Joshf67_ServerConnector_Packing_ByteConverter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ByteConverter</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertASCIIString_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertASCIIString*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertASCIIString_System_String_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertASCIIString(System.String)">ConvertASCIIString(String)</h4>
+  <div class="markdown level1 summary"><p>Convert a ASCII string to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertASCIIString(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The ASCII String to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array with the same length as the string </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertASCIIStrings_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertASCIIStrings*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertASCIIStrings_System_String___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertASCIIStrings(System.String[])">ConvertASCIIStrings(String[])</h4>
+  <div class="markdown level1 summary"><p>Convert ASCII strings to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertASCIIStrings(string[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The ASCII strings to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBool_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBool*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBool_System_Boolean_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBool(System.Boolean)">ConvertBool(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Convert a Boolean to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertBool(bool value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The boolean to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBools_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBools*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBools_System_Boolean___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBools(System.Boolean[])">ConvertBools(Boolean[])</h4>
+  <div class="markdown level1 summary"><p>Convert Booleans to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertBools(bool[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The boolean to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertByte_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertByte*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertByte_System_Byte_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertByte(System.Byte)">ConvertByte(Byte)</h4>
+  <div class="markdown level1 summary"><p>Convert a Byte to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertByte(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The boolean to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBytes_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBytes*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertBytes_System_Byte___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertBytes(System.Byte[])">ConvertBytes(Byte[])</h4>
+  <div class="markdown level1 summary"><p>Convert bytes to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertBytes(byte[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The byte array to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertChar_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertChar*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertChar_System_Char_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertChar(System.Char)">ConvertChar(Char)</h4>
+  <div class="markdown level1 summary"><p>Convert a Char to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertChar(char value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">Char</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The char to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 2 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertChars_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertChars*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertChars_System_Char___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertChars(System.Char[])">ConvertChars(Char[])</h4>
+  <div class="markdown level1 summary"><p>Convert Chars to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertChars(char[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">Char</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The chars to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor_Color_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor(Color)">ConvertColor(Color)</h4>
+  <div class="markdown level1 summary"><p>Convert a Color to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertColor(Color value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Color to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 4 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor32*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor32_Color32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor32(Color32)">ConvertColor32(Color32)</h4>
+  <div class="markdown level1 summary"><p>Convert a Color32 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertColor32(Color32 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Color32 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 4 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor32s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor32s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColor32s_Color32___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColor32s(Color32[])">ConvertColor32s(Color32[])</h4>
+  <div class="markdown level1 summary"><p>Convert Color32s to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertColor32s(Color32[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Color32s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColors_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColors*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertColors_Color___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertColors(Color[])">ConvertColors(Color[])</h4>
+  <div class="markdown level1 summary"><p>Convert Colors to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertColors(Color[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Colors to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataDictionary_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataDictionary*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataDictionary_DataDictionary_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataDictionary(DataDictionary)">ConvertDataDictionary(DataDictionary)</h4>
+  <div class="markdown level1 summary"><p>Convert a DataDictionary to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDataDictionary(DataDictionary value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataDictionary</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The DataDictionary to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataList_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataList*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataList_DataList_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataList(DataList)">ConvertDataList(DataList)</h4>
+  <div class="markdown level1 summary"><p>Convert a DataList to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDataList(DataList value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The DataList to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataToken_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataToken*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDataToken_DataToken_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDataToken(DataToken)">ConvertDataToken(DataToken)</h4>
+  <div class="markdown level1 summary"><p>Convert any DataToken type into their byte array equivilent</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDataToken(DataToken value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDateTime_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDateTime*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDateTime_DateTime_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDateTime(DateTime)">ConvertDateTime(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Convert a DateTime to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDateTime(DateTime value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The DateTime to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDateTimes_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDateTimes*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDateTimes_DateTime___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDateTimes(DateTime[])">ConvertDateTimes(DateTime[])</h4>
+  <div class="markdown level1 summary"><p>Convert DateTimes to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDateTimes(DateTime[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DateTime</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The DateTimes to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDecimal_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDecimal*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDecimal_Decimal_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDecimal(Decimal)">ConvertDecimal(Decimal)</h4>
+  <div class="markdown level1 summary"><p>Convert a Decimal floating-point to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDecimal(Decimal value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Decimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Decimal floating-point to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 16 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDecimals_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDecimals*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertDecimals_Decimal___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertDecimals(Decimal[])">ConvertDecimals(Decimal[])</h4>
+  <div class="markdown level1 summary"><p>Convert Decimals to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertDecimals(Decimal[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Decimal</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Decimals to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertGUID_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertGUID*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertGUID_Guid_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertGUID(Guid)">ConvertGUID(Guid)</h4>
+  <div class="markdown level1 summary"><p>Convert a Guid to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertGUID(Guid value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Guid</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Guid to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 16 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertGUIDs_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertGUIDs*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertGUIDs_Guid___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertGUIDs(Guid[])">ConvertGUIDs(Guid[])</h4>
+  <div class="markdown level1 summary"><p>Convert Guids to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertGUIDs(Guid[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Guid</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Guids to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalf_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalf*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalf_System_Single_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalf(System.Single)">ConvertHalf(Single)</h4>
+  <div class="markdown level1 summary"><p>Convert a half-precision floating-point to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalf(float value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half-precision floating-point to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 2 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalf_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalf*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalf_System_Single___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalf(System.Single[])">ConvertHalf(Single[])</h4>
+  <div class="markdown level1 summary"><p>Convert half floats to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalf(float[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half floats to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfQuaternion_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfQuaternion*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfQuaternion_Quaternion_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfQuaternion(Quaternion)">ConvertHalfQuaternion(Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Convert a half Quaternion to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfQuaternion(Quaternion value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector4 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfQuaternion_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfQuaternion*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfQuaternion_Quaternion___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfQuaternion(Quaternion[])">ConvertHalfQuaternion(Quaternion[])</h4>
+  <div class="markdown level1 summary"><p>Convert half Quaternions to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfQuaternion(Quaternion[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half Quaternions to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector2_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector2*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector2_Vector2_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector2(Vector2)">ConvertHalfVector2(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Convert a half Vector2 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector2(Vector2 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector2 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 2 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector2s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector2s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector2s_Vector2___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector2s(Vector2[])">ConvertHalfVector2s(Vector2[])</h4>
+  <div class="markdown level1 summary"><p>Convert half Vector2s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector2s(Vector2[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half Vector2s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector3_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector3*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector3_Vector3_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector3(Vector3)">ConvertHalfVector3(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Convert a half Vector3 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector3(Vector3 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector3 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 6 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector3_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector3*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector3_Vector3___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector3(Vector3[])">ConvertHalfVector3(Vector3[])</h4>
+  <div class="markdown level1 summary"><p>Convert half Vector3s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector3(Vector3[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half Vector3s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector4_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector4*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector4_Vector4_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector4(Vector4)">ConvertHalfVector4(Vector4)</h4>
+  <div class="markdown level1 summary"><p>Convert a half Vector4 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector4(Vector4 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector4</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector4 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector4_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector4*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertHalfVector4_Vector4___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertHalfVector4(Vector4[])">ConvertHalfVector4(Vector4[])</h4>
+  <div class="markdown level1 summary"><p>Convert half Vector4s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertHalfVector4(Vector4[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector4</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The half Vector4s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt16_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt16*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt16_Int16_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt16(Int16)">ConvertInt16(Int16)</h4>
+  <div class="markdown level1 summary"><p>Convert a Int16 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt16(Int16 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Int16 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 2 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt16s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt16s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt16s_Int16___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt16s(Int16[])">ConvertInt16s(Int16[])</h4>
+  <div class="markdown level1 summary"><p>Convert Int16s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt16s(Int16[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int16</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Int16s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt32*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt32_System_Int32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt32(System.Int32)">ConvertInt32(Int32)</h4>
+  <div class="markdown level1 summary"><p>Convert an Integer to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt32(int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Integer to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 4 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt32s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt32s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt32s_System_Int32___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt32s(System.Int32[])">ConvertInt32s(Int32[])</h4>
+  <div class="markdown level1 summary"><p>Convert ints to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt32s(int[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The ints to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt64_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt64*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt64_Int64_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt64(Int64)">ConvertInt64(Int64)</h4>
+  <div class="markdown level1 summary"><p>Convert a 64-bit Integer to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt64(Int64 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Integer to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt64s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt64s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertInt64s_Int64___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertInt64s(Int64[])">ConvertInt64s(Int64[])</h4>
+  <div class="markdown level1 summary"><p>Convert Int64s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertInt64s(Int64[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Int64</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Int64s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertObject_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertObject*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertObject_System_Object_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertObject(System.Object)">ConvertObject(Object)</h4>
+  <div class="markdown level1 summary"><p>convert any standard/unity type excluding UTF based on typeof into a DataList of bytes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertObject(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertQuaternion_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertQuaternion*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertQuaternion_Quaternion_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertQuaternion(Quaternion)">ConvertQuaternion(Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Convert a Quaternion to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertQuaternion(Quaternion value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector4 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 16 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertQuaternions_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertQuaternions*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertQuaternions_Quaternion___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertQuaternions(Quaternion[])">ConvertQuaternions(Quaternion[])</h4>
+  <div class="markdown level1 summary"><p>Convert Quaternions to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertQuaternions(Quaternion[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Quaternions to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSByte_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSByte*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSByte_System_SByte_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSByte(System.SByte)">ConvertSByte(SByte)</h4>
+  <div class="markdown level1 summary"><p>Convert a SByte to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertSByte(sbyte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">SByte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The SByte to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSBytes_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSBytes*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSBytes_System_SByte___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSBytes(System.SByte[])">ConvertSBytes(SByte[])</h4>
+  <div class="markdown level1 summary"><p>Convert SBytes to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertSBytes(sbyte[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.sbyte">SByte</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The SBytes to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSingle_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSingle*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSingle_System_Single_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSingle(System.Single)">ConvertSingle(Single)</h4>
+  <div class="markdown level1 summary"><p>Convert a single-precision floating-point into a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertSingle(float value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The single-precision floating-point to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 4 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSingles_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSingles*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertSingles_System_Single___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertSingles(System.Single[])">ConvertSingles(Single[])</h4>
+  <div class="markdown level1 summary"><p>Convert floats to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertSingles(float[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The floats to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertTimeSpan_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertTimeSpan*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertTimeSpan_TimeSpan_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertTimeSpan(TimeSpan)">ConvertTimeSpan(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Convert a TimeSpan to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertTimeSpan(TimeSpan value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The TimeSpan to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertTimeSpans_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertTimeSpans*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertTimeSpans_TimeSpan___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertTimeSpans(TimeSpan[])">ConvertTimeSpans(TimeSpan[])</h4>
+  <div class="markdown level1 summary"><p>Convert TimeSpans to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertTimeSpans(TimeSpan[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TimeSpan</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The TimeSpans to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt16_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt16*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt16_UInt16_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt16(UInt16)">ConvertUInt16(UInt16)</h4>
+  <div class="markdown level1 summary"><p>Convert a UInt16 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt16(UInt16 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt16</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The UInt16 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 2 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt16s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt16s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt16s_UInt16___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt16s(UInt16[])">ConvertUInt16s(UInt16[])</h4>
+  <div class="markdown level1 summary"><p>Convert UInt16s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt16s(UInt16[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt16</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The UInt16s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt32*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt32_System_UInt32_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt32(System.UInt32)">ConvertUInt32(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Convert an Unsigned Integer to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt32(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Unsigned Integer to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 4 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt32s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt32s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt32s_System_UInt32___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt32s(System.UInt32[])">ConvertUInt32s(UInt32[])</h4>
+  <div class="markdown level1 summary"><p>Convert uints to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt32s(uint[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">UInt32</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The uints to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt64_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt64*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt64_UInt64_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt64(UInt64)">ConvertUInt64(UInt64)</h4>
+  <div class="markdown level1 summary"><p>Convert a 64-bit Unsigned Integer to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt64(UInt64 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Unsigned Integer to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt64s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt64s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUInt64s_UInt64___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUInt64s(UInt64[])">ConvertUInt64s(UInt64[])</h4>
+  <div class="markdown level1 summary"><p>Convert UInt64 to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUInt64s(UInt64[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UInt64</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The UInt64 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUTF8String_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUTF8String*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUTF8String_System_String_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUTF8String(System.String)">ConvertUTF8String(String)</h4>
+  <div class="markdown level1 summary"><p>Convert a UTF8 string to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUTF8String(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The UTF8 String to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A DataList Byte Array with the same length as the string or compressed length + 1 </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUTF8String_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUTF8String*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertUTF8String_System_String___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertUTF8String(System.String[])">ConvertUTF8String(String[])</h4>
+  <div class="markdown level1 summary"><p>Convert UTF8 strings to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertUTF8String(string[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The UTF8 strings to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector2_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector2*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector2_Vector2_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector2(Vector2)">ConvertVector2(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Convert a Vector2 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector2(Vector2 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector2 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 8 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector2s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector2s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector2s_Vector2___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector2s(Vector2[])">ConvertVector2s(Vector2[])</h4>
+  <div class="markdown level1 summary"><p>Convert Vector2s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector2s(Vector2[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector2s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector3_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector3*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector3_Vector3_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector3(Vector3)">ConvertVector3(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Convert a Vector3 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector3(Vector3 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector3 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 12 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector3s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector3s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector3s_Vector3___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector3s(Vector3[])">ConvertVector3s(Vector3[])</h4>
+  <div class="markdown level1 summary"><p>Convert Vector3s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector3s(Vector3[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector3s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector4_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector4*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector4_Vector4_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector4(Vector4)">ConvertVector4(Vector4)</h4>
+  <div class="markdown level1 summary"><p>Convert a Vector4 to a DataList Byte Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector4(Vector4 value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector4</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector4 to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A 16 DataList Byte Array </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector4s_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector4s*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ConvertVector4s_Vector4___" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ConvertVector4s(Vector4[])">ConvertVector4s(Vector4[])</h4>
+  <div class="markdown level1 summary"><p>Convert Vector4s to a DataList Array</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DataList ConvertVector4s(Vector4[] value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector4</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The Vector4s to convert </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataList</span></td>
+        <td><p>A single DataList containing the individual converted results </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_GetPackingType_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.GetPackingType*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_GetPackingType_DataToken_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.GetPackingType(DataToken)">GetPackingType(DataToken)</h4>
+  <div class="markdown level1 summary"><p>Returns the byte PackingType for a given type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PackingType GetPackingType(DataToken value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The data to get the PackingType for </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Joshf67.ServerConnector.Packing.PackingType.html">PackingType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_GetPackingType_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.GetPackingType*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_GetPackingType_System_Object_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.GetPackingType(System.Object)">GetPackingType(Object)</h4>
+  <div class="markdown level1 summary"><p>Returns the byte PackingType for a given type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PackingType GetPackingType(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The data to get the PackingType for </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Joshf67.ServerConnector.Packing.PackingType.html">PackingType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Packing_ByteConverter_ReturnDataTokenValueAsObject_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ReturnDataTokenValueAsObject*"></a>
+  <h4 id="Joshf67_ServerConnector_Packing_ByteConverter_ReturnDataTokenValueAsObject_DataToken_" data-uid="Joshf67.ServerConnector.Packing.ByteConverter.ReturnDataTokenValueAsObject(DataToken)">ReturnDataTokenValueAsObject(DataToken)</h4>
+  <div class="markdown level1 summary"><p>Returns the value for a DataToken regardless of type as an object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static object ReturnDataTokenValueAsObject(DataToken value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The DataToken to get the value for </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>object storing the DataToken value </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Server Connector documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

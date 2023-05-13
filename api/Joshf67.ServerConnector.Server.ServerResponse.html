@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class UdonHashLib
+    <title>Class ServerResponse
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class UdonHashLib
+    <meta name="title" content="Class ServerResponse
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,36 +78,117 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Example.UdonHashLib">
+            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Server.ServerResponse">
   
   
-  <h1 id="Joshf67_ServerConnector_Example_UdonHashLib" data-uid="Joshf67.ServerConnector.Example.UdonHashLib" class="text-break">Class UdonHashLib
+  <h1 id="Joshf67_ServerConnector_Server_ServerResponse" data-uid="Joshf67.ServerConnector.Server.ServerResponse" class="text-break">Class ServerResponse
   </h1>
-  <div class="markdown level0 summary"><p>UdonHashLib created by (Gorialis) R</p>
+  <div class="markdown level0 summary"><p>Base abstract class to allow generic server response reading</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">UdonHashLib</span></div>
+    <div class="level1"><span class="xref">ServerResponse</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Example.html">Joshf67.ServerConnector.Example</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Server.html">Joshf67.ServerConnector.Server</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Joshf67_ServerConnector_Example_UdonHashLib_syntax">Syntax</h5>
+  <h5 id="Joshf67_ServerConnector_Server_ServerResponse_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UdonHashLib : UdonSharpBehaviour</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ServerResponse : UdonSharpBehaviour</code></pre>
   </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_Content_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Content*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_Content" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Content">Content</h4>
+  <div class="markdown level1 summary"><p>Public getter for the content of the response</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataToken Content { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_Response_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Response*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_Response" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Response">Response</h4>
+  <div class="markdown level1 summary"><p>Public getter for the full message recieved from a server</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataToken Response { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_Type_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Type*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_Type" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Type">Type</h4>
+  <div class="markdown level1 summary"><p>Public getter for the type of response</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServerResponseType Type { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Joshf67.ServerConnector.Server.ServerResponseType.html">ServerResponseType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_MD5_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.MD5_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_MD5_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.MD5_Bytes(System.Byte[])">MD5_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageContent_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageContent*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageContent_DataDictionary_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageContent(DataDictionary)">GetMessageContent(DataDictionary)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON DataDictionary and finds the Response content</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MD5_Bytes(byte[] data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static DataToken GetMessageContent(DataDictionary response)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,9 +201,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><span class="xref">DataDictionary</span></td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The JSON DataDictionary to parse </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -136,20 +218,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><span class="xref">DataToken</span></td>
+        <td><p>The content of a response or an error if invalid </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_MD5_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.MD5_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_MD5_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.MD5_UTF8(System.String)">MD5_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageContent_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageContent*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageContent_System_String_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageContent(System.String)">GetMessageContent(String)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON String and finds the Response content</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MD5_UTF8(string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public static DataToken GetMessageContent(string response)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -163,8 +247,9 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The JSON String to parse </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -178,20 +263,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><span class="xref">DataToken</span></td>
+        <td><p>The content of a response or an error if invalid </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA1_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA1_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA1_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA1_Bytes(System.Byte[])">SHA1_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageType_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageType*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageType_DataDictionary_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageType(DataDictionary)">GetMessageType(DataDictionary)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON DataDictionary and finds the Response type</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA1_Bytes(byte[] data)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ServerResponseType GetMessageType(DataDictionary response)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -204,9 +291,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><span class="xref">DataDictionary</span></td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The JSON DataDictionary to parse </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -220,104 +308,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><a class="xref" href="Joshf67.ServerConnector.Server.ServerResponseType.html">ServerResponseType</a></td>
+        <td><p>The response type of the message </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA1_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA1_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA1_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA1_UTF8(System.String)">SHA1_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageType_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageType*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_GetMessageType_System_String_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.GetMessageType(System.String)">GetMessageType(String)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON String and finds the Response type</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA1_UTF8(string text)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA224_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA224_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA224_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA224_Bytes(System.Byte[])">SHA224_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA224_Bytes(byte[] data)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA224_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA224_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA224_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA224_UTF8(System.String)">SHA224_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA224_UTF8(string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ServerResponseType GetMessageType(string response)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -331,8 +337,9 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The JSON String to parse </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -346,20 +353,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><a class="xref" href="Joshf67.ServerConnector.Server.ServerResponseType.html">ServerResponseType</a></td>
+        <td><p>The response type of the message </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA256_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA256_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA256_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA256_Bytes(System.Byte[])">SHA256_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_HandleResponse_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.HandleResponse*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_HandleResponse_DataDictionary_DataToken__" data-uid="Joshf67.ServerConnector.Server.ServerResponse.HandleResponse(DataDictionary,DataToken@)">HandleResponse(DataDictionary, out DataToken)</h4>
+  <div class="markdown level1 summary"><p>Handles the parsed message</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA256_Bytes(byte[] data)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract bool HandleResponse(DataDictionary response, out DataToken HandleResult)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,9 +381,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
+        <td><span class="xref">DataDictionary</span></td>
+        <td><span class="parametername">response</span></td>
+        <td><p>The JSON DataDictionary to be handled </p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td><span class="parametername">HandleResult</span></td>
+        <td><p>The result of the ServerRespons handler </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -388,104 +404,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Boolean if the response was parsed properly </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA256_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA256_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA256_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA256_UTF8(System.String)">SHA256_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_Parse_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Parse*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_Parse_System_String_DataToken__" data-uid="Joshf67.ServerConnector.Server.ServerResponse.Parse(System.String,DataToken@)">Parse(String, out DataToken)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON String and handle the message</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA256_UTF8(string text)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA384_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA384_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA384_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA384_Bytes(System.Byte[])">SHA384_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA384_Bytes(byte[] data)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA384_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA384_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA384_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA384_UTF8(System.String)">SHA384_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA384_UTF8(string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Parse(string message, out DataToken HandleResult)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -499,8 +433,15 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The JSON String to parse </p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">DataToken</span></td>
+        <td><span class="parametername">HandleResult</span></td>
+        <td><p>The result of the ServerRespons handler </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -514,62 +455,22 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Boolean if the response was handled or not </p>
+</td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA512_Bytes_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA512_Bytes*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA512_Bytes_System_Byte___" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA512_Bytes(System.Byte[])">SHA512_Bytes(Byte[])</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_ParseWithoutHandling_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.ParseWithoutHandling*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_ParseWithoutHandling_System_String_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.ParseWithoutHandling(System.String)">ParseWithoutHandling(String)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON String and does not try to handle it, useful for saving logic for later</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA512_Bytes(byte[] data)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
-        <td><span class="parametername">data</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Joshf67_ServerConnector_Example_UdonHashLib_SHA512_UTF8_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA512_UTF8*"></a>
-  <h4 id="Joshf67_ServerConnector_Example_UdonHashLib_SHA512_UTF8_System_String_" data-uid="Joshf67.ServerConnector.Example.UdonHashLib.SHA512_UTF8(System.String)">SHA512_UTF8(String)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SHA512_UTF8(string text)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool ParseWithoutHandling(string message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -583,8 +484,9 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">text</span></td>
-        <td></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The JSON String to parse </p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -598,8 +500,54 @@
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Boolean if the response was handled or not </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Joshf67_ServerConnector_Server_ServerResponse_ParseWithoutResult_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.ParseWithoutResult*"></a>
+  <h4 id="Joshf67_ServerConnector_Server_ServerResponse_ParseWithoutResult_System_String_" data-uid="Joshf67.ServerConnector.Server.ServerResponse.ParseWithoutResult(System.String)">ParseWithoutResult(String)</h4>
+  <div class="markdown level1 summary"><p>Parses a JSON String and handle the response but ignore the result</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ParseWithoutResult(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The JSON String to parse </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Boolean if the response was handled or not </p>
+</td>
       </tr>
     </tbody>
   </table>
