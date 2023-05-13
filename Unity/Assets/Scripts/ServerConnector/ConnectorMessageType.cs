@@ -2,7 +2,7 @@
 {
     
 	/// <summary>
-	/// Used so the server can understand what is supposed to happen for this response
+	/// Used so the server can understand what is supposed to happen for a response
 	/// </summary>
 	public enum ConnectorMessageType
 	{

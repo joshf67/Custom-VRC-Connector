@@ -13,7 +13,7 @@ namespace Joshf67.ServerConnector
 {
 
     /// <summary>
-    /// Abstract base class to enable easy connections to for servers
+    /// Abstract base class to enable easy connections to servers
     /// </summary>
 	[RequireComponent(typeof(ImageDownloaderListener), typeof(StringDownloaderListener))]
 	public abstract class Connector : UdonSharpBehaviour
