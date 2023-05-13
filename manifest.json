@@ -24,11 +24,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Example.UdonHashLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.UdonHashLib.html",
+          "hash": "gOdpZMX9Xf4CjpimkstTgRLNilCMPgu2Ar4Dz99B3Sc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Example.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Example.html",
+          "hash": "Lj+OH1gvwh5Tr0hN6kcHCiXola/RVSUURXlOMRkLV8w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Joshf67.ServerConnector.Connector.yml",
       "output": {
         ".html": {
           "relative_path": "api/Joshf67.ServerConnector.Connector.html",
-          "hash": "siQMfHeX6R2svIGHg2pclpDaU7TV9faD13DlQ5V5RC0="
+          "hash": "a3aWCC9K99vmvYg3cv/1jdW8BE7MEZTx9MvK1O0qVEk="
         }
       },
       "is_incremental": false,
@@ -228,6 +252,78 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html",
+          "hash": "SR7/ceC+IKZb2/n67OCJnHkoxxVgJhUN+Lk58TzQneg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ExampleServerResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ExampleServerResponse.html",
+          "hash": "Ukwa3uCjK8Ygzgk8FDVicNRHY3TzF/www4hnpgf5PDs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.InvetorySchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.InvetorySchema.html",
+          "hash": "kwFnuV/asHtCcgswWi4/WwkeDfRHknoW7Q3zVdkvE1s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.ItemSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.ItemSchema.html",
+          "hash": "PpICJvCpv69P1zwtrfyGJ6PaTXht46JeKiTbrA+Lyuk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.UserSchema.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.UserSchema.html",
+          "hash": "i0+U3Ectot6UJ2I/jm6EW+8+HYXhVuw7+e3AY+NX3+A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Joshf67.ServerConnector.Example.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Joshf67.ServerConnector.Example.html",
+          "hash": "uJaeUCFQRyAJz2CzWZeqf6lBrIf3QXT+jHi2Qh9xeJU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Joshf67.ServerConnector.Packing.ByteConverter.yml",
       "output": {
         ".html": {
@@ -328,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xKfBC8wZyjUNA3fJ6/FjTpNKIwijye2SYcvzbOYCvu0="
+          "hash": "B7AgB3dRFxjvZbJWgYd/Qu6710LFrw558RRKJRUOYfE="
         }
       },
       "is_incremental": false,
@@ -410,7 +506,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "4qsYjKH/xaTABY/QPQkbI6lCR3yS/lzUJEHVq0qUMe4="
+          "hash": "92gVtUIW8sn1kb0ad4c0aQ0GVsO1mQbkXAUzB8n3c2g="
         }
       },
       "is_incremental": false,
@@ -437,7 +533,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 25,
+          "total_file_count": 33,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

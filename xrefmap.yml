@@ -1,6 +1,194 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Example
+  name: Example
+  href: api/Example.html
+  name.vb: ''
+  fullName: Example
+  fullName.vb: ''
+  nameWithType: Example
+  nameWithType.vb: ''
+- uid: Example.UdonHashLib
+  name: UdonHashLib
+  href: api/Example.UdonHashLib.html
+  commentId: T:Example.UdonHashLib
+  fullName: UdonHashLib
+  nameWithType: UdonHashLib
+- uid: Example.UdonHashLib.MD5_Bytes(System.Byte[])
+  name: MD5_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_MD5_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.MD5_Bytes(System.Byte[])
+  name.vb: MD5_Bytes(Byte())
+  fullName: UdonHashLib.MD5_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.MD5_Bytes(System.Byte())
+  nameWithType: UdonHashLib.MD5_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.MD5_Bytes(Byte())
+- uid: Example.UdonHashLib.MD5_Bytes*
+  name: MD5_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_MD5_Bytes_
+  commentId: Overload:Example.UdonHashLib.MD5_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.MD5_Bytes
+  nameWithType: UdonHashLib.MD5_Bytes
+- uid: Example.UdonHashLib.MD5_UTF8(System.String)
+  name: MD5_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_MD5_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.MD5_UTF8(System.String)
+  fullName: UdonHashLib.MD5_UTF8(System.String)
+  nameWithType: UdonHashLib.MD5_UTF8(String)
+- uid: Example.UdonHashLib.MD5_UTF8*
+  name: MD5_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_MD5_UTF8_
+  commentId: Overload:Example.UdonHashLib.MD5_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.MD5_UTF8
+  nameWithType: UdonHashLib.MD5_UTF8
+- uid: Example.UdonHashLib.SHA1_Bytes(System.Byte[])
+  name: SHA1_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA1_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.SHA1_Bytes(System.Byte[])
+  name.vb: SHA1_Bytes(Byte())
+  fullName: UdonHashLib.SHA1_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.SHA1_Bytes(System.Byte())
+  nameWithType: UdonHashLib.SHA1_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.SHA1_Bytes(Byte())
+- uid: Example.UdonHashLib.SHA1_Bytes*
+  name: SHA1_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA1_Bytes_
+  commentId: Overload:Example.UdonHashLib.SHA1_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.SHA1_Bytes
+  nameWithType: UdonHashLib.SHA1_Bytes
+- uid: Example.UdonHashLib.SHA1_UTF8(System.String)
+  name: SHA1_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA1_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.SHA1_UTF8(System.String)
+  fullName: UdonHashLib.SHA1_UTF8(System.String)
+  nameWithType: UdonHashLib.SHA1_UTF8(String)
+- uid: Example.UdonHashLib.SHA1_UTF8*
+  name: SHA1_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA1_UTF8_
+  commentId: Overload:Example.UdonHashLib.SHA1_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.SHA1_UTF8
+  nameWithType: UdonHashLib.SHA1_UTF8
+- uid: Example.UdonHashLib.SHA224_Bytes(System.Byte[])
+  name: SHA224_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA224_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.SHA224_Bytes(System.Byte[])
+  name.vb: SHA224_Bytes(Byte())
+  fullName: UdonHashLib.SHA224_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.SHA224_Bytes(System.Byte())
+  nameWithType: UdonHashLib.SHA224_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.SHA224_Bytes(Byte())
+- uid: Example.UdonHashLib.SHA224_Bytes*
+  name: SHA224_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA224_Bytes_
+  commentId: Overload:Example.UdonHashLib.SHA224_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.SHA224_Bytes
+  nameWithType: UdonHashLib.SHA224_Bytes
+- uid: Example.UdonHashLib.SHA224_UTF8(System.String)
+  name: SHA224_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA224_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.SHA224_UTF8(System.String)
+  fullName: UdonHashLib.SHA224_UTF8(System.String)
+  nameWithType: UdonHashLib.SHA224_UTF8(String)
+- uid: Example.UdonHashLib.SHA224_UTF8*
+  name: SHA224_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA224_UTF8_
+  commentId: Overload:Example.UdonHashLib.SHA224_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.SHA224_UTF8
+  nameWithType: UdonHashLib.SHA224_UTF8
+- uid: Example.UdonHashLib.SHA256_Bytes(System.Byte[])
+  name: SHA256_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA256_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.SHA256_Bytes(System.Byte[])
+  name.vb: SHA256_Bytes(Byte())
+  fullName: UdonHashLib.SHA256_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.SHA256_Bytes(System.Byte())
+  nameWithType: UdonHashLib.SHA256_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.SHA256_Bytes(Byte())
+- uid: Example.UdonHashLib.SHA256_Bytes*
+  name: SHA256_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA256_Bytes_
+  commentId: Overload:Example.UdonHashLib.SHA256_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.SHA256_Bytes
+  nameWithType: UdonHashLib.SHA256_Bytes
+- uid: Example.UdonHashLib.SHA256_UTF8(System.String)
+  name: SHA256_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA256_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.SHA256_UTF8(System.String)
+  fullName: UdonHashLib.SHA256_UTF8(System.String)
+  nameWithType: UdonHashLib.SHA256_UTF8(String)
+- uid: Example.UdonHashLib.SHA256_UTF8*
+  name: SHA256_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA256_UTF8_
+  commentId: Overload:Example.UdonHashLib.SHA256_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.SHA256_UTF8
+  nameWithType: UdonHashLib.SHA256_UTF8
+- uid: Example.UdonHashLib.SHA384_Bytes(System.Byte[])
+  name: SHA384_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA384_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.SHA384_Bytes(System.Byte[])
+  name.vb: SHA384_Bytes(Byte())
+  fullName: UdonHashLib.SHA384_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.SHA384_Bytes(System.Byte())
+  nameWithType: UdonHashLib.SHA384_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.SHA384_Bytes(Byte())
+- uid: Example.UdonHashLib.SHA384_Bytes*
+  name: SHA384_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA384_Bytes_
+  commentId: Overload:Example.UdonHashLib.SHA384_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.SHA384_Bytes
+  nameWithType: UdonHashLib.SHA384_Bytes
+- uid: Example.UdonHashLib.SHA384_UTF8(System.String)
+  name: SHA384_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA384_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.SHA384_UTF8(System.String)
+  fullName: UdonHashLib.SHA384_UTF8(System.String)
+  nameWithType: UdonHashLib.SHA384_UTF8(String)
+- uid: Example.UdonHashLib.SHA384_UTF8*
+  name: SHA384_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA384_UTF8_
+  commentId: Overload:Example.UdonHashLib.SHA384_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.SHA384_UTF8
+  nameWithType: UdonHashLib.SHA384_UTF8
+- uid: Example.UdonHashLib.SHA512_Bytes(System.Byte[])
+  name: SHA512_Bytes(Byte[])
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA512_Bytes_System_Byte___
+  commentId: M:Example.UdonHashLib.SHA512_Bytes(System.Byte[])
+  name.vb: SHA512_Bytes(Byte())
+  fullName: UdonHashLib.SHA512_Bytes(System.Byte[])
+  fullName.vb: UdonHashLib.SHA512_Bytes(System.Byte())
+  nameWithType: UdonHashLib.SHA512_Bytes(Byte[])
+  nameWithType.vb: UdonHashLib.SHA512_Bytes(Byte())
+- uid: Example.UdonHashLib.SHA512_Bytes*
+  name: SHA512_Bytes
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA512_Bytes_
+  commentId: Overload:Example.UdonHashLib.SHA512_Bytes
+  isSpec: "True"
+  fullName: UdonHashLib.SHA512_Bytes
+  nameWithType: UdonHashLib.SHA512_Bytes
+- uid: Example.UdonHashLib.SHA512_UTF8(System.String)
+  name: SHA512_UTF8(String)
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA512_UTF8_System_String_
+  commentId: M:Example.UdonHashLib.SHA512_UTF8(System.String)
+  fullName: UdonHashLib.SHA512_UTF8(System.String)
+  nameWithType: UdonHashLib.SHA512_UTF8(String)
+- uid: Example.UdonHashLib.SHA512_UTF8*
+  name: SHA512_UTF8
+  href: api/Example.UdonHashLib.html#Example_UdonHashLib_SHA512_UTF8_
+  commentId: Overload:Example.UdonHashLib.SHA512_UTF8
+  isSpec: "True"
+  fullName: UdonHashLib.SHA512_UTF8
+  nameWithType: UdonHashLib.SHA512_UTF8
 - uid: Joshf67.ServerConnector
   name: Joshf67.ServerConnector
   href: api/Joshf67.ServerConnector.html
@@ -670,6 +858,355 @@ references:
   isSpec: "True"
   fullName: Joshf67.ServerConnector.Editors.GenerateConnectorUrlsTool.ShowWindow
   nameWithType: GenerateConnectorUrlsTool.ShowWindow
+- uid: Joshf67.ServerConnector.Example
+  name: Joshf67.ServerConnector.Example
+  href: api/Joshf67.ServerConnector.Example.html
+  commentId: N:Joshf67.ServerConnector.Example
+  fullName: Joshf67.ServerConnector.Example
+  nameWithType: Joshf67.ServerConnector.Example
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector
+  name: ExampleDatabaseConnector
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html
+  commentId: T:Joshf67.ServerConnector.Example.ExampleDatabaseConnector
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector
+  nameWithType: ExampleDatabaseConnector
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem
+  name: AddItem()
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_AddItem
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem()
+  nameWithType: ExampleDatabaseConnector.AddItem()
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem*
+  name: AddItem
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_AddItem_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItem
+  nameWithType: ExampleDatabaseConnector.AddItem
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItemField
+  name: AddItemField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_AddItemField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItemField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.AddItemField
+  nameWithType: ExampleDatabaseConnector.AddItemField
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage(System.String)
+  name: ConvertSHA256ToMessage(String)
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_ConvertSHA256ToMessage_System_String_
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage(System.String)
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage(System.String)
+  nameWithType: ExampleDatabaseConnector.ConvertSHA256ToMessage(String)
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage*
+  name: ConvertSHA256ToMessage
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_ConvertSHA256ToMessage_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertSHA256ToMessage
+  nameWithType: ExampleDatabaseConnector.ConvertSHA256ToMessage
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash(System.String)
+  name: ConvertTextToHash(String)
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_ConvertTextToHash_System_String_
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash(System.String)
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash(System.String)
+  nameWithType: ExampleDatabaseConnector.ConvertTextToHash(String)
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash*
+  name: ConvertTextToHash
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_ConvertTextToHash_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ConvertTextToHash
+  nameWithType: ExampleDatabaseConnector.ConvertTextToHash
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount
+  name: CreateAccount()
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_CreateAccount
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount()
+  nameWithType: ExampleDatabaseConnector.CreateAccount()
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount*
+  name: CreateAccount
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_CreateAccount_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.CreateAccount
+  nameWithType: ExampleDatabaseConnector.CreateAccount
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ExampleResponseParser
+  name: ExampleResponseParser
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_ExampleResponseParser
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ExampleResponseParser
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.ExampleResponseParser
+  nameWithType: ExampleDatabaseConnector.ExampleResponseParser
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage(System.String)
+  name: HandleMessage(String)
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_HandleMessage_System_String_
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage(System.String)
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage(System.String)
+  nameWithType: ExampleDatabaseConnector.HandleMessage(String)
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage*
+  name: HandleMessage
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_HandleMessage_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.HandleMessage
+  nameWithType: ExampleDatabaseConnector.HandleMessage
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.hasher
+  name: hasher
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_hasher
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.hasher
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.hasher
+  nameWithType: ExampleDatabaseConnector.hasher
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.itemField
+  name: itemField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_itemField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.itemField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.itemField
+  nameWithType: ExampleDatabaseConnector.itemField
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login
+  name: Login()
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_Login
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login()
+  nameWithType: ExampleDatabaseConnector.Login()
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login*
+  name: Login
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_Login_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.Login
+  nameWithType: ExampleDatabaseConnector.Login
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.passwordField
+  name: passwordField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_passwordField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.passwordField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.passwordField
+  nameWithType: ExampleDatabaseConnector.passwordField
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem
+  name: RemoveItem()
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_RemoveItem
+  commentId: M:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem()
+  nameWithType: ExampleDatabaseConnector.RemoveItem()
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem*
+  name: RemoveItem
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_RemoveItem_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItem
+  nameWithType: ExampleDatabaseConnector.RemoveItem
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItemField
+  name: RemoveItemField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_RemoveItemField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItemField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.RemoveItemField
+  nameWithType: ExampleDatabaseConnector.RemoveItemField
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.responseField
+  name: responseField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_responseField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.responseField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.responseField
+  nameWithType: ExampleDatabaseConnector.responseField
+- uid: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.usernameField
+  name: usernameField
+  href: api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html#Joshf67_ServerConnector_Example_ExampleDatabaseConnector_usernameField
+  commentId: F:Joshf67.ServerConnector.Example.ExampleDatabaseConnector.usernameField
+  fullName: Joshf67.ServerConnector.Example.ExampleDatabaseConnector.usernameField
+  nameWithType: ExampleDatabaseConnector.usernameField
+- uid: Joshf67.ServerConnector.Example.ExampleServerResponse
+  name: ExampleServerResponse
+  href: api/Joshf67.ServerConnector.Example.ExampleServerResponse.html
+  commentId: T:Joshf67.ServerConnector.Example.ExampleServerResponse
+  fullName: Joshf67.ServerConnector.Example.ExampleServerResponse
+  nameWithType: ExampleServerResponse
+- uid: Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse(DataDictionary,DataToken@)
+  name: HandleResponse(DataDictionary, out DataToken)
+  href: api/Joshf67.ServerConnector.Example.ExampleServerResponse.html#Joshf67_ServerConnector_Example_ExampleServerResponse_HandleResponse_DataDictionary_DataToken__
+  commentId: M:Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse(DataDictionary,DataToken@)
+  name.vb: HandleResponse(DataDictionary, ByRef DataToken)
+  fullName: Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse(DataDictionary, out DataToken)
+  fullName.vb: Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse(DataDictionary, ByRef DataToken)
+  nameWithType: ExampleServerResponse.HandleResponse(DataDictionary, out DataToken)
+  nameWithType.vb: ExampleServerResponse.HandleResponse(DataDictionary, ByRef DataToken)
+- uid: Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse*
+  name: HandleResponse
+  href: api/Joshf67.ServerConnector.Example.ExampleServerResponse.html#Joshf67_ServerConnector_Example_ExampleServerResponse_HandleResponse_
+  commentId: Overload:Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ExampleServerResponse.HandleResponse
+  nameWithType: ExampleServerResponse.HandleResponse
+- uid: Joshf67.ServerConnector.Example.InvetorySchema
+  name: InvetorySchema
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html
+  commentId: T:Joshf67.ServerConnector.Example.InvetorySchema
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema
+  nameWithType: InvetorySchema
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken)
+  name: GetCurrency(DataToken)
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetCurrency_DataToken_
+  commentId: M:Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken)
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken)
+  nameWithType: InvetorySchema.GetCurrency(DataToken)
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken,System.Double@)
+  name: GetCurrency(DataToken, out Double)
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetCurrency_DataToken_System_Double__
+  commentId: M:Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken,System.Double@)
+  name.vb: GetCurrency(DataToken, ByRef Double)
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken, out System.Double)
+  fullName.vb: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency(DataToken, ByRef System.Double)
+  nameWithType: InvetorySchema.GetCurrency(DataToken, out Double)
+  nameWithType.vb: InvetorySchema.GetCurrency(DataToken, ByRef Double)
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency*
+  name: GetCurrency
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetCurrency_
+  commentId: Overload:Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetCurrency
+  nameWithType: InvetorySchema.GetCurrency
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken)
+  name: GetInventoryItems(DataToken)
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetInventoryItems_DataToken_
+  commentId: M:Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken)
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken)
+  nameWithType: InvetorySchema.GetInventoryItems(DataToken)
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken,DataList@)
+  name: GetInventoryItems(DataToken, out DataList)
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetInventoryItems_DataToken_DataList__
+  commentId: M:Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken,DataList@)
+  name.vb: GetInventoryItems(DataToken, ByRef DataList)
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken, out DataList)
+  fullName.vb: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems(DataToken, ByRef DataList)
+  nameWithType: InvetorySchema.GetInventoryItems(DataToken, out DataList)
+  nameWithType.vb: InvetorySchema.GetInventoryItems(DataToken, ByRef DataList)
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems*
+  name: GetInventoryItems
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_GetInventoryItems_
+  commentId: Overload:Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.GetInventoryItems
+  nameWithType: InvetorySchema.GetInventoryItems
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema(DataToken,DataDictionary@)
+  name: IsInventorySchema(DataToken, out DataDictionary)
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_IsInventorySchema_DataToken_DataDictionary__
+  commentId: M:Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema(DataToken,DataDictionary@)
+  name.vb: IsInventorySchema(DataToken, ByRef DataDictionary)
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema(DataToken, out DataDictionary)
+  fullName.vb: Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema(DataToken, ByRef DataDictionary)
+  nameWithType: InvetorySchema.IsInventorySchema(DataToken, out DataDictionary)
+  nameWithType.vb: InvetorySchema.IsInventorySchema(DataToken, ByRef DataDictionary)
+- uid: Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema*
+  name: IsInventorySchema
+  href: api/Joshf67.ServerConnector.Example.InvetorySchema.html#Joshf67_ServerConnector_Example_InvetorySchema_IsInventorySchema_
+  commentId: Overload:Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.InvetorySchema.IsInventorySchema
+  nameWithType: InvetorySchema.IsInventorySchema
+- uid: Joshf67.ServerConnector.Example.ItemSchema
+  name: ItemSchema
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html
+  commentId: T:Joshf67.ServerConnector.Example.ItemSchema
+  fullName: Joshf67.ServerConnector.Example.ItemSchema
+  nameWithType: ItemSchema
+- uid: Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken)
+  name: GetItemID(DataToken)
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html#Joshf67_ServerConnector_Example_ItemSchema_GetItemID_DataToken_
+  commentId: M:Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken)
+  fullName: Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken)
+  nameWithType: ItemSchema.GetItemID(DataToken)
+- uid: Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken,System.Double@)
+  name: GetItemID(DataToken, out Double)
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html#Joshf67_ServerConnector_Example_ItemSchema_GetItemID_DataToken_System_Double__
+  commentId: M:Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken,System.Double@)
+  name.vb: GetItemID(DataToken, ByRef Double)
+  fullName: Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken, out System.Double)
+  fullName.vb: Joshf67.ServerConnector.Example.ItemSchema.GetItemID(DataToken, ByRef System.Double)
+  nameWithType: ItemSchema.GetItemID(DataToken, out Double)
+  nameWithType.vb: ItemSchema.GetItemID(DataToken, ByRef Double)
+- uid: Joshf67.ServerConnector.Example.ItemSchema.GetItemID*
+  name: GetItemID
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html#Joshf67_ServerConnector_Example_ItemSchema_GetItemID_
+  commentId: Overload:Joshf67.ServerConnector.Example.ItemSchema.GetItemID
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ItemSchema.GetItemID
+  nameWithType: ItemSchema.GetItemID
+- uid: Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema(DataToken,DataDictionary@)
+  name: IsItemSchema(DataToken, out DataDictionary)
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html#Joshf67_ServerConnector_Example_ItemSchema_IsItemSchema_DataToken_DataDictionary__
+  commentId: M:Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema(DataToken,DataDictionary@)
+  name.vb: IsItemSchema(DataToken, ByRef DataDictionary)
+  fullName: Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema(DataToken, out DataDictionary)
+  fullName.vb: Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema(DataToken, ByRef DataDictionary)
+  nameWithType: ItemSchema.IsItemSchema(DataToken, out DataDictionary)
+  nameWithType.vb: ItemSchema.IsItemSchema(DataToken, ByRef DataDictionary)
+- uid: Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema*
+  name: IsItemSchema
+  href: api/Joshf67.ServerConnector.Example.ItemSchema.html#Joshf67_ServerConnector_Example_ItemSchema_IsItemSchema_
+  commentId: Overload:Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.ItemSchema.IsItemSchema
+  nameWithType: ItemSchema.IsItemSchema
+- uid: Joshf67.ServerConnector.Example.UserSchema
+  name: UserSchema
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html
+  commentId: T:Joshf67.ServerConnector.Example.UserSchema
+  fullName: Joshf67.ServerConnector.Example.UserSchema
+  nameWithType: UserSchema
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken)
+  name: GetInventory(DataToken)
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetInventory_DataToken_
+  commentId: M:Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken)
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken)
+  nameWithType: UserSchema.GetInventory(DataToken)
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken,DataDictionary@)
+  name: GetInventory(DataToken, out DataDictionary)
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetInventory_DataToken_DataDictionary__
+  commentId: M:Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken,DataDictionary@)
+  name.vb: GetInventory(DataToken, ByRef DataDictionary)
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken, out DataDictionary)
+  fullName.vb: Joshf67.ServerConnector.Example.UserSchema.GetInventory(DataToken, ByRef DataDictionary)
+  nameWithType: UserSchema.GetInventory(DataToken, out DataDictionary)
+  nameWithType.vb: UserSchema.GetInventory(DataToken, ByRef DataDictionary)
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetInventory*
+  name: GetInventory
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetInventory_
+  commentId: Overload:Joshf67.ServerConnector.Example.UserSchema.GetInventory
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetInventory
+  nameWithType: UserSchema.GetInventory
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken)
+  name: GetLoginHash(DataToken)
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetLoginHash_DataToken_
+  commentId: M:Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken)
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken)
+  nameWithType: UserSchema.GetLoginHash(DataToken)
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken,System.String@)
+  name: GetLoginHash(DataToken, out String)
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetLoginHash_DataToken_System_String__
+  commentId: M:Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken,System.String@)
+  name.vb: GetLoginHash(DataToken, ByRef String)
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken, out System.String)
+  fullName.vb: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash(DataToken, ByRef System.String)
+  nameWithType: UserSchema.GetLoginHash(DataToken, out String)
+  nameWithType.vb: UserSchema.GetLoginHash(DataToken, ByRef String)
+- uid: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash*
+  name: GetLoginHash
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_GetLoginHash_
+  commentId: Overload:Joshf67.ServerConnector.Example.UserSchema.GetLoginHash
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.UserSchema.GetLoginHash
+  nameWithType: UserSchema.GetLoginHash
+- uid: Joshf67.ServerConnector.Example.UserSchema.IsUserSchema(DataToken,DataDictionary@)
+  name: IsUserSchema(DataToken, out DataDictionary)
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_IsUserSchema_DataToken_DataDictionary__
+  commentId: M:Joshf67.ServerConnector.Example.UserSchema.IsUserSchema(DataToken,DataDictionary@)
+  name.vb: IsUserSchema(DataToken, ByRef DataDictionary)
+  fullName: Joshf67.ServerConnector.Example.UserSchema.IsUserSchema(DataToken, out DataDictionary)
+  fullName.vb: Joshf67.ServerConnector.Example.UserSchema.IsUserSchema(DataToken, ByRef DataDictionary)
+  nameWithType: UserSchema.IsUserSchema(DataToken, out DataDictionary)
+  nameWithType.vb: UserSchema.IsUserSchema(DataToken, ByRef DataDictionary)
+- uid: Joshf67.ServerConnector.Example.UserSchema.IsUserSchema*
+  name: IsUserSchema
+  href: api/Joshf67.ServerConnector.Example.UserSchema.html#Joshf67_ServerConnector_Example_UserSchema_IsUserSchema_
+  commentId: Overload:Joshf67.ServerConnector.Example.UserSchema.IsUserSchema
+  isSpec: "True"
+  fullName: Joshf67.ServerConnector.Example.UserSchema.IsUserSchema
+  nameWithType: UserSchema.IsUserSchema
 - uid: Joshf67.ServerConnector.Packing
   name: Joshf67.ServerConnector.Packing
   href: api/Joshf67.ServerConnector.Packing.html
