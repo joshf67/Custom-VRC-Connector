@@ -8,13 +8,25 @@
                         "Assets/Scripts/ServerConnector/**.cs"
                     ],
                     "exclude": [
-                        "Assets/Plugins/**"
+                        "Assets/Scripts/ServerConnector/Example/**"
+                    ]
+                }
+            ],
+            "filter": "filterConfig.yml",
+            "dest": "api"
+        },
+        {
+            "src": [
+                {
+                    "src": "..",
+                    "files": [
+                        "Assets/Scripts/ServerConnector/Example/**.cs"
                     ]
                 }
             ],
             "globalNamespaceId": "Joshf67.ServerConnector.Example",
             "filter": "filterConfig.yml",
-            "dest": "api"
+            "dest": "example_api"
         }
     ],
     "build": {
