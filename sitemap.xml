@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Connector.html</loc>
+    <lastmod>2023-05-13T07:18:37+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.ConnectorMessageType.html</loc>
+    <lastmod>2023-05-13T07:18:37+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.html</loc>
+    <lastmod>2023-05-13T07:18:37+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/coniunctis.html</loc>
+    <lastmod>2023-05-13T07:18:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/etiam.html</loc>
+    <lastmod>2023-05-13T07:18:37+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
