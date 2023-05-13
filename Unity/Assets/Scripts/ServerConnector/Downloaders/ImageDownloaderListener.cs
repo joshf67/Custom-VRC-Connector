@@ -8,16 +8,26 @@ using Joshf67.ServerConnector.Development;
 
 namespace Joshf67.ServerConnector.Downloader
 {
-	
-	//This class is needed as there is an error with the Image Downloader where it can read erros from different threads
-	//The solution is to extract the onsuccess/onerror to another script and report back to the main script
-	public class ImageDownloaderListener : UdonSharpBehaviour
+
+    /// <summary>
+    /// This class was generated to solve an error with the Image Downloader where it can read erros from different threads
+	/// The solution was to extract the onsuccess/onerror to another script and report back to the main script
+	/// <para>
+	/// This is no longer needed however does split up the code for downloaders and connectors
+	/// </para>
+    /// </summary>
+    public class ImageDownloaderListener : UdonSharpBehaviour
 	{				
+		/// <summary>
+		/// Stores if a message has recieved a response from a server
+		/// </summary>
 		[SerializeField]
-		//Stores if a message has recieved a response from a server
 		public DownloaderMessageStatus DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
 		
-		//Image downloader is used purely to decrease response time, no result handling is needed
+		/// <summary>
+		/// Image downloader is used purely to decrease response time, no result handling is needed
+		/// </summary>
+		/// <param name="result"> The response from a server </param>
 		public override void OnImageLoadSuccess(IVRCImageDownload result)
 		{
 			//This shouldn't be possible
@@ -29,7 +39,10 @@ namespace Joshf67.ServerConnector.Downloader
 			base.OnImageLoadSuccess(result);
 		}
 	
-		//Image downloader is used purely to decrease response time, no result handling is needed
+		/// <summary>
+		/// Image downloader is used purely to decrease response time, no result handling is needed
+		/// </summary>
+		/// <param name="result"> The response from a server </param>
 		public override void OnImageLoadError(IVRCImageDownload result)
 		{
 			base.OnImageLoadError(result);

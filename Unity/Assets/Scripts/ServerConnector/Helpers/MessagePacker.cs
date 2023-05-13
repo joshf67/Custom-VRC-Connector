@@ -6,6 +6,9 @@ using Joshf67.ServerConnector.Development;
 namespace Joshf67.ServerConnector.Packing
 {
 
+    /// <summary>
+    /// Static helper class that handles packing any messages together to compress the required bits of data
+    /// </summary>
     public static class MessagePacker
     {
 
@@ -282,6 +285,7 @@ namespace Joshf67.ServerConnector.Packing
         /// Compares if an object parameter is in the format of a compressed message
         /// </summary>
         /// <param name="message"> The message to check </param>
+        /// <param name="logAsWarning"> Determines if the message requires warning mode and will be logged as such </param>
         /// <returns> Boolean determining the structure type </returns>
         public static bool IsCompressedMessage(object message, bool logAsWarning = false)
         {
@@ -302,6 +306,7 @@ namespace Joshf67.ServerConnector.Packing
         /// Compares if a DataList parameter is in the format of a compressed message
         /// </summary>
         /// <param name="message"> The message to check </param>
+        /// <param name="logAsWarning"> Determines if the message requires warning mode and will be logged as such </param>
         /// <returns> Boolean determining the structure type </returns>
         public static bool IsCompressedMessage(DataDictionary message, bool logAsWarning = false)
         {
@@ -376,8 +381,9 @@ namespace Joshf67.ServerConnector.Packing
         /// Compress any built-in/unity types into a standard structure
         /// <para> Calling this function directly will alter the _messageBytes DataList to a compressed state </para>
         /// </summary>
-        /// <param name="_message"> The message to compress </param>
-        /// <param name="_bitsToUse"> The bits required from this message, will be calculated if not provided </param>
+        /// <param name="message"> The message to compress </param>
+        /// <param name="messageBytes"> The DataList Bytes for the message </param>
+        /// <param name="bitsToUse"> The bits required from this message, will be calculated if not provided </param>
         /// <param name="packingType"> Determines the method used for packing bits </param>
         /// <returns> An DataDictionary containing 4 keys:
         /// original_message == The original message,
@@ -469,8 +475,8 @@ namespace Joshf67.ServerConnector.Packing
         /// <summary>
         /// Compress any built-in/unity types into a standard structure
         /// </summary>
-        /// <param name="_message"> The message to compress </param>
-        /// <param name="_bitsToUse"> The bits required from this message, will be calculated if not provided </param>
+        /// <param name="message"> The message to compress </param>
+        /// <param name="bitsToUse"> The bits required from this message, will be calculated if not provided </param>
         /// <param name="packingType"> Determines the method used for packing bits </param>
         /// <returns> An DataDictionary containing 4 keys:
         /// original_message == The original message,
@@ -493,8 +499,8 @@ namespace Joshf67.ServerConnector.Packing
         /// <summary>
         /// Compress any built-in/unity types into a standard structure
         /// </summary>
-        /// <param name="_message"> The message to compress </param>
-        /// <param name="_bitsToUse"> The bits required from this message, will be calculated if not provided </param>
+        /// <param name="message"> The message to compress </param>
+        /// <param name="bitsToUse"> The bits required from this message, will be calculated if not provided </param>
         /// <param name="packingType"> Determines the method used for packing bits </param>
         /// <returns> An DataDictionary containing 4 keys:
         /// original_message == The original message,
@@ -515,8 +521,8 @@ namespace Joshf67.ServerConnector.Packing
         /// <summary>
         /// Compress any DataToken types into a standard structure
         /// </summary>
-        /// <param name="_message"> The DataToken to compress </param>
-        /// <param name="_bitsToUse"> The bits required from this message, will be calculated if not provided </param>
+        /// <param name="message"> The DataToken to compress </param>
+        /// <param name="bitsToUse"> The bits required from this message, will be calculated if not provided </param>
         /// <param name="packingType"> Determines the method used for packing bits </param>
         /// <returns> An DataDictionary containing 4 keys:
         /// original_message == The original message,

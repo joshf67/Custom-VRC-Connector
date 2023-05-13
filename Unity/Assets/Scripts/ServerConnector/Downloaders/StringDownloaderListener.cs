@@ -10,23 +10,39 @@ using Joshf67.ServerConnector.Development;
 
 namespace Joshf67.ServerConnector.Downloader
 {
-	
-	//This class is needed as there is an error with the Image Downloader where it can read erros from different threads
-	//The solution is to extract the onsuccess/onerror to another script and report back to the main script
-	public class StringDownloaderListener : UdonSharpBehaviour
+
+    /// <summary>
+    /// This class was generated because of an issue with the Image Downloader where it can read erros from different threads,
+    /// The solution was to extract the onsuccess/onerror to another script and report back to the main script.
+    /// <para>
+    /// This is no longer needed however does split up the code for downloaders and connectors
+    /// </para>
+    /// </summary>
+    public class StringDownloaderListener : UdonSharpBehaviour
 	{		
 		
+		/// <summary>
+		/// Stores if a message has recieved a response from a server
+		/// </summary>
 		[SerializeField]
-		//Stores if a message has recieved a response from a server
 		public DownloaderMessageStatus DownloaderStatus = DownloaderMessageStatus.Awaiting_Request;
 		
-		//Stores the last recieved response from a server
+		/// <summary>
+		/// Stores the last recieved response from a server incase an error occurs
+		/// </summary>
 		private IVRCStringDownload requestResult;
+
+		/// <summary>
+		/// Public getter for the last recieved response
+		/// </summary>
 		public IVRCStringDownload RequestResult {
 			get { return requestResult; }
 		}
 		
-		//Handle String Downloader successful message 
+		/// <summary>
+		/// Handle String Downloader successful message 
+		/// </summary>
+		/// <param name="result"> The response from the server </param>
 		public override void OnStringLoadSuccess(IVRCStringDownload result)
 		{
 			base.OnStringLoadSuccess(result);
@@ -63,7 +79,10 @@ namespace Joshf67.ServerConnector.Downloader
 			}
 		}
 	
-		//Handle String Downloader error message
+		/// <summary>
+		/// Handle String Downloader error message
+		/// </summary>
+		/// <param name="result"> The response from the server </param>
 		public override void OnStringLoadError(IVRCStringDownload result)
 		{
 			base.OnStringLoadError(result);

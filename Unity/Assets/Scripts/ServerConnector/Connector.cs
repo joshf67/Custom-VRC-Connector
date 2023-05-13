@@ -12,50 +12,101 @@ using VRC.SDK3.Data;
 namespace Joshf67.ServerConnector
 {
 
+    /// <summary>
+    /// Abstract base class to enable easy connections to for servers
+    /// </summary>
 	[RequireComponent(typeof(ImageDownloaderListener), typeof(StringDownloaderListener))]
 	public abstract class Connector : UdonSharpBehaviour
     {
-	    //Used to translate messages into URLs
+        /// <summary>
+        /// Used to translate messages into URLs
+        /// </summary>
 	    [SerializeField]
 	    private ConnectorUrlToolManager URLLookup;
+
+        /// <summary>
+        /// Stores the current message to enable re-sending if necessary
+        /// </summary>
 	    private VRCUrl currentlySelectedURL;
-	    
-	    //Used to listen to onSuccess/onError due to thread errors
-	    [SerializeField]
+
+        /// <summary>
+        /// Used to listen to onSuccess/onError of Stirng downloaders due to old Image downloader thread errors
+        /// </summary>
+        [SerializeField]
 	    private StringDownloaderListener stringDownloaderListener;
-	    [SerializeField]
+
+        /// <summary>
+        /// Used to listen to onSuccess/onError due to old Image downloader thread errors
+        /// </summary>
+        [SerializeField]
 	    private ImageDownloaderListener imageDownloaderListener;
 
+        /// <summary>
+        /// Controls how many bits are packed into each message
+        /// </summary>
 	    [SerializeField]
         protected byte packingMessageBitSize = 21;
+
+        /// <summary>
+        /// Controls how many bits are used for specifying the message type
+        /// </summary>
         [SerializeField]
         protected byte messageTypeSize = 4;
 
-        //Used to make sure only 1 message is used by each type every 5 seconds
+        /// <summary>
+        /// Used to make sure only 1 message is used by each type every 5 seconds
+        /// </summary>
         private readonly float CONNECTION_TIMEOUT_RATE = 5;
-        
-	    //Used to retry a message if the server doesn't respond
-	    private readonly float CONNECTION_RETRY_RATE = 15;
 
-        //Variables to handle StringDownloader requests
+        /// <summary>
+        /// Used to retry a message if the server doesn't respond
+        /// </summary>
+        private readonly float CONNECTION_RETRY_RATE = 15;
+
+        /// <summary>
+        /// Stores the current timeout (due to VRC) on the String downloader
+        /// </summary>
         [SerializeField]
         private float stringRequestTimeout = 0;
+
+        /// <summary>
+        /// Stores if the String Downloader is currently in use and awaiting a response
+        /// </summary>
         [SerializeField]
         private bool sendingStringMessage = false;
 
-        //Variables to handle ImageDownloader requests
+        /// <summary>
+        /// Stores the current timeout (due to VRC) on the Image downloader
+        /// </summary>
         [SerializeField]
         private float imageRequestTimeout = 0;
+
+        /// <summary>
+        /// Stores if the String Downloader is currently in use and awaiting a response
+        /// </summary>
         [SerializeField]
         private bool sendingImageMessage = false;
+        
+        /// <summary>
+        /// Stores the image result from an Image Downloader to be disposed of after a request
+        /// </summary>
         private VRCImageDownloader imageDownloader = new VRCImageDownloader();
 
-        //Variables to hold all messaging data
+        /// <summary>
+        /// Holds all of the messages to send in DataList buffers
+        /// </summary>
         [SerializeField]
         private DataList messageBuffer = new DataList();
+
+        /// <summary>
+        /// The current message being sent
+        /// </summary>
         [SerializeField]
         private int currentMessageIndex = 0;
 
+        /// <summary>
+        /// Setup all the required downloader variables when initiated
+        /// </summary>
         public void Start()
 	    {
 		    stringDownloaderListener = GetComponent<StringDownloaderListener>();
@@ -68,6 +119,9 @@ namespace Joshf67.ServerConnector
             ManagerStart();
         }
 
+        /// <summary>
+        /// Update the String/Image downloader variables and set up next requests
+        /// </summary>
         private void Update()
         {
 	        UpdateStringDownloader();

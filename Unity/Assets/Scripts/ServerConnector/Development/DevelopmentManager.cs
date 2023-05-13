@@ -6,11 +6,26 @@
     /// </summary>
     public enum DevelopmentMode
     {
-        None,       // Indicates no development mode is enabled
-        Basic,      // Indicates basic development mode is enabled
-        Advanced,   // Indicates advanced development mode is enabled
-        Warning,    // Indicates that error development modes are enabled
-        All,        // Indicates all development modes are enabled
+        /// <summary>
+        /// Indicates no development mode is enabled
+        /// </summary>
+        None,
+        /// <summary>
+        /// Indicates basic development mode is enabled
+        /// </summary>
+        Basic,
+        /// <summary>
+        /// Indicates advanced development mode is enabled
+        /// </summary>
+        Advanced,
+        /// <summary>
+        /// Indicates that error development modes are enabled
+        /// </summary>
+        Warning,
+        /// <summary>
+        /// Indicates all development modes are enabled
+        /// </summary>
+        All,
     }
 
     /// <summary>
@@ -18,13 +33,39 @@
     /// </summary>
     public static class DevelopmentManager
     {
-        // These constant variables control the development mode for each class type.
+        /// <summary>
+        /// Stores the current development mode for the ByteConverter
+        /// </summary>
         public const DevelopmentMode ByteConverterMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the MessagePacker
+        /// </summary>
         public const DevelopmentMode MessagePackerMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the Connector
+        /// </summary>
         public const DevelopmentMode ConnectorMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the ServerResponse
+        /// </summary>
         public const DevelopmentMode ServerResponseMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the StringListener
+        /// </summary>
         public const DevelopmentMode StringListenerMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the ImageListener
+        /// </summary>
         public const DevelopmentMode ImageListenerMode = DevelopmentMode.None;
+
+        /// <summary>
+        /// Stores the current development mode for the Schema
+        /// </summary>
         public const DevelopmentMode SchemaMode = DevelopmentMode.None;
 
         /// <summary>
@@ -39,37 +80,71 @@
             return actual == requested || actual == DevelopmentMode.All;
         }
 
-        // The following functions check if the requested development mode is enabled for the corresponding class type.
+        /// <summary>
+        /// Tests if the development mode for Converter is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsByteConverterEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, ByteConverterMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for MessagePacker is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsMessagePackerEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, MessagePackerMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for Connector is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsConnectorEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, ConnectorMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for ServerResponse is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsServerResponseEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, ServerResponseMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for StringListener is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsStringListenerEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, StringListenerMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for ImageListener is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsImageListenerEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, ImageListenerMode);
         }
 
+        /// <summary>
+        /// Tests if the development mode for Schema is enabled
+        /// </summary>
+        /// <param name="mode"> The mode to test for </param>
+        /// <returns> If the current mode is the same, or all is selected </returns>
         public static bool IsSchemaEnabled(DevelopmentMode mode)
         {
             return IsEnabled(mode, SchemaMode);

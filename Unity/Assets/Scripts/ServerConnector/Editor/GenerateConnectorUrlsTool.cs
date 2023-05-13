@@ -8,6 +8,9 @@ using Joshf67.ServerConnector.Downloader;
 namespace Joshf67.ServerConnector.Editors
 {
 
+    /// <summary>
+    /// Displays editor UI to help with creating the server connection URLs
+    /// </summary>
     public class GenerateConnectorUrlsTool : EditorWindow
     {
 
@@ -15,17 +18,29 @@ namespace Joshf67.ServerConnector.Editors
         private int urlsToGenerate = 0;
         private string startingURL = "";
 
+        /// <summary>
+        /// Open the editor window
+        /// </summary>
 	    [MenuItem("Server Connector/Generate URLs")]
         public static void ShowWindow()
         {
 	        GetWindow<GenerateConnectorUrlsTool>("Generate Connector Urls Tool");
         }
 
+        /// <summary>
+        /// Close the editor window
+        /// </summary>
         public static void HideWindow()
         {
             GetWindow<GenerateConnectorUrlsTool>().Close();
         }
 
+        /// <summary>
+        /// Displays editor UI to help with creating the server connection URLs
+        /// </summary>
+        /// <param name="urlObject"> The object to add the URL children to </param>
+        /// <param name="urlsToGenerate"> The amount of URLs to generate </param>
+        /// <param name="startingURL"> The initial URL parameter to be prepended to the URL </param>
         public static void GenerateURLs(GameObject urlObject, int urlsToGenerate, string startingURL)
         {
             if (urlObject != null && urlsToGenerate != 0 && startingURL != "")
@@ -81,6 +96,9 @@ namespace Joshf67.ServerConnector.Editors
             }
         }
 
+        /// <summary>
+        /// Displays editor UI to help with creating the server connection URLs
+        /// </summary>
         public void OnGUI()
         {
             urlObject = (GameObject)EditorGUILayout.ObjectField("URL Object: ", urlObject, typeof(GameObject), true);

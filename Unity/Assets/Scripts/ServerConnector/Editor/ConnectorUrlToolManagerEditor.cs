@@ -5,13 +5,19 @@ using Joshf67.ServerConnector.Downloader;
 
 namespace Joshf67.ServerConnector.Editors
 {
-	[CustomEditor(typeof(ConnectorUrlToolManager))]
+    /// <summary>
+    /// Displays editor UI to help with creating the server connection URLs
+    /// </summary>
+    [CustomEditor(typeof(ConnectorUrlToolManager))]
 	public class ConnectorUrlToolManagerEditor : Editor
     {
 
         private int urlsToGenerate = 0;
         private string startingURL = "";
 
+        /// <summary>
+        /// Render the main inputs and buttons to setup the URLTool
+        /// </summary>
         public override void OnInspectorGUI()
         {
             GUIStyle label = GUI.skin.label;

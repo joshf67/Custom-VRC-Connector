@@ -3,8 +3,12 @@ using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Data;
 
-namespace Joshf67.ServerConnector.Development
+namespace Joshf67.ServerConnector.Development.Tests
 {
+
+    /// <summary>
+    /// A set of test functions to ensure underlying code is not broken
+    /// </summary>
     public static class ServerConnectorTestSuit
     {
         /// <summary>
@@ -37,7 +41,7 @@ namespace Joshf67.ServerConnector.Development
         /// <param name="testName"> The name of the test </param>
         /// <param name="packedResults"> The packed results </param>
         /// <param name="expectedResults"> The expected results </param>
-        /// <returns></returns>
+        /// <returns> Boolean if any test fails </returns>
         private static bool CompareMessagePackerResults(string testName, DataList packedResults, DataList expectedResults)
         {
             DataList errors = new DataList();

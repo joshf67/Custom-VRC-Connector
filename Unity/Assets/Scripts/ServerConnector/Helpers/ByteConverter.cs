@@ -11,19 +11,38 @@ namespace Joshf67.ServerConnector.Packing
     /// </summary>
     public enum PackingType
     {
-        None,           // Used in functions where the PackingType should be inferred from the type
-        Sequential,     // Indicates that the Endian of this DataStructure
-                        // doesn't matter and should be treated as sequential when packing
-        LittleEndian,   // Indicates that the data uses Little Endian for its DataStructure
-        BigEndian,      // Indicates that the data uses Big Endian for its DataStructure
+        /// <summary>
+        /// Used in functions where the PackingType should be inferred from the type
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// Indicates that the Endian of this DataStructure,
+        /// doesn't matter and should be treated as sequential when packing
+        /// </summary>
+        Sequential,
+
+        /// <summary>
+        /// Indicates that the data uses Little Endian for its DataStructure
+        /// </summary>
+        LittleEndian,
+
+        /// <summary>
+        /// Indicates that the data uses Big Endian for its DataStructure
+        /// </summary>
+        BigEndian,
     }
 
     /// <summary>
     /// This class is a one-way converter to byte arrays, it doesn't not have a way to revert this
     /// This class is not optimized with generic objects so use DataTokens due to using typeof search which means we can't use switches because it's not const
     /// This is class is a combination of two different methods of converting to make generating server requests easier.
-    /// <see cref="https://github.com/Xytabich/UNet/blob/master/UNet/ByteBufferWriter.cs"/>
-    /// <see cref="https://github.com/Miner28/NetworkedEventCaller"/>
+    /// <para>
+    /// <see href="https://github.com/Xytabich/UNet/blob/master/UNet/ByteBufferWriter.cs"/>
+    /// </para>
+    /// <para>
+    /// <see href="https://github.com/Miner28/NetworkedEventCaller"/>
+    /// </para>
     /// </summary>
     public class ByteConverter
     {
@@ -1128,7 +1147,6 @@ namespace Joshf67.ServerConnector.Packing
         /// Convert a UTF8 string to a DataList Byte Array
         /// </summary>
         /// <param name="value"> The UTF8 String to convert </param>
-        /// <param name="compress"> Controls if any unused bytes are removed </param>
         /// <returns> A DataList Byte Array with the same length as the string or compressed length + 1 </returns>
         public static DataList ConvertUTF8String(string value)
         {

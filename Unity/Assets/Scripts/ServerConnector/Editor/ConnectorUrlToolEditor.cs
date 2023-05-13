@@ -5,6 +5,9 @@ using Joshf67.ServerConnector.Downloader;
 
 namespace Joshf67.ServerConnector.Editors
 {
+    /// <summary>
+    /// Displays editor UI to help with creating the server connection URLs
+    /// </summary>
 	[CustomEditor(typeof(ConnectorUrlTool))]
 	public class ConnectorUrlToolEditor : Editor
     {
@@ -12,11 +15,9 @@ namespace Joshf67.ServerConnector.Editors
         private int urlsToGenerate = 0;
         private string startingURL = "";
 
-        public void OnEnable()
-        {
-            //if (style == null) style = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
-        }
-
+        /// <summary>
+        /// Render the URL count for this URLTool
+        /// </summary>
         public override void OnInspectorGUI()
         {
             GUIStyle label = GUI.skin.label;

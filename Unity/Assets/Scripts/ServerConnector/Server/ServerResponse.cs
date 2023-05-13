@@ -248,8 +248,6 @@ namespace Joshf67.ServerConnector.Server
         /// Logs a server response and all of it's variables
         /// </summary>
         /// <param name="response"> The response to parse </param>
-        /// <param name="parsedLevel"> The current level of recursion in the parse </param>
-        /// <param name="recusrionStack"> Recursion causes issues with variables, so implement own stack </param>
         protected static void LogServerResponse(DataToken response)
         {
             Debug.Log("Logging server response to console:");
@@ -261,7 +259,7 @@ namespace Joshf67.ServerConnector.Server
         /// <summary>
         /// Recursively logs a server response
         /// </summary>
-        /// <param name="parsedLevel"> The current level of recursion in the parse </param>
+        /// <param name="indentLevel"> The current level of recursion in the parse </param>
         /// <param name="recusrionStack"> Recursion causes issues with variables, so implement own stack </param>
         private static void LogServerResponse(int indentLevel, ref DataList recusrionStack)
         {
