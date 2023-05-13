@@ -12,7 +12,8 @@
                     ]
                 }
             ],
-            "globalNamespaceId": "Example",
+            "globalNamespaceId": "Joshf67.ServerConnector.Example",
+            "filter": "filterConfig.yml",
             "dest": "api"
         }
     ],

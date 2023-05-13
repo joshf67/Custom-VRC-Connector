@@ -2,6 +2,7 @@
 using UnityEngine;
 using VRC.SDK3.Data;
 using Joshf67.ServerConnector.Development;
+using UdonSharp;
 
 namespace Joshf67.ServerConnector.Packing
 {
@@ -24,6 +25,7 @@ namespace Joshf67.ServerConnector.Packing
         /// <param name="chunkSize"> The total size of every chunk </param>
         /// <param name="currentChunk"> The current chunk with messages packed into it </param>
         /// <param name="chunkRemainingBits"> The amount of bits left before this chunk is full </param>
+        [RecursiveMethod]
         private static void AddMessageBits(ref DataList packedChunks, int bits, int bitCount,
                                             byte chunkSize, ref int currentChunk,
                                             ref int chunkRemainingBits)

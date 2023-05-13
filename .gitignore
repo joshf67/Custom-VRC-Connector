@@ -216,3 +216,10 @@ Unity/Assets/UdonSharp/UtilityScripts/WorldAudioSettings.asset
 Unity/Assets/UdonSharp/UtilityScripts/PlayerModSetter.asset
 Unity/Assets/UdonSharp/UtilityScripts/InteractToggle.asset
 Unity/Assets/UdonSharp/UtilityScripts/BoneFollower.asset
+Unity/Assets/UdonSharp/UtilityScripts/BoneFollower.asset
+Unity/Assets/UdonSharp/UtilityScripts/InteractToggle.asset
+Unity/Assets/UdonSharp/UtilityScripts/PlayerModSetter.asset
+Unity/Assets/UdonSharp/UtilityScripts/Synced/GlobalToggleObject.asset
+Unity/Assets/UdonSharp/UtilityScripts/Synced/MasterToggleObject.asset
+Unity/Assets/UdonSharp/UtilityScripts/TrackingDataFollower.asset
+Unity/Assets/UdonSharp/UtilityScripts/WorldAudioSettings.asset

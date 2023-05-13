@@ -245,24 +245,16 @@ namespace Joshf67.ServerConnector.Server
         protected abstract bool HandleResponse(DataDictionary response, out DataToken HandleResult);
 
         /// <summary>
-        /// Logs a server response and all of it's variables
-        /// </summary>
-        /// <param name="response"> The response to parse </param>
-        protected static void LogServerResponse(DataToken response)
-        {
-            Debug.Log("Logging server response to console:");
-            DataList recursionStack = new DataList();
-            recursionStack.Add(response);
-            LogServerResponse(0, ref recursionStack);
-        }
-
-        /// <summary>
         /// Recursively logs a server response
         /// </summary>
+        /// <param name="data"> The part of the response to debug </param>
         /// <param name="indentLevel"> The current level of recursion in the parse </param>
-        /// <param name="recusrionStack"> Recursion causes issues with variables, so implement own stack </param>
-        private static void LogServerResponse(int indentLevel, ref DataList recusrionStack)
+        [RecursiveMethod]
+        private static void LogServerResponse(DataToken data, int indentLevel = 0)
         {
+            if (indentLevel == 0)
+                Debug.Log("Logging server response to console:");
+
             //Indent has to be manually calculated
             string indentLevelString = "";
             for (int i = 0; i < indentLevel; i++)
@@ -270,35 +262,30 @@ namespace Joshf67.ServerConnector.Server
                 indentLevelString += "  ";
             }
 
-            //Due to recursion variable options, implent a stack and grab the variable from that
-            switch (recusrionStack[recusrionStack.Count - 1].TokenType)
+            switch (data.TokenType)
             {
                 case TokenType.DataList:
-                    for (int i = 0; i < recusrionStack[recusrionStack.Count - 1].DataList.Count; i++)
+                    for (int i = 0; i < data.DataList.Count; i++)
                     {
-                        if (recusrionStack[recusrionStack.Count - 1].DataList[i].TokenType == TokenType.DataList ||
-                            recusrionStack[recusrionStack.Count - 1].DataList[i].TokenType == TokenType.DataDictionary)
+                        if (data.DataList[i].TokenType == TokenType.DataList)
                         {
-                            //Add the current loop variables to the stack
-                            recusrionStack.Add(i);
-                            recusrionStack.Add(recusrionStack[recusrionStack.Count - 2].DataList[i]);
-                            LogServerResponse(indentLevel + 1, ref recusrionStack);
-
-                            //Resetup the loop variables after recursion
-                            i = recusrionStack[recusrionStack.Count - 1].Int;
-                            recusrionStack.RemoveAt(recusrionStack.Count - 1);
+                            LogServerResponse(data.DataList[i].DataList, indentLevel + 1);
+                        }
+                        else if (data.DataList[i].TokenType == TokenType.DataDictionary)
+                        {
+                            LogServerResponse(data.DataList[i].DataDictionary, indentLevel + 1);
                         }
                         else
                         {
                             Debug.Log(indentLevelString +
-                                ByteConverter.ReturnDataTokenValueAsObject(recusrionStack[recusrionStack.Count - 1]));
+                                ByteConverter.ReturnDataTokenValueAsObject(data));
                         }
                     }
                     break;
 
                 case TokenType.DataDictionary:
-                    DataList keys = recusrionStack[recusrionStack.Count - 1].DataDictionary.GetKeys();
-                    DataList values = recusrionStack[recusrionStack.Count - 1].DataDictionary.GetValues();
+                    DataList keys = data.DataDictionary.GetKeys();
+                    DataList values = data.DataDictionary.GetValues();
                     for (int i = 0; i < keys.Count; i++)
                     {
                         Debug.Log(indentLevelString + "Key: " +
@@ -306,31 +293,22 @@ namespace Joshf67.ServerConnector.Server
                             ByteConverter.ReturnDataTokenValueAsObject(values[i]) + ", " + values[i].TokenType);
 
                         //If the field is another List/Dictionary then recurse into it
-                        if (values[i].TokenType == TokenType.DataList ||
-                            values[i].TokenType == TokenType.DataDictionary)
+                        if (values[i].TokenType == TokenType.DataList)
                         {
-                            //Add the current loop variables to the stack
-                            recusrionStack.Add(i);
-                            recusrionStack.Add(values[i]);
-                            LogServerResponse(indentLevel + 1, ref recusrionStack);
-
-                            //Resetup the loop variables after recursion
-                            i = recusrionStack[recusrionStack.Count - 1].Int;
-                            recusrionStack.RemoveAt(recusrionStack.Count - 1);
-                            keys = recusrionStack[recusrionStack.Count - 1].DataDictionary.GetKeys();
-                            values = recusrionStack[recusrionStack.Count - 1].DataDictionary.GetValues();
+                            LogServerResponse(values[i].DataList, indentLevel + 1);
+                        } 
+                        else if (values[i].TokenType == TokenType.DataDictionary)
+                        {
+                            LogServerResponse(values[i].DataDictionary, indentLevel + 1);
                         }
                     }
                     break;
 
                 default:
                     Debug.Log(indentLevelString +
-                        ByteConverter.ReturnDataTokenValueAsObject(recusrionStack[recusrionStack.Count - 1]));
+                        ByteConverter.ReturnDataTokenValueAsObject(data));
                     break;
             }
-
-            //Remove the variable from the stack once used
-            recusrionStack.RemoveAt(recusrionStack.Count - 1);
         }
     }
 
