@@ -12,8 +12,7 @@
                     ]
                 }
             ],
-            "globalNamespaceId": "Global",
-            "filter": "filterConfig.yml",
+            "globalNamespaceId": "Example",
             "dest": "api"
         }
     ],
@@ -71,7 +70,8 @@
             }
         },
         "xref": [
-            "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"
+            "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml",
+            "https://joshf67.github.io/VRCXrefMaps/vrcxrefmap.yml"
         ],
         "xrefService": [
             "https://xref.docs.microsoft.com/query?uid={uid}"
