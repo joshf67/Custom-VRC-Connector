@@ -50,6 +50,13 @@
                 "dest": "api"
             },
             {
+                "src": "example_api",
+                "files": [
+                    "*.yml"
+                ],
+                "dest": "example_api"
+            },
+            {
                 "src": "manual",
                 "files": [
                     "toc.yml",
