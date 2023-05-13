@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Custom-VRC-Connector | Server Connector documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Custom-VRC-Connector | Server Connector documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-vrc-connector">Custom-VRC-Connector</h1>
+
+<h2 id="this-is-still-a-wip-it-should-work-currently-but-there-are-no-guarantees-any-of-the-implementations-are-good-to-use">THIS IS STILL A WIP, IT SHOULD WORK CURRENTLY BUT THERE ARE NO GUARANTEES ANY OF THE IMPLEMENTATIONS ARE GOOD TO USE</h2>
+<p>HTTP Server - Base NPM project to respond to any connection </p>
+<p>Unity - All code and demo scene (Hopefully shouldn&#39;t be broken as it just uses VRCSDK stuff and U#, everything else should be included)</p>
+<hr>
+<h3 id="thanks-to-all-of-these-people-for-helping-along-the-way">Thanks to all of these people for helping along the way:</h3>
+<p>Gorialis - UdonHashLib used for hashing login data</p>
+<p>Foorack - UdonXML used for parsing the server response</p>
+<p>Hax - For the MessagePacker script, general help and suggestions on methods to use</p>
+<p>@Merlin - Creating UdonSharp and for general help with bugs/issues</p>
+<p>@GlitchyDev, @Miner28 and @BocuD - AvatarImageReader code to read in data from a render texture (old video player method, no longer used, but thanks is still deserved)</p>
+<h1 id="modify-the-url-to-send-data">Modify the url to send data</h1>
+<pre><code>    Inside app.js on line 44:
+    app.use(&#39;/sendMessage=*&#39;, ServerConnector.HandleConnection);
+    change &#39;/sendMessage=*&#39; to whatever you want your messages to be recieved on
+</code></pre><h1 id="setup-server-env-file">Setup Server .env file</h1>
+<p><img src="/README/Env%20Location.png" alt="Env file location"></p>
+<pre><code>PORT=(string) - The port you want to host the server on
+
+MESSAGE_TYPE_BITS=(int) - The amount of bits that will be used for determining the message type
+MESSAGE_BITS_LENGTH=(int) - The amount of bits that will be sent per message (including the bits used for the type)
+
+DATABASE_URL=(string) - The url of the Database, for example: &quot;mongodb+srv://-----.-----.mongodb.net/-----&quot;
+DATABASE_NAME=(string) - The name of the Database
+DATABASE_CONNECTION_TIMEOUT=(int) - The amount of time to wait until failing a connection to the Database in MS
+DATABASE_USER_CERT=(string) - The location of the mongodb login certificate relative to HTTP_SERVER folder
+
+LOGIN_HASH_CHARACTERS=(int) - The amount of characters your login hash will have
+
+PRUNE_INACTIVE_TIME_MINUTES=(int) - The amount of time a user has to be inactive (no messages sent to the server) to remove them and clear their user connection
+
+DEVELOPMENT_MODE=(boolean) - Enables logging throughout the server
+</code></pre><h1 id="setup-urls">Setup URLS:</h1>
+<h2 id="connector-url-tool">Connector URL Tool</h2>
+<p>Supply a starting URL, a number of URLs and the &quot;Generate URLs&quot; will appear</p>
+<p><img src="/README/ConnectorURLs.png" alt="URL TOOL OBJECT"></p>
+<p><img src="/README/Connector%20URL%20Tool.png" alt="URL TOOL"></p>
+<h2 id="generate-connectorurl-tool">Generate ConnectorUrl Tool</h2>
+<p>Supply a gameObject object to hold URLs, starting URL, a number of URLs and the &quot;Generate URLs&quot; button will appear</p>
+<p><img src="/README/Generate%20ConnectorUrls.png" alt="URL GENERATOR TOOL"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Unity/Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Server Connector documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
