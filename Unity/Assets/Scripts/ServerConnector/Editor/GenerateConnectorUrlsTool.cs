@@ -5,6 +5,7 @@ using VRC.SDKBase;
 
 using Joshf67.ServerConnector.Downloader;
 
+#if UNITY_EDITOR
 namespace Joshf67.ServerConnector.Editors
 {
 
@@ -115,3 +116,4 @@ namespace Joshf67.ServerConnector.Editors
     }
 
 }
+#endif

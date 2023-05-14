@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using VRC.SDK3.Data;
 
+#if UNITY_EDITOR
 namespace Joshf67.ServerConnector.Development.Tests
 {
 
@@ -305,3 +306,4 @@ namespace Joshf67.ServerConnector.Development.Tests
         }
     }
 }
+#endif

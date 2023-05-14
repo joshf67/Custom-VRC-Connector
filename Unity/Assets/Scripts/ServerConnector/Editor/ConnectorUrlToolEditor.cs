@@ -3,6 +3,7 @@ using UnityEngine;
 
 using Joshf67.ServerConnector.Downloader;
 
+#if UNITY_EDITOR
 namespace Joshf67.ServerConnector.Editors
 {
     /// <summary>
@@ -32,3 +33,4 @@ namespace Joshf67.ServerConnector.Editors
     }
 
 }
+#endif
