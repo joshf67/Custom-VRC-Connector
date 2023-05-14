@@ -5,10 +5,10 @@
                 {
                     "src": "..",
                     "files": [
-                        "Assets/Scripts/ServerConnector/**.cs"
+                        "Unity/Assets/Scripts/ServerConnector/**.cs"
                     ],
                     "exclude": [
-                        "Assets/Scripts/ServerConnector/Example/**"
+                        "Unity/Assets/Scripts/ServerConnector/Example/**"
                     ]
                 }
             ],
@@ -20,7 +20,7 @@
                 {
                     "src": "..",
                     "files": [
-                        "Assets/Scripts/ServerConnector/Example/**.cs"
+                        "Unity/Assets/Scripts/ServerConnector/Example/**.cs"
                     ]
                 }
             ],
@@ -28,7 +28,7 @@
             "filter": "filterConfig.yml",
             "dest": "example_api",
             "references": [
-                "Assets/Scripts/ServerConnector/**.cs"
+                "Unity/Assets/Scripts/ServerConnector/**.cs"
             ]
         }
     ],
@@ -74,14 +74,6 @@
                     "*.yml"
                 ],
                 "dest": "example_api"
-            }
-        ],
-        "overwrite": [
-            {
-                "src": "..",
-                "files": [
-                    "Assets/Scripts/**/*.md"
-                ]
             }
         ],
         "resource": [
