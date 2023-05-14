@@ -6,7 +6,9 @@ There are two methods to generate the URLs for the connection:
 
 In order to use this tool you need to add it to a GameObject and supply the starting URL and the total URLs to generate.
 
-Once you supply the required parameters a "Generate URLs" button will appear, this will generate all of the VRCUrls required and set up the URL containers for the GameObject.
+Once you supply the required parameters a "Generate URLs" button will appear, this will generate all of the VRCUrls required and set up the URL containers for the GameObject inside a child GameObject that will be named "0 - URL count".
+
+<span style="color:red"> Do not inspect the named child GameObject as for optimisation this tool will generate 1 ConnectorURLTool component for every 8192 URLs, which will cause your editor to lock up until it loads them</span>
 
 There is a helper button for calculating the total URLs required for a 21 bit message, if you are using a custom message length then please calulate the required URLs to fit your bits required:
 

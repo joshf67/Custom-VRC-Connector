@@ -4,3 +4,5 @@
   href: Server.md
 - name: Configuring VRC
   href: VRC.md
+- name: API Introduction
+  href: APIIntroduction.md
