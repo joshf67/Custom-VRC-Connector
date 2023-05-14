@@ -1,0 +1,25 @@
+{
+  "name": "http-server",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A simple HTTP server to listen to requests",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bitset": "^5.1.1",
+    "cookie-parser": "~1.4.6",
+    "debug": "~4.3.4",
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "http-errors": "~2.0.0",
+    "install": "^0.13.0",
+    "jade": "^1.9.2",
+    "jsdoc": "^4.0.2",
+    "morgan": "~1.10.0",
+    "nocache": "^3.0.4",
+    "npm": "^9.6.6",
+    "npm-check-updates": "^16.10.12"
+  }
+}

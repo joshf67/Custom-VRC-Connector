@@ -1,115 +1,79 @@
 {
-    "metadata": [
+  "metadata": [
+    {
+      "src": [
         {
-            "src": [
-                {
-                    "src": "..",
-                    "files": [
-                        "Unity/Assets/Scripts/ServerConnector/**.cs"
-                    ],
-                    "exclude": [
-                        "Unity/Assets/Scripts/ServerConnector/Example/**"
-                    ]
-                }
-            ],
-            "dest": "api"
-        },
-        {
-            "src": [
-                {
-                    "src": "..",
-                    "files": [
-                        "Unity/Assets/Scripts/ServerConnector/Example/**.cs"
-                    ]
-                }
-            ],
-            "globalNamespaceId": "Joshf67.ServerConnector.Example",
-            "dest": "example_api"
+          "src": "..",
+          "files": ["Unity/Assets/Scripts/ServerConnector/**.cs"],
+          "exclude": ["Unity/Assets/Scripts/ServerConnector/Example/**"]
         }
-    ],
-    "build": {
-        "globalMetadata": {
-            "_appTitle": "Server Connector documentation",
-            "_appFooter": "Server Connector documentation",
-            "_enableSearch": true
-        },
-        "content": [
-            {
-                "files": [
-                    "toc.yml",
-                    "index.md"
-                ]
-            },
-            {
-                "src": "manual",
-                "files": [
-                    "toc.yml",
-                    "*.md"
-                ],
-                "dest": "manual"
-            },
-            {
-                "src": "api",
-                "files": [
-                    "*.yml"
-                ],
-                "dest": "api"
-            },
-            {
-                "src": "base-node-server",
-                "files": [
-                    "toc.yml",
-                    "*.md"
-                ],
-                "dest": "base-node-server"
-            },
-            {
-                "src": "example",
-                "files": [
-                    "toc.yml",
-                    "*.md"
-                ],
-                "dest": "example"
-            },
-            {
-                "src": "example_api",
-                "files": [
-                    "*.yml"
-                ],
-                "dest": "example_api"
-            },
-            {
-                "src": "database-node-server",
-                "files": [
-                    "toc.yml",
-                    "*.md"
-                ],
-                "dest": "database-node-server"
-            }
-        ],
-        "resource": [
-            {
-                "files": [
-                    "resources/**/*"
-                ]
-            }
-        ],
-        "sitemap": {
-            "baseUrl": "https://joshf67.github.io/Custom-VRC-Connector",
-            "changefreq": "weekly",
-            "fileOptions": {
-                "api/*": {
-                    "changefreq": "daily"
-                }
-            }
-        },
-        "xref": [
-            "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml",
-            "https://joshf67.github.io/VRCXrefMaps/vrcxrefmap.yml"
-        ],
-        "xrefService": [
-            "https://xref.docs.microsoft.com/query?uid={uid}"
-        ],
-        "dest": "../_site"
+      ],
+      "dest": "api"
+    },
+    {
+      "src": [
+        {
+          "src": "..",
+          "files": ["Unity/Assets/Scripts/ServerConnector/Example/**.cs"]
+        }
+      ],
+      "globalNamespaceId": "Joshf67.ServerConnector.Example",
+      "dest": "example_api"
     }
+  ],
+  "build": {
+    "globalMetadata": {
+      "_appTitle": "Server Connector documentation",
+      "_appFooter": "Server Connector documentation",
+      "_enableSearch": true
+    },
+    "content": [
+      {
+        "files": ["toc.yml", "index.md"]
+      },
+      {
+        "src": "manual",
+        "files": ["toc.yml", "*.md"],
+        "dest": "manual"
+      },
+      {
+        "src": "api",
+        "files": ["*.yml"],
+        "dest": "api"
+      },
+      {
+        "src": "example",
+        "files": ["toc.yml", "*.md"],
+        "dest": "example"
+      },
+      {
+        "src": "example_api",
+        "files": ["*.yml"],
+        "dest": "example_api"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+            "resources/**/*",
+            "../nodejs-servers/**/docs/**/*"
+        ]
+      }
+    ],
+    "sitemap": {
+      "baseUrl": "https://joshf67.github.io/Custom-VRC-Connector",
+      "changefreq": "weekly",
+      "fileOptions": {
+        "api/*": {
+          "changefreq": "daily"
+        }
+      }
+    },
+    "xref": [
+      "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml",
+      "https://joshf67.github.io/VRCXrefMaps/vrcxrefmap.yml"
+    ],
+    "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
+    "dest": "../_site"
+  }
 }
