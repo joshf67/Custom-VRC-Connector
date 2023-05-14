@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ServerConnectorTestSuit
-   | Server Connector documentation </title>
+    <title>VRCUrl impact testing | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ServerConnectorTestSuit
-   | Server Connector documentation ">
+    <meta name="title" content="VRCUrl impact testing | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -78,54 +76,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit">
-  
-  
-  <h1 id="Joshf67_ServerConnector_Development_Tests_ServerConnectorTestSuit" data-uid="Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit" class="text-break">Class ServerConnectorTestSuit
-  </h1>
-  <div class="markdown level0 summary"><p>A set of test functions to ensure underlying code is not broken</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">ServerConnectorTestSuit</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Joshf67.ServerConnector.Development.Tests.html">Joshf67.ServerConnector.Development.Tests</a></h6>
-  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="Joshf67_ServerConnector_Development_Tests_ServerConnectorTestSuit_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class ServerConnectorTestSuit</code></pre>
-  </div>
-  <h3 id="methods">Methods
-  </h3>
-  
-  
-  <a id="Joshf67_ServerConnector_Development_Tests_ServerConnectorTestSuit_RunTests_" data-uid="Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.RunTests*"></a>
-  <h4 id="Joshf67_ServerConnector_Development_Tests_ServerConnectorTestSuit_RunTests" data-uid="Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.RunTests">RunTests()</h4>
-  <div class="markdown level1 summary"><p>Runs all of the tests</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool RunTests()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><p>Returns if any of the test failed </p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="vrcurl-impact-testing">VRCUrl impact testing</h1>
+
+<p><a href="Introduction.html#negatives">Return to negatives</a></p>
+<h3 id="tested-on">Tested on:</h3>
+<ul>
+<li>CPU: 5800x3d</li>
+<li>GPU: RTX 4090</li>
+</ul>
+<p>Starting URL (38 characters) = &quot;http//***.***.*.***:*****/sendMessage=&quot;</p>
+<h3 id="21-bit-message-lengths--2097152-vrcurls">21 bit message lengths = 2097152 VRCUrls:</h3>
+<ul>
+<li>File size: 2.65MB</li>
+<li>Build time: 2 minutes 10 seconds</li>
+</ul>
+<h3 id="20-bit-message-lengths--1048576-vrcurls">20 bit message lengths = 1048576 VRCUrls:</h3>
+<ul>
+<li>File size: 1.44MB</li>
+<li>Build time: 1 minutes 48 seconds</li>
+</ul>
+<h3 id="none">None:</h3>
+<ul>
+<li>File size: 212.87kb</li>
+<li>Build time: 41 seconds</li>
+</ul>
+<h3 id="assuming-linear-scaling-which-is-probably-innacurate-1-vrcurl">Assuming linear scaling (which is probably innacurate) 1 VRCUrl:</h3>
+<ul>
+<li>File size: 1.15 bytes</li>
+<li>Build time: 0.02ms</li>
+</ul>
 </article>
           </div>
           
@@ -133,6 +113,9 @@
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Unity/Documentation/manual/VRCUrlTesting.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

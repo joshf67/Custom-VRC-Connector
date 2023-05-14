@@ -72,30 +72,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Development.Tests.ServerConnectorTestSuit.html",
-          "hash": "sbQYUN+wSb2Yr4+3CMYk2ms5rz+RMpJfY0ZTR+Eok5E="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Development.Tests.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Development.Tests.html",
-          "hash": "GOxE/jmTn8sRAAAkFSALOYdv/X5NmOq4aZO7aKGNgXM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Joshf67.ServerConnector.Development.yml",
       "output": {
         ".html": {
@@ -173,54 +149,6 @@
         ".html": {
           "relative_path": "api/Joshf67.ServerConnector.Downloader.html",
           "hash": "2B14G7YsxClFWlzzCq9l3YSRS1DJkCklx+ys6fzZoE0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolEditor.html",
-          "hash": "GkUQXJmPOf8X0SX2m2esQ6ps7ewGmz4KPvJPJPmaJbc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolManagerEditor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Editors.ConnectorUrlToolManagerEditor.html",
-          "hash": "fx/tmgoejE5WUNhXA9hmQzEoPu8lLYWTPrjYet8Nds8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Editors.GenerateConnectorUrlsTool.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Editors.GenerateConnectorUrlsTool.html",
-          "hash": "uQmSgcfsT+CwsTXu/5CVSNPZJk6oQzfw8GTIwk2Ud0g="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Joshf67.ServerConnector.Editors.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Joshf67.ServerConnector.Editors.html",
-          "hash": "dwHohfYbOMACnjwgnkcTtOwvDkgmhhUg28uRoMmE+64="
         }
       },
       "is_incremental": false,
@@ -328,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xKfBC8wZyjUNA3fJ6/FjTpNKIwijye2SYcvzbOYCvu0="
+          "hash": "TWhLRgZQKl5gymGLePtkeU5/RsvuDeeus7DDO3h8zMA="
         }
       },
       "is_incremental": false,
@@ -480,11 +408,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "manual/APIIntroduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/APIIntroduction.html",
+          "hash": "2HNIxTk2aOc1fPIXxwUmQD52ceBpMceciWnJ2Qp/MKM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/Introduction.md",
       "output": {
         ".html": {
           "relative_path": "manual/Introduction.html",
-          "hash": "rdi1v0O20YzS5j3pR8WLN9nivMheNSQKSwTAMZKDpqA="
+          "hash": "xmxp22AwOvQwClxWXnSJFbpoiOytXtkhgLfAij3+XbA="
         }
       },
       "is_incremental": false,
@@ -511,7 +451,19 @@
       "output": {
         ".html": {
           "relative_path": "manual/VRC.html",
-          "hash": "93K6hxAJAc1BpL0mA1QOzCnLwQPSuaN9amLgReZRmo8="
+          "hash": "sY70vHyJALKmmA69cLFd2U7sZG/aKgVYuy6YAIIftaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/VRCUrlTesting.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/VRCUrlTesting.html",
+          "hash": "876qPnDeigrvgpCqlySEiwQZ/QFQdVr8xX+TxLZQ0Ac="
         }
       },
       "is_incremental": false,
@@ -523,7 +475,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "oEVlPibhRKzvrpaWNrT6sq7KIO9lpxxtTR7nA0av9dQ="
+          "hash": "67zqvF8HlntltYUkC49mMd6qxtRHeaCuf3R6gG9Ps4w="
         }
       },
       "is_incremental": false,
@@ -600,13 +552,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 6,
+          "total_file_count": 8,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 32,
+          "total_file_count": 26,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
