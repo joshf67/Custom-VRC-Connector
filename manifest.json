@@ -396,6 +396,21 @@
     },
     {
       "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "Wzmy8SeisWe9wYjp8dFxhLka6MOX89IlB4D34rv3aeY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
         "InvalidFileLink",
         "UidNotFound"
       ],
@@ -453,15 +468,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "E+ZJ3LA8ZpwIQoaIOkRXlU2h2qlLbRjcVNPizoPmcQ0="
+          "hash": "Zf2wb6a5jpGV756G+b1gdL8zefcVYwDREuwyJWdLYWc="
         }
       },
       "is_incremental": false,
@@ -538,7 +550,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 6,
+          "total_file_count": 7,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>VRC Server Connector Introduction | Server Connector documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="VRC Server Connector Introduction | Server Connector documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="vrc-server-connector-introduction">VRC Server Connector Introduction</h1>
+
+<p><a href="APIIntroduction.md">Skip to the API explanation?</a></p>
+<h2 id="what">What?</h2>
+<p>VRC Server Connector is an API that allows your to send and recieve arbitrary messages to/from external servers.</p>
+<h2 id="why">Why?</h2>
+<p>VRC does not allow arbitrary amounts of data out of the VRC client easily, this has affected some of the functionality of worlds by limiting them to only being capable of downloading data from a server (using the <a href="https://docs.vrchat.com/docs/video-players">Video Player</a> or <a href="https://docs.vrchat.com/docs/string-loading">String</a>/<a href="https://docs.vrchat.com/docs/image-loading">Image</a> loading) through <a href="https://udonsharp.docs.vrchat.com/vrchat-api/#vrcurl">static URLs</a> or <a href="https://udonsharp.docs.vrchat.com/vrchat-api/#vrcurlinputfield">user entered URLs</a>.</p>
+<p>The community has already come up with methods to bypass these limitations locally, however, these all come with their own downsides that a creator has to account for (<a href="#negatives">this API also has downsides</a>):</p>
+<p><a href="https://github.com/Miner28/AvatarImageReader">AvatarImageReader (depricated)</a></p>
+<h2 id="how">How?</h2>
+<p>An external NodeJS server is set up to listen to requests from <a href="https://docs.vrchat.com/docs/string-loading">String</a>/<a href="https://docs.vrchat.com/docs/image-loading">Image</a> loading and converts the URL into the binary equivilent. This is then parsed based on the logic implemented on the server, the server then responds to the VRC loader request with an appropriate response that is then parsed on the VRC client side using UdonJSON and handled.</p>
+<h2 id="positives">Positives</h2>
+<ul>
+<li><p>Can send arbitrary data out of VRC to an externally hosted server, which means that users are not able to tamper with the data directly. </p>
+</li>
+<li><p>Data can be compressed and arbirary length of bits can be used to decrease the required messages being sent.</p>
+</li>
+<li><p>The server is not coupled to the world, so you can connect to a single external server from multiple VRC worlds.</p>
+</li>
+<li><p>Uses VRC features under the hood, so should be inherently cross-compatible.</p>
+</li>
+</ul>
+<h2 id="negatives">Negatives</h2>
+<ul>
+<li><p>Due to relying on the <a href="https://docs.vrchat.com/docs/string-loading">String</a>/<a href="https://docs.vrchat.com/docs/image-loading">Image</a> under the hood, the upload rate is very slow. Using the default message length of 21 bits, each loader used has an effective rate of ~4 bits/s (initial overheads means longer messages are more efficient), as you can see this is very limited on what you can send so you need to be clever with your requests.</p>
+</li>
+<li><p>Small messages are not optimized due to the <a href="https://docs.vrchat.com/docs/string-loading">String</a> loader being required for the first and last message to read the response.</p>
+</li>
+<li><p>Each bit of data that you want to send needs to be accounted for as a VRCUrl. This means that larger message sizes require exponentially more VRCUrls. This increases world build times and will increase the world filesize, From some initial tests each VRCUrl takes <a href="VRCUrlTesting.md">0.02ms and 1.15 bytes to build</a>.</p>
+</li>
+<li><p>Handling individual bits and trying to communicate with limited bandwidth requires some creative thinking and is not a drag-and-drop solution.</p>
+</li>
+</ul>
+<h2 id="future-development">Future Development?</h2>
+<ul>
+<li><p>Currently the <a href="https://docs.vrchat.com/docs/video-players">Video Player</a> is unused, if this was implemented the upload speed could be increased to ~63 bits per 5s (~12 bits/s) or even ~84 bits if both <a href="https://docs.vrchat.com/docs/video-players">Video Player</a> could be combined.</p>
+</li>
+<li><p>Currently only the <a href="https://docs.vrchat.com/docs/string-loading">String</a> loader is used to handle responses, this means the first and last requests require it, so you have to wait 5s for them before starting a new message, and other slowdowns due to this.</p>
+</li>
+<li><p>Converting Objects aren&#39;t supported the best, this may cause some issues with custom data types that cannot fit inside DataTokens.</p>
+</li>
+</ul>
+<h2 id="credits">Credits:</h2>
+<ul>
+<li><p>Gorialis - <a href="https://github.com/Gorialis/vrchat-udon-hashlib">UdonHashLib</a> used for hashing login data in the example project</p>
+</li>
+<li><p>Hax - For the initial MessagePacker script, original FFMPEG response (no longer used), general help and suggestions on methods to use</p>
+</li>
+<li><p>@Merlin - Creating UdonSharp and for general help with bugs/issues</p>
+</li>
+<li><p>@GlitchyDev, @Miner28 and @BocuD - <a href="https://github.com/Miner28/AvatarImageReader">AvatarImageReader</a> code to read in data from a render texture (old video player method, no longer used, but thanks is still deserved)</p>
+</li>
+<li><p>The U# Discord for everyone that has made any suggestions or comments during the development of this API</p>
+</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Documentation/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Server Connector documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
