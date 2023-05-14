@@ -24,6 +24,31 @@ The node server requires a .env file inside the base folder with the following c
             <td> This is the bit length of the entire message (including MESSAGE_TYPE_BITS) </td>
         </tr>
         <tr>
+            <td> DATABASE_URL </td>
+            <td> [String](xref:System.String) </td>
+            <td> The URL of the database, for example "mongodb+srv://**.**.mongodb.net/**" </td>
+        </tr>
+        <tr>
+            <td> DATABASE_NAME </td>
+            <td> [String](xref:System.String) </td>
+            <td> The name of the MongoDB collection to be used for the Database </td>
+        </tr>
+        <tr>
+            <td> DATABASE_CONNECTION_TIMEOUT </td>
+            <td> [Int](xref:System.Int) </td>
+            <td> The total time in MS until a stalled database connection fails </td>
+        </tr>
+        <tr>
+            <td> DATABASE_USER_CERT </td>
+            <td> [String](xref:System.String) </td>
+            <td> The location (relative to initial folder) of the MongoDB login certificate </td>
+        </tr>
+        <tr>
+            <td> LOGIN_HASH_CHARACTERS </td>
+            <td> [Int](xref:System.Int) </td>
+            <td> This is the length required for a VRC user's login to the database </td>
+        </tr>
+        <tr>
             <td> PRUNE_INACTIVE_TIME_MINUTES </td>
             <td> [String](xref:System.Int) </td>
             <td> Controls how long a VRC user has to not message for them to be pruned(removed) from the connect user storage </td>
@@ -43,7 +68,15 @@ PORT=33646
 MESSAGE_TYPE_BITS=4
 MESSAGE_BITS_LENGTH=21
 
+DATABASE_URL="mongodb+srv://xxxx.xxxx.mongodb.net/RPGDatabase"
+DATABASE_NAME="RPGDatabase"
+DATABASE_CONNECTION_TIMEOUT=2000
+DATABASE_USER_CERT="Mongodb/mongo.pem"
+
+LOGIN_HASH_CHARACTERS=9
+
 PRUNE_INACTIVE_TIME_MINUTES=30
+
 DEVELOPMENT_MODE=true
 ```
 

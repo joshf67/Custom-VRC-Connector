@@ -15,20 +15,47 @@ namespace Joshf67.ServerConnector.Example
     /// </summary>
     public class ExampleDatabaseConnector : Connector
     {
+        /// <summary>
+        /// The field used to accept login inputs for account messages
+        /// </summary>
         public InputField usernameField;
+
+        /// <summary>
+        /// The field used to accept password inputs for account messages
+        /// </summary>
         public InputField passwordField;
 
+        /// <summary>
+        /// The field used to display the server's responses to the user
+        /// </summary>
         public Text responseField;
+
+        /// <summary>
+        /// The server response handler to be used for this example
+        /// </summary>
         public ExampleServerResponse ExampleResponseParser;
 
         private double currency = 0;
         private DataList items = new DataList();
+
+        /// <summary>
+        /// The field used to display all the user's items
+        /// </summary>
         public Text itemField;
 
+        /// <summary>
+        /// The field used to accept inputs for item addition messages
+        /// </summary>
         public InputField AddItemField;
+
+        /// <summary>
+        /// The field used to accept inputs for item removal messages
+        /// </summary>
         public InputField RemoveItemField;
 
-        //Used to hash any messages for simple encryption
+        /// <summary>
+        /// Used to hash any messages for simple encryption
+        /// </summary>
         [SerializeField]
         protected UdonHashLib hasher;
 
