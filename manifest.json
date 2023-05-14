@@ -263,6 +263,21 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "database-node-server/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-node-server/toc.html",
+          "hash": "jfSETwjqY++v3rOk+Ccu+YxdAB4SOQQupOWprBfZAOA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "example/Introduction.md",
       "output": {
@@ -291,15 +306,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "example/toc.yml",
       "output": {
         ".html": {
           "relative_path": "example/toc.html",
-          "hash": "FBYd8eQdrexb8l5r/+Qk69n0EWhU+KHlmsk9Utl7zWk="
+          "hash": "ZwZaY+SFC23b+6ZrlSE3bOtKliCM26DbAz9AjLxInH4="
         }
       },
       "is_incremental": false,
@@ -410,7 +422,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Uzet+yDEhvqF9XZTzgNRTWLkVROLPIQtCji5U08D4U4="
+          "hash": "m7RghLK9J4/4YYtd5APyQIrYsmBMnbe5pvWGSX7E2HY="
         }
       },
       "is_incremental": false,
@@ -487,28 +499,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "resources/ExampleManual.png",
-      "output": {
-        "resource": {
-          "relative_path": "resources/ExampleManual.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "resources/ExampleScriptingApi.png",
-      "output": {
-        "resource": {
-          "relative_path": "resources/ExampleScriptingApi.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "resources/example/MongoDB_Cert.png",
       "output": {
         "resource": {
@@ -552,12 +542,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "hoaP2tYJd0NkIsakK891b5mHUn4tycqIdIhqgiLXyGI="
+          "hash": "qWoaUlAITEvAL3io47icJjB/E5FTOYb3/1+oqivHP58="
         }
       },
       "is_incremental": false,
