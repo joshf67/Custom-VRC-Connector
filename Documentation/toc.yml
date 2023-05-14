@@ -2,7 +2,11 @@
   href: manual/
 - name: Scripting API
   href: api/
+- name: Base Server API
+  href: base-node-server/
 - name: Example Manual
   href: example/
 - name: Scripting Example API
   href: example_api/
+- name: Database Server API
+  href: database-node-server/

@@ -56,6 +56,14 @@
                 "dest": "api"
             },
             {
+                "src": "base-node-server",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "base-node-server"
+            },
+            {
                 "src": "example",
                 "files": [
                     "toc.yml",
@@ -69,6 +77,14 @@
                     "*.yml"
                 ],
                 "dest": "example_api"
+            },
+            {
+                "src": "database-node-server",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "database-node-server"
             }
         ],
         "resource": [

@@ -1,0 +1,6 @@
+{
+    "source": {
+      "include": ["../NodeJs-Servers/Base/bin/src/**.js"]
+    },
+    "destination": "base_node_server"
+}

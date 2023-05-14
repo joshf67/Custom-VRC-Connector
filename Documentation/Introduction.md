@@ -1,6 +1,8 @@
 # VRC Server Connector Introduction
 
-[Skip to the API explanation?](APIIntroduction.md)
+[Skip to the API explanation?](manual/APIIntroduction.md)
+
+[Go to the Github Repository?](https://github.com/joshf67/Custom-VRC-Connector)
 
 ## What?
 

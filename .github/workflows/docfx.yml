@@ -21,6 +21,9 @@ jobs:
       - name: Use Introduction.md as index.md
         run: cp Documentation/Introduction.md Documentation/index.md
 
+      - name: Use node2docfx
+        run: npx node2docfx Documentation/node2docfx.json
+
       - name: Build
         run: docfx Documentation/docfx.json
 
