@@ -491,12 +491,27 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "UidNotFound"
+      ],
       "type": "Conceptual",
-      "source_relative_path": "manual/etiam.md",
+      "source_relative_path": "manual/Server.md",
       "output": {
         ".html": {
-          "relative_path": "manual/etiam.html",
-          "hash": "NHnQPmol5WdNQcX1dI73JglioZ6fNCUZ5V/7o8CbZv4="
+          "relative_path": "manual/Server.html",
+          "hash": "E96wjNeG9SgXQjhDQdRCg9WAU+qhL/DMLHJ04x1SUNg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/VRC.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/VRC.html",
+          "hash": "6VVSrcDJyF9qi1zBznPI2dY+Vy3xZtpRDMwdUg27umQ="
         }
       },
       "is_incremental": false,
@@ -508,7 +523,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "0na9vxgVJJrCAhE823QaQwTj0OmkWeqljA6vkZG2U4E="
+          "hash": "oEVlPibhRKzvrpaWNrT6sq7KIO9lpxxtTR7nA0av9dQ="
         }
       },
       "is_incremental": false,
@@ -531,6 +546,28 @@
       "output": {
         "resource": {
           "relative_path": "resources/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/ConnectorURLTool.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/ConnectorURLTool.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/manual/ConnectorURLToolWindow.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/manual/ConnectorURLToolWindow.png"
         }
       },
       "is_incremental": false,
@@ -563,7 +600,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 5,
+          "total_file_count": 6,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

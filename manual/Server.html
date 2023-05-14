@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Etiam nantemque exul | Server Connector documentation </title>
+    <title>Configuring Server Settings | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Etiam nantemque exul | Server Connector documentation ">
+    <meta name="title" content="Configuring Server Settings | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,63 +77,67 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="etiam-nantemque-exul">Etiam nantemque exul</h1>
+<h1 id="configuring-server-settings">Configuring Server Settings</h1>
 
-<h2 id="cum-tulit">Cum tulit</h2>
-<p>Lorem markdownum quos stimulosque <strong>altos</strong>. Putat nubes molle Troiae vero dea;
-nostraque <a href="http://www.tibi.io/">plurima</a>. Vos de mihi, credidit: salibus et
-iacuit, volvitur sunt unda fronti deriguisse <strong>refert</strong>.</p>
-<h2 id="sumpsisse-viso">Sumpsisse viso</h2>
-<p>Nubila nomine. Purpura se o et causa parva ripas, adsonat saevaque; quid modo
-ambo et venere voveo. Sine et esse, illa tempore, sive tibi roseo, ministerio
-altos. Trepident medicamine, primasque cum et peregit
-<a href="http://www.vetustas.net/">dapibusque</a> quoslibet hominis quoque insula.
-Tepentibus ut Cecropios ab turba, est auro ferventi aliter duratos feres
-differtis Ausoniis potes, non noctis Laertaque iuvenes.</p>
-<h2 id="caelumque-vestigia">Caelumque vestigia</h2>
-<p>Et promissa fila sentiet leges; Phrygiae et levatus ferire? Salutifer coniugis
-fierent ante fecissent post vultumque ultima, per radios currere; tandem.
-<a href="http://www.est-adicit.com/licet.html">Fuerat</a> qua, ne foedera reformatus nunc
-diu dea audet nonne.</p>
-<blockquote><p>Ut utinam mitia tenuerunt movent spectans Mavortis nulla ite, somnos exsiccata
-dixit Aeetias. Binas Trinacriam album ex ipse. Quoque <strong>una utraque tardius</strong>
-placetque gerere; mariti sed dare ludunt memorante Delphice corpora. Caret
-quantum intellegat venis gaudent eurus. Et suos crista; has et ferarum quid
-audit omine; mea cum praemia quae duris, suspicor.</p>
-</blockquote>
-<h2 id="adflati-qui">Adflati qui</h2>
-<p>Spiro conata supprimit diemque; ora oblitus ensem alti non quo lacrimis ferunt,
-<strong>ageret</strong> Cebrenida rutilis delendaque? Terras lata modus: nec fas, misi utque
-adpositis Iunonis. Fide vidit, ferox Schoeneia mundi, voce, tellus pariterque
-pedum, <strong>sic Celadon</strong> securior corpora partesque posito.</p>
-<blockquote><p>Potest faxo unda pendulaque ille rostro, haesit pars: formidine captat,
-viseret simulaverat! Sequi est peragit flumineae pallent simulatas formae
-avulsa, imagine undis; formam. Et nec sed adeunt, huic aequa et ignes nec,
-medere terram. Move ipsum abnuat retemptat retinebat duabus diu Iovi est
-pluma. <strong>Tecum non</strong> deducit Pelops Inachus: arcet aliquemque, regia telo.</p>
-</blockquote>
-<h2 id="tollens-altore-nec-semel-qui-voce-palatinae">Tollens altore nec semel qui voce Palatinae</h2>
-<p>Apertis et <strong>dei duo inquit</strong>; luna secundo, fervida terret. In haec dextra
-septima Tydides tibi: congelat hospes nativum radice <strong>tegumenque</strong> membris
-Hesperio ne Libys, est vocabula siqua. Dumque <a href="http://peparethos-ultus.org/">stet
-mulces</a>, ut fontem dea atricolor, est pronos,
-clarissimus poterat cum intrare sidere templi.</p>
-<pre><code>cut_metadata(whitelistSequenceUnit.thick.of_bezel_cdma(
-        address_suffix_troubleshooting), sram_trojan(4, hdmi_network - 1));
-flash.apache -= web_gps_plug;
-if (offline.dac_bridge(scrollEbookRom,
-        parameter.internal_target_superscalar(2)) &lt; qwerty + 2 -
-        ipvCgiContextual) {
-    certificateIdeAsp = overclocking + app;
-    supplyCard = siteRaster;
-}
-</code></pre><p>Sagitta curvum quoque petisti opibusque proximitas in, illa vestrum, mihi domum
-nescia flexit sacra in. Magni <em>vive sim crescente</em> causam saxo voluit, mens,
-quod. Tela <em>ter ulterius similis</em> illos nato refugit ait verbaque nec fatigatum
-penates iaculatricemque cecidit pinnas, cum. Misso contigit <em>caelo</em> dedissent
-lumina; nympha ad vobis occidat, malo sacra utrumque cunctos Diomedeos addita.
-Virgineus autumnos, ait mitissima curru: fuit sed fessi se habebat hactenus
-Ultor; meus.</p>
+<h2 id="server-environment-file">Server Environment File</h2>
+<p>The node server requires a .env file with the following configuration
+<table>
+    <tbody>
+        <th> Setting </th>
+        <th> Value Type </th>
+        <th> Description </th>
+        <tr>
+            <td> PORT </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> This is the port that the NodeJS server will listen to requests on </td>
+        </tr>
+        <tr>
+            <td> MESSAGE_TYPE_BITS </td>
+            <td> <a href="xref:System.Int">Int</a> </td>
+            <td> This is the bit length used for determining a message&#39;s type </td>
+        </tr>
+        <tr>
+            <td> MESSAGE_BITS_LENGTH </td>
+            <td> <a href="xref:System.Int">Int</a> </td>
+            <td> This is the bit length of the entire message (including MESSAGE_TYPE_BITS) </td>
+        </tr>
+        <tr>
+            <td> DATABASE_URL </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The URL of the database, for example &quot;mongodb+srv://<strong>.</strong>.mongodb.net/**&quot; </td>
+        </tr>
+        <tr>
+            <td> DATABASE_NAME </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The name of the MongoDB collection to be used for the Database </td>
+        </tr>
+        <tr>
+            <td> DATABASE_CONNECTION_TIMEOUT </td>
+            <td> <a href="xref:System.Int">Int</a> </td>
+            <td> The total time in MS until a stalled database connection fails </td>
+        </tr>
+        <tr>
+            <td> DATABASE_USER_CERT </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The location (relative to HTTP_SERVER folder) of the MongoDB login certificate </td>
+        </tr>
+    </tbody>
+</table></p>
+<p><br></p>
+<h2 id="modifying-the-servers-listening-url">Modifying The Server&#39;s Listening URL</h2>
+<p>By default the server will listen for any messages that start with &quot;/sendMessage=&quot;, however, this can be changed by modifying line 52 inside the App.js file:
+<span style="color:red"> Remember to keep the * wildcard at the end otherwise the server will only listen to the exact URL &quot;/sendMessage=&quot; </span></p>
+<pre><code class="lang-javascript">//ignore favicon
+app.use(&quot;/favicon.ico&quot;, function() {});
+
+//Bind all messages to custom server logic
+app.use(&#39;/sendMessage=*&#39;, ServerConnector.HandleConnection); // &lt;----- Change this line here
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+</code></pre><p><span style="color:red"> Don&#39;t forget to update the <a href="VRC.html">VRC URL settings</a></span></p>
 </article>
           </div>
           
@@ -142,7 +146,7 @@ Ultor; meus.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Unity/Documentation/manual/etiam.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Unity/Documentation/manual/Server.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
