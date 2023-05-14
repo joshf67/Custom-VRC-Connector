@@ -91,7 +91,8 @@
         },
         "xref": [
             "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml",
-            "https://joshf67.github.io/VRCXrefMaps/vrcxrefmap.yml"
+            "https://joshf67.github.io/VRCXrefMaps/vrcxrefmap.yml",
+            "https://joshf67.github.io/Custom-VRC-Connector/xrefmap.yml"
         ],
         "xrefService": [
             "https://xref.docs.microsoft.com/query?uid={uid}"
