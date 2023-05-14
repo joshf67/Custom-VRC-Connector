@@ -79,6 +79,17 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="vrc-server-connector-api-introduction">VRC Server Connector API Introduction</h1>
 
+<p>All of the API code is documented <a href="../api/Joshf67.ServerConnector.html">here</a>, however, here is a brief overview of the most common parts of the API that you will interact with:</p>
+<h2 id="serverconnector">ServerConnector</h2>
+<p>This is the class that you will inherit from if you want to build upon helper functions that allow messages to and from the external server by overriding the <a class="xref" href="../api/Joshf67.ServerConnector.Connector.html#Joshf67_ServerConnector_Connector_HandleMessage_System_String_">HandleMessage</a> method.</p>
+<h2 id="serverresponse">ServerResponse</h2>
+<p>This is the class that you will inherit from if you want to handle server responses by overriding the <a class="xref" href="../example_api/Joshf67.ServerConnector.Example.ExampleServerResponse.html#Joshf67_ServerConnector_Example_ExampleServerResponse_HandleResponse_DataDictionary_DataToken__">HandleResponse</a> method.</p>
+<h2 id="messagepacker">MessagePacker</h2>
+<p>This static class is probably what you will interact with when converting your data into compressed messages that the URL packer will use.</p>
+<p>To pack a set of data into a URL message buffer, you need to provide the method <a class="xref" href="../api/Joshf67.ServerConnector.Packing.MessagePacker.html#Joshf67_ServerConnector_Packing_MessagePacker_PackMessageBytesToURL_DataList_Joshf67_ServerConnector_ConnectorMessageType_System_Byte_System_Byte_">PackMessageBytesToURL</a> with a <a href="xref:VRC.SDK3.Data.DataList">DataList</a> of preferably pre-compressed messages, however, this function will try to convert inputs into a compressed format (this might not be optimized for your use case).</p>
+<p>To compress messages you will want to call the static function (CompressMessage)[xref:Joshf67.ServerConnector.Packing.MessagePacker.CompressMessage(DataToken,System.Int32,System.Int32)] with a <a href="xref:VRC.SDK3.Data.DataToken">DataToken</a>, (optional) the amount of bits you want from the message and finally (optional) the <a class="xref" href="../api/Joshf67.ServerConnector.Packing.PackingType.html">type of packing</a> you want to use for the message .</p>
+<h2 id="byteconverter">ByteConverter</h2>
+<p>If you are interacting with this manually then it&#39;s probably because you want manually convert values into their bytes, the <a class="xref" href="../api/Joshf67.ServerConnector.Packing.ByteConverter.html">API reference</a> will give you all the methods available.</p>
 </article>
           </div>
           
@@ -87,7 +98,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Unity/Documentation/manual/APIIntroduction.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Documentation/manual/APIIntroduction.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

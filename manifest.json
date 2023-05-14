@@ -10,7 +10,7 @@
     "changefreq": "weekly"
   },
   "homepages": [],
-  "source_base_path": "D:/a/Custom-VRC-Connector/Custom-VRC-Connector/Unity/Documentation",
+  "source_base_path": "D:/a/Custom-VRC-Connector/Custom-VRC-Connector/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "example/ExtraFunctionality.html",
-          "hash": "YTeIhwTi34iK6AkVv/SxFxBYtpBpsxOhad/24g+mW4s="
+          "hash": "m1uUBn3fyDOpUd7aeXdaVMkBdl4t+dOEgPXi8J2K9PI="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "example/Introduction.html",
-          "hash": "Wb7d/uE/kqddkh8EbBFa15e4cmjygaR2QhnEvR4gaDM="
+          "hash": "Gi0biD7UWtxVLVMxeLwvQwttgOKSEqgI5fFJL65KR8Q="
         }
       },
       "is_incremental": false,
@@ -400,19 +400,23 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "ld7UMZ3HA6e2pOEatx73brI9oBf8RB+PA2palxOMSMw="
+          "hash": "foLeTNTABlqTwtB5rn62KzlPO/5zxXJjE5e82xvxQEw="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink",
+        "UidNotFound"
+      ],
       "type": "Conceptual",
       "source_relative_path": "manual/APIIntroduction.md",
       "output": {
         ".html": {
           "relative_path": "manual/APIIntroduction.html",
-          "hash": "2HNIxTk2aOc1fPIXxwUmQD52ceBpMceciWnJ2Qp/MKM="
+          "hash": "xVOw/KpeGkilZ58RGCcZzkeZBiTau9MJ+9rg0UqDlR0="
         }
       },
       "is_incremental": false,
@@ -424,7 +428,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/Introduction.html",
-          "hash": "xmxp22AwOvQwClxWXnSJFbpoiOytXtkhgLfAij3+XbA="
+          "hash": "vSgL/zhg+Z6GqVY+GHdRPqaOwcLDmnzrCx/qZaX8+aU="
         }
       },
       "is_incremental": false,
@@ -439,7 +443,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/Server.html",
-          "hash": "27fmdT+zVIkT0ds1c8+t+KYZ90imZhJwErZn4w/u8Yk="
+          "hash": "Vgzvv+IdWK5ow3JF8j8HlLnhrjr1y4kvo5Gt6iyMtKM="
         }
       },
       "is_incremental": false,
@@ -451,7 +455,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/VRC.html",
-          "hash": "sY70vHyJALKmmA69cLFd2U7sZG/aKgVYuy6YAIIftaM="
+          "hash": "s8HIOUp6UictnkXN9x/Y1fZ/Bsz5ob1oibSPdtB91oY="
         }
       },
       "is_incremental": false,
@@ -463,7 +467,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/VRCUrlTesting.html",
-          "hash": "876qPnDeigrvgpCqlySEiwQZ/QFQdVr8xX+TxLZQ0Ac="
+          "hash": "/9AwhA7UYIVPHWx2GevQvylWMs2yI8yS0luzgRc+SbQ="
         }
       },
       "is_incremental": false,
