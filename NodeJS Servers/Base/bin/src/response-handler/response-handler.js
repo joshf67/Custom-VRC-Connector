@@ -1,7 +1,6 @@
 const ResponseData = require("./response-data");
 const UserConnectionData = require("../connection-handler/user-connection-data");
 const { ResponseTypes } = require("./response-types");
-const XMLBuilder = new (require("fast-xml-parser").XMLBuilder)();
 
 const resendData = new ResponseData(ResponseTypes.Failed_To_Parse, null);
 

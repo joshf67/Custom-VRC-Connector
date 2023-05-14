@@ -1,7 +1,5 @@
-var path = require("path");
 const logger = require("../../../logger");
 const UserConnectionData = require("../../../connection-handler/user-connection-data");
-const URLMessage = require("../../url-message");
 const ResponseHandler = require("../../../response-handler/response-handler");
 const ResponseData = require("../../../response-handler/response-data");
 const { ResponseTypes } = require("../../../response-handler/response-types");

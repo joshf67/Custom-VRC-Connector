@@ -1,6 +1,5 @@
 const logger = require("../../../logger");
 const DatabaseHandler = require("../../../database-handler/database-handler");
-var path = require("path");
 const UserConnectionData = require("../../../connection-handler/user-connection-data");
 const URLMessage = require("../../url-message");
 const ResponseHandler = require("../../../response-handler/response-handler");
@@ -28,24 +27,8 @@ class LoginHandler {
     );
     
     //Setup the message listener and then send the remaining message bits into it
-    user.expectingDataCallback = LoginHandler.HandleMessage;
+    user.expectingDataCallback = user.expectingDataState.AddMessageBytes;
     user.expectingDataCallback(user, res, message);
-  }
-
-  /**
-   * Handles login related messages to build up a user login hash
-   * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
-   * @param {String[]} message - The parsed message from the connection
-   */
-  static HandleMessage(user, res, message) {
-    //If the user is already logged in, return the correct log in
-    if (user.loginHash != null) {
-      return LoginHandler.HandleLogin(user, res);
-    }
-
-    //Handle the current message
-    return user.expectingDataState.AddMessageBytes(user, res, message);
   }
 
   /**
@@ -55,6 +38,11 @@ class LoginHandler {
    * @param {*} bitsRemaining - The bits remaining until the message is complete
    */
   static HandleMessageUpdate(user, res, bitsRemaining) {
+    //If the user is already logged in, return the correct log in
+    if (user.loginHash != null) {
+      return LoginHandler.HandleLogin(user, res);
+    }
+
     //Continue listening to data
     ResponseHandler.HandleResponse(
       user,
