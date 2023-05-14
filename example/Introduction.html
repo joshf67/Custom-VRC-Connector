@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Coniunctis nec qui et lanient monticolae vitae | Server Connector documentation </title>
+    <title>MongoDB Connector Example | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Coniunctis nec qui et lanient monticolae vitae | Server Connector documentation ">
+    <meta name="title" content="MongoDB Connector Example | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,48 +77,814 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="coniunctis-nec-qui-et-lanient-monticolae-vitae">Coniunctis nec qui et lanient monticolae vitae</h1>
+<h1 id="mongodb-connector-example">MongoDB Connector Example</h1>
 
-<h2 id="opem-ille">Opem ille</h2>
-<p>Lorem markdownum cavis exululat inutile. Illi quem caeli, vola patruo difficili
-Iuppiter Patraeque, est ardebant ingeniis Troica intus Amore tibi mirantem
-superfusis, multum.</p>
-<ol>
-<li>Ut Achilles</li>
-<li>Et sitim</li>
-<li>Tibi modo ait temptant crinita daret</li>
-<li>Pariter in removi offensasque Lenaeo damno terra</li>
-</ol>
-<p>Phoebes ut damnosa classis ignes templo; tua ulla capillos ultima. Videre
-percusso plectro templa fuit diva minimum debere, quid nomen Philomela animis.
-Verbis istis flagrat vulnera inpediique ignes. Gravi filo obvius arte Amphionis
-Panes emisitque iubet.</p>
-<h2 id="latona-te-timens">Latona te timens</h2>
-<p>Latentia ante, eundem meritorum <em>sunto</em>! Elige in timuit templa ferrea, qui arma
-ligati stagnum turbant. Fraternaque aeternus, dedisse, naufragus corripiens
-ranas Amathunta et quod laetior culpa nec semper scorpius fuit vicem corpora
-ardere. Fallit in artus primordia, fratres <strong>per aliis</strong>, ipsi manu <strong>Asiae quod
-marmorea</strong>.</p>
-<pre><code>mountain(googleVga, pngIphone);
-var radcabBitrate = dnsCronRecursion;
-gui(2);
-ipImageAix += vle(drm_cisc, horizontal + computer_key);
-jre(vaporware_adc_multi);
-</code></pre><h2 id="lumina-ut-tamen-praesentia-vidistis-nymphae-auroque">Lumina ut tamen praesentia vidistis nymphae auroque</h2>
-<p>Bromumque <strong>in</strong> portant furorem. Visa init <strong>resurgere</strong> praevitiat canibus et,
-dedignata turea, ilia.</p>
-<blockquote><p>Pisenore mensura insula aere nec per o gladium causa: Alcidae. Veris sentes
-pallet, alta melius nostra amborum probant, deam. Iuventae dedimus nitidaque
-hunc traxisse sermonibus <a href="http://fulmen-seu.org/illam.aspx">pectine flecti</a> an
-pateres, hac ore gelidis foret semper. Sithon pelle.</p>
-</blockquote>
-<p>Bracchia Hippason videntur fateri hosti: palpitat animo est reliquit anne nam
-confusaque. Interea rex altis munera quem quae quoque rorant, rauco albescere
-scopulo moriensque parvo, pectus illa, quadrupedes.</p>
-<p>Notavit haec. Vertit pars quem Euryte casu usta iterum! Ablatum pectus
-corripiunt neu humus tamquam; ducens stellarum amore. Pulsisque latet, ad tamen
-victor fulva Tirynthius posco; qui inque in poena quidem
-<a href="http://gentisque-togaque.io/">enses</a>!</p>
+<p>In this example I will walk through the steps I took to make a connector between VRC and a MongoDB database, this will not go super into depth on how every line of code works, but the source code is provided in the <a href="https://github.com/joshf67/Custom-VRC-Connector">github repository</a> if you wish to look at it.</p>
+<p><span style="color:red"> Warning: There is a lot of code below. Once you get the hang of it, it shouldn&#39;t be too difficult, however, it has a steep learning curve due to the compexity of this API so... good luck reading it. </span></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Store client data on an externally hosted MongoDB and interact with that from within VRC.</li>
+<li>Allow a client to send a login/password to the server which autheticates them with a unique account.</li>
+<li>Allow a client to update a list of items that are stored inside that database and have it display for them.</li>
+</ul>
+<h2 id="step-0-setting-up-the-base-project">Step 0. Setting up the base project</h2>
+<p>I started by cloning the repository and setting up the inital <a href="../manual/Server.html">server</a> settings. I then create a new VRC Unity project and installed the <a href="">Server Connector Package.</a></p>
+<h2 id="step-1-setting-up-the-mongodb-instance">Step 1. Setting up the MongoDB instance</h2>
+<p>There are a bunch of free MongoDB hosting sites out there, however, I have decided to go with <a href="https://www.mongodb.com/">MongoDB&#39;s</a> own free hosting, <a href="https://www.mongodb.com/basics/mongodb-atlas-tutorial">here&#39;s a link to their own tutorial on how to set things up.</a></p>
+<p>For this example I am going to be using certification authentication so I need to generate one that allows me access to the database:</p>
+<p><img src="../resources/example/MongoDB_Cert.png" alt="MongoDB Certification Generation"></p>
+<p>I stored the generated certificate inside it&#39;s own folder.</p>
+<p><img src="../resources/example/MongoDB_Cert_Folder.png" alt="MongoDB Certification Folder"></p>
+<p>I setup some properties on my <a href="Server.html">.env</a> file to allow me to access this easier later on, I also knew that I wanted to make the client &quot;log&quot; into the database by requesting the data for a specific hash:</p>
+<p><a href="Server.html">see Example server settings for more details</a></p>
+<pre><code class="lang-javascript">    PORT=33646
+
+    MESSAGE_TYPE_BITS=4
+    MESSAGE_BITS_LENGTH=21
+
+    //This was added during this step
+    DATABASE_URL=&quot;mongodb+srv://xxxx.xxxx.mongodb.net/RPGDatabase&quot;
+    DATABASE_NAME=&quot;RPGDatabase&quot;
+    DATABASE_CONNECTION_TIMEOUT=2000
+    DATABASE_USER_CERT=&quot;Mongodb/mongo.pem&quot;
+
+    LOGIN_HASH_CHARACTERS=9
+    //This was added during this step
+
+    PRUNE_INACTIVE_TIME_MINUTES=30
+
+    DEVELOPMENT_MODE=true
+</code></pre><h2 id="step-2-adding-a-way-to-connect-to-the-database-in-the-nodejs-server">Step 2. Adding a way to connect to the database in the NodeJS server</h2>
+<p>The first thing to do is to get out NodeJS server connected to the MongoDB instance:</p>
+<p>In the following code you can see a &quot;UserModel&quot; this is just a mongoose schema that lays out the structure of the database, for this example it&#39;s multiple schema&#39;s layered into each other to produce this structure:</p>
+<pre><code>User: {
+    loginHash: String
+    Inventory: {
+        Currency: Number
+        Items: [
+            itemID: Number,
+            ...
+        ]
+    }
+}
+</code></pre><pre><code class="lang-javascript">const mongoose = require(&quot;mongoose&quot;);
+const path = require(&quot;path&quot;);
+const logger = require(&quot;../logger&quot;);
+
+//Remove excess data not needed from the database
+mongoose.plugin((schema) =&gt; {
+  schema.options.toJSON = {
+    virtuals: true,
+    versionKey: false,
+    transform(doc, ret) {
+      delete ret._id;
+      delete ret.id;
+    }
+  };
+});
+
+const UserModel = require(&quot;./database-schema/user/user-model&quot;);
+
+class DatabaseHandler {
+  client;
+
+  constructor() {
+    Connect(
+      process.env.DATABASE_URL,
+      path.join(__dirname, &quot;../../../&quot;, process.env.DATABASE_USER_CERT)
+    ).then(
+      function (client) {
+        this.client = client;
+      }.bind(this)
+    );
+
+    // If the Node process ends, close the Mongoose connection
+    process.on(&quot;SIGINT&quot;, function () {
+      mongoose.connection.close(function () {
+        logger.log(&quot;Mongoose disconnected on app termination&quot;);
+        process.exit(0);
+      });
+    });
+  }
+
+  /**
+   * Request user from database if the hash exists, if not create it
+   * @param {string} userLoginHash - The user&#39;s login
+   * @returns {Promise} The user&#39;s database entry
+   */
+  async addUserData(userLoginHash) {
+    return new Promise((resolve, reject) =&gt; {
+      //Try to get the data before adding it
+      this.getUserData(userLoginHash)
+        .then((user) =&gt; {
+          resolve(user);
+        })
+        .catch((error) =&gt; {
+          //Generate new user data and save it to the database
+          let newUser = new UserModel({ loginHash: userLoginHash });
+          newUser.save().finally(() =&gt; {
+            //Get that saved data from the database
+            //Can probably be replaced with a blank response
+            this.getUserData(userLoginHash)
+              .then((user) =&gt; {
+                resolve(user);
+              })
+              .catch((error) =&gt; {
+                //If the data doesn&#39;t exist, something went wrong
+                logger.error(error);
+                reject(error);
+              });
+          });
+        });
+    });
+  }
+
+  /**
+   * Request user from database if the hash exists
+   * @param {string} userLoginHash - The user&#39;s login
+   * @returns {Promise} The user&#39;s database entry
+   */
+  async getUserData(userLoginHash) {
+    return new Promise((resolve, reject) =&gt; {
+      UserModel.find({ loginHash: userLoginHash })
+        .then((value) =&gt; {
+          if (value.length == 0) {
+            reject(`Unable to find user: ${userLoginHash}`);
+          } else {
+            resolve(value);
+          }
+        })
+        .catch((error) =&gt; {
+          reject(&quot;Unable to find user: &quot; + error);
+        });
+    });
+  }
+}
+
+/**
+ * Handles connecting to database
+ * @param {string} uri - The location of the database
+ * @param {string} cert - The certification to connect to the database
+ * @returns {Promise} - Returns a promise for the connection
+ */
+function Connect(uri, cert) {
+  return new Promise((resolve) =&gt; {
+    logger.log(&quot;Initiating  connection to database&quot;);
+    mongoose
+      .connect(uri, {
+        ssl: true,
+        sslValidate: false,
+        sslKey: cert,
+        sslCert: cert,
+        authMechanism: &quot;MONGODB-X509&quot;,
+      })
+      .then((client) =&gt; {
+        logger.log(&quot;Connected to database successfully&quot;);
+        resolve(client);
+      })
+      .catch((error) =&gt; {
+        logger.error(error);
+      });
+  });
+}
+</code></pre><p>This allows class tries to connect to a MongoDB instance by using mongoose which is a set of wrapper functions around the MongoDB API to make it easier to use, the connect function was a little complicated for me as I have never done any of this before so, it took me a while to figure out how to connect to the MongoDB with the certification file we downloaded above.</p>
+<h2 id="step-3-messaging-the-nodejs-server-from-within-vrc">Step 3. Messaging the NodeJS server from within VRC</h2>
+<p>As I mentioned before, I decided that I would make the client log into a database using a unique 9 character hash, the first thing to do was to start getting the VRC client to message the server with the hash.</p>
+<p>The first thing I implemented on the client was a way to convert a user&#39;s input into a 9 character hash, I found a hashing script that <a href="https://github.com/Gorialis/vrchat-udon-hashlib">Gorialis made called UdonHashLib</a> which I am using to convert a string into a SHA512 hash:</p>
+<p>The following C# code is inside a class that extends the <a class="xref" href="../api/Joshf67.ServerConnector.Connector.html">ServerConnector</a> class.</p>
+<pre><code class="lang-csharp">    protected UdonHashLib hasher;
+
+    public string ConvertTextToHash(string text)
+    {
+        return hasher.SHA512_UTF8(text);
+    }
+
+    public string ConvertSHA256ToMessage(string hash)
+    {
+        if (hash.Length != 128) return &quot;&quot;;
+        return new string(new char[] { hash[0], hash[15], hash[31], hash[47], hash[63], hash[79], hash[95], hash[111], hash[127] });
+    }
+</code></pre><p>The next step was to setup the UI for a user to execute the login/account creation login</p>
+<pre><code class="lang-csharp">    public void Login()
+    {
+        AddMessagesToBuffer(MessagePacker.PackMessageBytesToURL(GenerateLoginHashBytes(), ConnectorMessageType.Login, packingMessageBitSize, messageTypeSize));
+    }
+
+    public void CreateAccount()
+    {
+        AddMessagesToBuffer(MessagePacker.PackMessageBytesToURL(GenerateLoginHashBytes(), ConnectorMessageType.AccountCreation, packingMessageBitSize, messageTypeSize));
+    }
+</code></pre><p>That is all that is required on the client side to send off the required requests to the server, next was to handle everything on the NodeJS server.</p>
+<h2 id="step-4-handling-vrc-client-messages-on-the-nodejs-server">Step 4. Handling VRC client messages on the NodeJS server</h2>
+<p>The first step was to implement the type on the main <a href="">message-handler</a> section:</p>
+<pre><code class="lang-javascript">//Switch statement that handles all different types of messages
+    switch (unpackedMessage.Type) {
+        case MessageTypes.Login:
+            return LoginHandler.HandleInitialMessage(
+                user,
+                res,
+                unpackedMessage.Message
+            );
+            break;
+        case MessageTypes.AccountCreation:
+            return LoginHandler.HandleInitialMessage(
+                user,
+                res,
+                unpackedMessage.Message,
+                true
+            );
+            break;
+        ...
+    }
+</code></pre><p>next is to implement a builder to accept the above requests and awaits for the 9 login hash characters until continuing:</p>
+<pre><code class="lang-javascript">const logger = require(&quot;../../../logger&quot;);
+const DatabaseHandler = require(&quot;../../../database-handler/database-handler&quot;);
+const UserConnectionData = require(&quot;../../../connection-handler/user-connection-data&quot;);
+const URLMessage = require(&quot;../../url-message&quot;);
+const ResponseHandler = require(&quot;../../../response-handler/response-handler&quot;);
+const ResponseData = require(&quot;../../../response-handler/response-data&quot;);
+const { ResponseTypes } = require(&quot;../../../response-handler/response-types&quot;);
+const MessageBuilder = require(&quot;../../message-builder&quot;);
+const { MessageLength } = require(&quot;../../message-length&quot;);
+
+class LoginHandler {
+  /**
+   * Handles the first login related message and sets up a user&#39;s expecting data
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {URLMessage} message - The parsed message from the connection
+   * @param {bool} creatingAccount - Controls if the login hash will be used to create a new user
+   */
+  static HandleInitialMessage(user, res, message, creatingAccount = false) {
+
+    //Build the message listener data
+    user.expectingDataState = new MessageBuilder(
+      LoginHandler.HandleMessageUpdate,
+      LoginHandler.HandleMessageFinish,
+      MessageLength.Login,
+      { creatingAccount: creatingAccount }
+    );
+
+    //Setup the message listener and then send the remaining message bits into it
+    user.expectingDataCallback = user.expectingDataState.AddMessageBytes;
+    user.expectingDataCallback(user, res, message);
+  }
+
+  /**
+   * Handles login related messages that add to the login hash
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {*} bitsRemaining - The bits remaining until the message is complete
+   */
+  static HandleMessageUpdate(user, res, bitsRemaining) {
+    //If the user is already logged in, return the correct log in
+    if (user.loginHash != null) {
+      return LoginHandler.HandleLogin(user, res);
+    }
+
+    //Continue listening to data
+    ResponseHandler.HandleResponse(
+      user,
+      res,
+      new ResponseData(
+        ResponseTypes.Login_Updated,
+        `Login Hash Part Recieved, Awaiting ${bitsRemaining} bits`
+      )
+    );
+  }
+
+  /**
+   * Handles finishing up login related messages to build up a user login hash
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {string[]} fullMessageBits - The message in a string binary array
+   * @param {*} options - The options passed to the message builder on creation
+   */
+  static HandleMessageFinish(user, res, fullMessageBits, options) {
+    let loginBytes = [];
+    for (let i = 0; i &lt; MessageLength.Login; i += 8) {
+      loginBytes.push(parseInt(fullMessageBits.slice(i, i + 8).join(&quot;&quot;), 2));
+    }
+
+    const loginHash = new TextDecoder().decode(new Uint8Array(loginBytes));
+
+    logger.log(loginHash);
+
+    //Handle finishing up userHashData message
+    user.expectingDataCallback = null;
+    user.expectingDataState = null;
+    user.userHash = loginHash;
+
+    if (options?.creatingAccount)
+      return LoginHandler.HandleAccountCreation(user, res);
+
+    return LoginHandler.HandleLogin(user, res);
+  }
+</code></pre><p>This Initial message handler sets up all of the parameters of the <a href="">message builder</a> class to wait for 9 login character&#39;s worth of bytes before continuing onto either loggin in or creating an account depending on the message type:</p>
+<pre><code class="lang-javascript">  /**
+   * Sends off a request to the database to get a user and responds with the result
+   * @param {UserConnectionData} user - The user data that contains all required info
+   * @param {*} res - The express response for the user
+   */
+  static HandleLogin(user, res) {
+    DatabaseHandler.getUserData(user.userHash)
+      .then((userData) =&gt; {
+        user.databaseData = userData[0];
+        return ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Login_Complete, userData[0])
+        );
+      })
+      .catch((error) =&gt; {
+        //Fail due to account not existing or another error
+        console.error(error);
+        if (error.indexOf(&quot;Unable to find user&quot;) != -1)
+          return ResponseHandler.HandleResponse(
+            user,
+            res,
+            new ResponseData(ResponseTypes.Login_Failed, &quot;User does not exist&quot;)
+          );
+        ResponseHandler.FailResponse(user, res);
+      });
+  }
+
+  /**
+   * Sends off a request to the database to generate a user and responds with the result
+   * @param {UserConnectionData} user - The user data that contains all required info
+   * @param {*} res - The express response for the user
+   */
+  static HandleAccountCreation(user, res) {
+    DatabaseHandler.addUserData(user.userHash)
+      .then((userData) =&gt; {
+        user.databaseData = userData[0];
+
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Account_Creation_Complete, userData[0])
+        );
+      })
+      .catch((error) =&gt; {
+        //Fail due to account not being able to be created
+        console.error(error);
+        ResponseHandler.FailResponse(user, res);
+      });
+  }
+}
+</code></pre><p>This is everything we need for the first and second requirement, next is to start implementing a way to allow a client to modify their own items</p>
+<h2 id="step-5-implementing-vrc-ui-to-modify-items">Step 5. Implementing VRC UI to modify items</h2>
+<p>This one is quite simple, I decided to go with 2 input fields that take a number and then request build a server response based on a button click:</p>
+<pre><code class="lang-csharp">    /// &lt;summary&gt;
+    /// Queue up an add item message to the server and attempt to add it
+    /// &lt;/summary&gt;
+    public void AddItem()
+    {
+        if (AddItemField.text == &quot;&quot;) return;
+
+        //Only allow 8 bit indices for the item to add
+        byte itemId = (byte)(int.Parse(AddItemField.text) &amp; 0xFF);
+        if (itemId &lt; 0 || itemId &gt; 255) return;
+
+        //Set up the options to send to the server&#39;s add item function
+        //1st bit = adding, next 7 bits = The amount of items to add, next 8 bits... = itemId
+        AddMessagesToBuffer(
+            MessagePacker.PackMessageBytesToURL(
+                new object[] {
+                MessagePacker.CompressMessage(true, 1),
+                MessagePacker.CompressMessage((byte)1, 7),
+                MessagePacker.CompressMessage(itemId)
+                }, ConnectorMessageType.ModifyItem, packingMessageBitSize, messageTypeSize
+            )
+        );
+    }
+
+    /// &lt;summary&gt;
+    /// Queue up a remove item message to the server and attempt to remove it
+    /// &lt;/summary&gt;
+    public void RemoveItem()
+    {
+        if (RemoveItemField.text == &quot;&quot;) return;
+
+        //Only allow 7 bit indices for removing
+        byte itemIndex = (byte)(int.Parse(RemoveItemField.text) &amp; 0xFF);
+        if (itemIndex &lt; 0 || itemIndex &gt; 255) return;
+
+        DataList packingParams = new DataList();
+        packingParams.Add(MessagePacker.CompressMessage(false, 1));
+        packingParams.Add(MessagePacker.CompressMessage((byte)1, 7));
+        packingParams.Add(MessagePacker.CompressMessage(itemIndex));
+
+        //Set up the options to send to the server&#39;s add item function
+        //1st bit = removing, next 7 bits = The amount of indices to remove, next 8 bits... = index to remove
+        AddMessagesToBuffer(
+            MessagePacker.PackMessageBytesToURL(
+                packingParams, ConnectorMessageType.ModifyItem,
+                packingMessageBitSize, messageTypeSize
+            )
+        );
+    }
+</code></pre><p>Because I am trying to do both adding/removing by only using a single type I needed to package my messages a little bit more complicated, I started off by using the first bit of a message to indicate if it was adding or removing, then the next 7 bits to indicate how many actions the server should wait for when building up the message. Finally I pack the item indices/ids as bytes one after another, this will be parsed using the action count in the 7 bits.</p>
+<h2 id="step-6-modifying-a-clients-items">Step 6. Modifying a client&#39;s items</h2>
+<p>The first part is to add another type to our main <a href="">message-handler</a> logic:</p>
+<pre><code class="lang-javascript">case MessageTypes.ModifyItem:
+    return ItemHandler.HandleInitialMessage(
+        user,
+        res,
+        unpackedMessage.Message
+    );
+    break;
+</code></pre><p>For these sets of methods I have decided that I want to try and only use 1 type for adding and removing, this means that the initial message building will be slightly more complicated than the login one:</p>
+<pre><code class="lang-javascript">const logger = require(&quot;../../../logger&quot;);
+const UserConnectionData = require(&quot;../../../connection-handler/user-connection-data&quot;);
+const ResponseHandler = require(&quot;../../../response-handler/response-handler&quot;);
+const ResponseData = require(&quot;../../../response-handler/response-data&quot;);
+const { ResponseTypes } = require(&quot;../../../response-handler/response-types&quot;);
+const { MessageLength } = require(&quot;../../message-length&quot;);
+const MessageBuilder = require(&quot;../../message-builder&quot;);
+const {
+  ItemSchemaJS,
+} = require(&quot;../../../database-handler/database-schema/inventory/item-schema&quot;);
+
+class ItemHandler {
+  /**
+   * Handles the first item related message and sets up a user&#39;s expecting data
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {String[]} message - The parsed message from the connection
+   */
+  static HandleInitialMessage(user, res, message) {
+    //First bit of a Item message is use to determine if it should be adding or removing
+    let addingItems = message[0] == &quot;1&quot;;
+
+    //The next 7 bits are used to store how many items/indices are in the message
+    let items = parseInt(message.slice(1, 8).join(&quot;&quot;), 2);
+
+    //Build the message listener data
+    user.expectingDataState = new MessageBuilder(
+      ItemHandler.HandleMessageUpdate,
+      ItemHandler.HandleMessageFinish,
+      addingItems == true
+        ? MessageLength.Item * items
+        : MessageLength.ItemIndex * items,
+      {
+        addingItems: addingItems,
+        items: items,
+      }
+    );
+
+    //Setup the message listener and then send the remaining message bits into it
+    user.expectingDataCallback = user.expectingDataState.AddMessageBytes;
+    user.expectingDataCallback(user, res, message.slice(8));
+  }
+
+  /**
+   * Handles item related messages
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {*} bitsRemaining - The bits remaining until the message is complete
+   */
+  static HandleMessageUpdate(user, res, bitsRemaining) {
+    //Continue listening to data
+    ResponseHandler.HandleResponse(
+      user,
+      res,
+      new ResponseData(
+        ResponseTypes.Item_Updated,
+        `Item message Recieved, Awaiting ${bitsRemaining} bits`
+      )
+    );
+  }
+
+  /**
+   * Handles finishing up item messages
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {string[]} fullMessageBits - The message in a string binary array
+   * @param {*} options - The options passed to the message builder on creation
+   */
+  static HandleMessageFinish(user, res, fullMessageBits, options) {
+    if (options.addingItems) {
+      let items = [];
+
+      //Build up all of the items to add from the message bits
+      for (let i = 0; i &lt; options.items * MessageLength.Item; i += MessageLength.Item) {
+        items.push(
+          new ItemSchemaJS(
+            parseInt(fullMessageBits.slice(i, i + MessageLength.Item).join(&quot;&quot;), 2)
+          )
+        );
+      }
+
+      logger.log(items);
+      ItemHandler.AddItems(user, res, items);
+    } else {
+      let indices = [];
+
+      //Build up all of the indices from the message bits
+      for (let i = 0; i &lt; options.items * MessageLength.Item; i += MessageLength.Item) {
+        indices.push(
+          parseInt(fullMessageBits.slice(i, i + MessageLength.ItemIndex).join(&quot;&quot;), 2)
+        );
+      }
+
+      logger.log(indices);
+      ItemHandler.RemoveItems(user, res, indices);
+    }
+  }
+  ...
+</code></pre><p>This time I decided to pass a few encoded messages inside the initial message, the first part is to tell the server what type of message this adding or removing, I do this by using the first bit in the message, I then follow that up with the next 7 bits being for the amount of actions this message should be expecting (In this example it&#39;s how many actions to remove/add will follow), after this I plan to send a single byte per action (0-255).</p>
+<p>The <a href="">message-builder</a> class has a parameter for any options that you wish to pass to the final message function, in this case we store how many actions are in the message and wether we are removing or adding items.</p>
+<p>After the message has been fully built out, we can call a function to either add or remove:</p>
+<pre><code class="lang-javascript">  /**
+   * Handles item addition
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {ItemSchemaJS[]} items - The items to be added
+   */
+  static AddItems(user, res, items) {
+    //Update the local inventory items
+    user.databaseData.Inventory.Items =
+      user.databaseData?.Inventory?.Items?.concat?.(items);
+
+    //Fire off a request to save the data into the database
+    user.databaseData
+      .save()
+      .then((saved) =&gt; {
+        //If it saved then respond with succeeded message
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Added_item, items)
+        );
+      })
+      .catch((error) =&gt; {
+        logger.warn(error);
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Server_Error)
+        );
+      });
+  }
+
+  /**
+   * Handles item removal
+   * @param {UserConnectionData} user - The user this message is for
+   * @param {*} res
+   * @param {int[]} indices - The item indexes to be removed
+   */
+  static RemoveItems(user, res, indices) {
+    /* sort all of the indices by largets first so that when we remove
+       any items it wont affect the rest of the indices position
+       and remove any indices that are above the actual inventory item count */
+    indices = indices.sort((a, b) =&gt; {
+      return a - b;
+    }).filter(
+      (index) =&gt; index &lt; (user.databaseData?.Inventory?.Items.length ?? 0)
+    );
+
+    //If there are no indices left then we don&#39;t need to message the database, so respond
+    if (indices.length == 0) {
+      return ResponseHandler.HandleResponse(
+        user,
+        res,
+        new ResponseData(ResponseTypes.Removed_item, indices)
+      );
+    }  
+
+    //Remove all of the incides
+    indices.forEach((index) =&gt; {
+      user.databaseData?.Inventory?.Items?.splice?.(index, 1);
+    });
+
+    //Fire off a request to save the data into the database
+    user.databaseData
+      .save()
+      .then((saved) =&gt; {
+        //If it saved then respond with succeeded message
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Removed_item, indices)
+        );
+      })
+      .catch((error) =&gt; {
+        logger.warn(error);
+        ResponseHandler.HandleResponse(
+          user,
+          res,
+          new ResponseData(ResponseTypes.Server_Error)
+        );
+      });
+  }
+}
+</code></pre><p>and that&#39;s it, implementing the adding/removing of items was a lot easier to do due to having the message building all fleshed out in the login section</p>
+<h2 id="step-7-implementing-vrc-ui-display-for-all-of-the-above-code">Step 7. Implementing VRC UI Display for all of the above code</h2>
+<p>In order to easily display that the client&#39;s inputs are actually working, I decided to display them in text for the client to see.</p>
+<p>The first thing I need for this, is to create a <a class="xref" href="../api/Joshf67.ServerConnector.Server.ServerResponse.html">ServerResponse</a> to handle the response from the NodeJS server inside VRC, this will be a very simple response that I will hardcode a response message for based on what the server should respond with:</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Example response to show how to handle server responses
+/// &lt;/summary&gt;
+public class ExampleServerResponse : ServerResponse
+{
+
+    /// &lt;summary&gt;
+    /// Handles the parsed message
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;response&quot;&gt; The JSON DataDictionary to be handled &lt;/param&gt;
+    /// &lt;param name=&quot;HandleResult&quot;&gt; The result of the ServerRespons handler &lt;/param&gt;
+    /// &lt;returns&gt; Boolean if the response was parsed properly &lt;/returns&gt;
+    override protected bool HandleResponse(DataDictionary response, out DataToken HandleResult)
+    {
+        HandleResult = new DataToken(DataError.None);
+        bool messageWasParsedSucessfully = false;
+
+        if (Type == ServerResponseType.Login_Failed)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a login failed type&quot;);
+
+            //The login has failed for some reason, so we need to display this to the user
+            HandleResult = new DataToken(&quot;Login credentials are invalid, please try again or create an account&quot;);
+        }
+        else if (Type == ServerResponseType.Login_Updated)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a login update type&quot;);
+
+            //Server sends message with a string response so this will display the bits remaining until login completion
+            messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.String, out HandleResult);
+        }
+        else if (Type == ServerResponseType.Login_Complete)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a login complete type&quot;);
+
+            messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.DataDictionary, out HandleResult);
+        }
+        else if (Type == ServerResponseType.Account_Creation_Complete)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a account creation complete type&quot;);
+
+             messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.DataDictionary, out HandleResult);
+        }
+        else if (Type == ServerResponseType.Item_Updated)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a item update type&quot;);
+
+            //Server sends message with a string response so this will display the bits remaining until item adding/remove message completion
+            messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.String, out HandleResult);
+        }
+        else if (Type == ServerResponseType.Added_Item)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a Added item type&quot;);
+
+            messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.DataList, out HandleResult);
+        }
+        else if (Type == ServerResponseType.Removed_Item)
+        {
+            if (DevelopmentManager.IsServerResponseEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;ServerExampleResponse is handling a Removed item type&quot;);
+
+            messageWasParsedSucessfully = response.TryGetValue(&quot;response&quot;, TokenType.DataList, out HandleResult);
+        }
+
+        return !messageWasParsedSucessfully;
+    }
+}
+</code></pre><p>Now that I have something that will store the response from the server, I can continue onto modifying my &quot;ExampleDatabaseConnector&quot; to handle this <a class="xref" href="../api/Joshf67.ServerConnector.Server.ServerResponse.html">ServerResponse</a>:</p>
+<pre><code class="lang-csharp">
+    /// &lt;summary&gt;
+    /// The field used to display all the user&#39;s items
+    /// &lt;/summary&gt;
+    public Text itemField;
+
+    /// &lt;summary&gt;
+    /// The field used to display the server&#39;s responses to the user
+    /// &lt;/summary&gt;
+    public Text responseField;
+
+    /// &lt;summary&gt;
+    /// The server response handler to be used for this example
+    /// &lt;/summary&gt;
+    public ExampleServerResponse ExampleResponseParser;
+
+    private DataList items = new DataList();
+
+    /// &lt;summary&gt;
+    /// Take a UserSchema and setup the display for the data
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;userData&quot;&gt; The user data to use with the setup &lt;/param&gt;
+    private void SetupUserData(DataToken userData)
+    {
+        //This is basically the same as the user schema on the server but in C#
+        if (!UserSchema.IsUserSchema(userData, out DataDictionary userSchema))
+        {
+            if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+                Debug.Log(&quot;Trying to setup user data with invalid data, is not UserSchema&quot;);
+
+            return;
+        }
+
+        currency = InvetorySchema.GetCurrency(userData);
+        items.Clear();
+        items = InvetorySchema.GetInventoryItems(userData);
+
+        RenderInventoryText();
+    }
+
+    /// &lt;summary&gt;
+    /// Renders out the inventory to the display
+    /// &lt;/summary&gt;
+    private void RenderInventoryText()
+    {
+        itemField.text = $&quot;Currency: {currency}\n&quot;;
+        for (int i = 0; i &lt; items.Count; i++)
+        {
+            itemField.text += $&quot;Item {i}: {ItemSchema.GetItemID(items[i])}\n&quot;;
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Accept any responses from the server and handle them
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;response&quot;&gt; The response from the server &lt;/param&gt;
+    public override void HandleMessage(string response)
+    {
+
+        if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+            Debug.Log(&quot;Server message has been recieved and is being handled by example connector&quot;);
+
+        ExampleResponseParser.Parse(response, out DataToken HandlerResult);
+        switch (ExampleResponseParser.Type)
+        {
+            case ServerResponseType.Login_Updated:
+                responseField.text = $&quot;Recieved a login update message with the response: {HandlerResult.String}&quot;;
+                break;
+
+            case ServerResponseType.Login_Complete:
+                SetupUserData(ExampleResponseParser.Content);
+                responseField.text = $&quot;Recieved a login complete message with the response: {UserSchema.GetLoginHash(HandlerResult.DataDictionary)}&quot;;
+                break;
+
+            case ServerResponseType.Login_Failed:
+                responseField.text = $&quot;Recieved a login failed message with the response: {HandlerResultString}&quot;;
+                break;
+
+            case ServerResponseType.Account_Creation_Complete:
+                responseField.text = $&quot;Recieved a account creation succeeded message with the response:{UserSchema.GetLoginHash(HandlerResult.DataDictionary)}&quot;;
+                break;
+
+            case ServerResponseType.Added_Item:
+                if (ExampleResponseParser.Content.TokenType == TokenType.DataList)
+                {
+                    for (int i = 0; i &lt; ExampleResponseParser.Content.DataList.Count; i++)
+                    {
+                        items.Add(ExampleResponseParser.Content.DataList[i].DataDictionary);
+                    }
+                }
+                else
+                {
+                    if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+                        Debug.Log(&quot;Server response has returned with an add item type but the message was in a incorrect format&quot;);
+                }
+                responseField.text = $&quot;Recieved a add item message adding items: {HandlerResult.DataList.Count}&quot;;
+                RenderInventoryText();
+                break;
+
+            case ServerResponseType.Removed_Item:
+                if (ExampleResponseParser.Content.TokenType == TokenType.DataList)
+                {
+                    for (int i = 0; i &lt; ExampleResponseParser.Content.DataList.Count; i++)
+                    {
+                        if (Convert.ToInt32(ExampleResponseParser.Content.DataList[i].Double) &lt; items.Count)
+                            items.RemoveAt(Convert.ToInt32(ExampleResponseParser.Content.DataList[i].Double));
+                    }
+                }
+                else
+                {
+                    if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+                        Debug.Log(&quot;Server response has returned with an remove item type but the message was in a incorrect format&quot;);
+                }
+                responseField.text = $&quot;Recieved a remove item message removing items: {HandlerResult.DataList.Count}&quot;;
+                RenderInventoryText();
+                break;
+            default:
+                if (DevelopmentManager.IsConnectorEnabled(DevelopmentMode.Basic))
+                    Debug.Log(&quot;Server response has returned with an unhandle type: &quot; + ExampleResponseParser.Type);
+                responseField.text = &quot;Recieved an invalid message response type&quot;;
+                break;
+        }
+    }
+</code></pre><p>And that&#39;s it, I can now link up the text fields and whenever the &quot;ExampleDatabaseConnector&quot; recieves a message it should render it to a display that makes sense for the user</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This was kind of complicated to implement, however once you have a single bit of logic built, you can copy and paste a lot of the code into other logic to expand on this greatly.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>As you might have noticed, I have left out the currency value from the example, why don&#39;t you try to use what I&#39;ve shown above and implement a way to increase/decrease/set this value and have it be displayed on the user&#39;s side.</p>
 </article>
           </div>
           

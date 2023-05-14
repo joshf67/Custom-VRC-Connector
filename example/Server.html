@@ -102,6 +102,31 @@
             <td> This is the bit length of the entire message (including MESSAGE_TYPE_BITS) </td>
         </tr>
         <tr>
+            <td> DATABASE_URL </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The URL of the database, for example &quot;mongodb+srv://<strong>.</strong>.mongodb.net/**&quot; </td>
+        </tr>
+        <tr>
+            <td> DATABASE_NAME </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The name of the MongoDB collection to be used for the Database </td>
+        </tr>
+        <tr>
+            <td> DATABASE_CONNECTION_TIMEOUT </td>
+            <td> <a href="xref:System.Int">Int</a> </td>
+            <td> The total time in MS until a stalled database connection fails </td>
+        </tr>
+        <tr>
+            <td> DATABASE_USER_CERT </td>
+            <td> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a> </td>
+            <td> The location (relative to initial folder) of the MongoDB login certificate </td>
+        </tr>
+        <tr>
+            <td> LOGIN_HASH_CHARACTERS </td>
+            <td> <a href="xref:System.Int">Int</a> </td>
+            <td> This is the length required for a VRC user&#39;s login to the database </td>
+        </tr>
+        <tr>
             <td> PRUNE_INACTIVE_TIME_MINUTES </td>
             <td> <a href="xref:System.Int">String</a> </td>
             <td> Controls how long a VRC user has to not message for them to be pruned(removed) from the connect user storage </td>
@@ -119,7 +144,15 @@
 MESSAGE_TYPE_BITS=4
 MESSAGE_BITS_LENGTH=21
 
+DATABASE_URL=&quot;mongodb+srv://xxxx.xxxx.mongodb.net/RPGDatabase&quot;
+DATABASE_NAME=&quot;RPGDatabase&quot;
+DATABASE_CONNECTION_TIMEOUT=2000
+DATABASE_USER_CERT=&quot;Mongodb/mongo.pem&quot;
+
+LOGIN_HASH_CHARACTERS=9
+
 PRUNE_INACTIVE_TIME_MINUTES=30
+
 DEVELOPMENT_MODE=true
 </code></pre><p><br></p>
 <h2 id="modifying-the-servers-listening-url">Modifying The Server&#39;s Listening URL</h2>
@@ -135,7 +168,7 @@ app.use(&#39;/sendMessage=*&#39;, ServerConnector.HandleConnection); // &lt;----
 app.use(function(req, res, next) {
   next(createError(404));
 });
-</code></pre><p><span style="color:red"> Don&#39;t forget to update the <a href="VRC.html">VRC URL settings</a></span></p>
+</code></pre><p><span style="color:red"> Don&#39;t forget to update the <a href="VRC.md">VRC URL settings</a></span></p>
 </article>
           </div>
           
@@ -144,7 +177,7 @@ app.use(function(req, res, next) {
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Documentation/manual/Server.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/joshf67/Custom-VRC-Connector/blob/main/Documentation/example/Server.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

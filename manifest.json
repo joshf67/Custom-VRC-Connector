@@ -264,35 +264,42 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "example/ExtraFunctionality.md",
-      "output": {
-        ".html": {
-          "relative_path": "example/ExtraFunctionality.html",
-          "hash": "m1uUBn3fyDOpUd7aeXdaVMkBdl4t+dOEgPXi8J2K9PI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "example/Introduction.md",
       "output": {
         ".html": {
           "relative_path": "example/Introduction.html",
-          "hash": "Gi0biD7UWtxVLVMxeLwvQwttgOKSEqgI5fFJL65KR8Q="
+          "hash": "bL57T3KkWj1YVmqz1if7ed+ZOgrJKrts+mxXM1uHzas="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink",
+        "UidNotFound"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "example/Server.md",
+      "output": {
+        ".html": {
+          "relative_path": "example/Server.html",
+          "hash": "8LoUJsIAa/qJvOyIBerNwrCRVnhPeM5/6UBqbaUGLcw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "example/toc.yml",
       "output": {
         ".html": {
           "relative_path": "example/toc.html",
-          "hash": "6k9YGJtspy+ATVRxPFDnehfOnVkfUDQvXenSKjcVQE4="
+          "hash": "FBYd8eQdrexb8l5r/+Qk69n0EWhU+KHlmsk9Utl7zWk="
         }
       },
       "is_incremental": false,
@@ -304,7 +311,7 @@
       "output": {
         ".html": {
           "relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html",
-          "hash": "jwYMr8HRkMcRlwq5cFSh8QrAvxr9ZIWVOC9hymO77M4="
+          "hash": "Deg2xYQijrwDbzq3pv4VcCg2o2PoXUSZAviCCmOC+YI="
         }
       },
       "is_incremental": false,
@@ -403,7 +410,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Wzmy8SeisWe9wYjp8dFxhLka6MOX89IlB4D34rv3aeY="
+          "hash": "Uzet+yDEhvqF9XZTzgNRTWLkVROLPIQtCji5U08D4U4="
         }
       },
       "is_incremental": false,
@@ -411,15 +418,14 @@
     },
     {
       "log_codes": [
-        "InvalidFileLink",
-        "UidNotFound"
+        "InvalidFileLink"
       ],
       "type": "Conceptual",
       "source_relative_path": "manual/APIIntroduction.md",
       "output": {
         ".html": {
           "relative_path": "manual/APIIntroduction.html",
-          "hash": "2zAjD84oksn86jNUz3YygpY33tnZAyACTzL15VaV7qU="
+          "hash": "krEvrs9zM6y0iTbQZXVlFrjrZpMNoJS1QppfXiKet4Y="
         }
       },
       "is_incremental": false,
@@ -434,7 +440,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/Server.html",
-          "hash": "Vgzvv+IdWK5ow3JF8j8HlLnhrjr1y4kvo5Gt6iyMtKM="
+          "hash": "CWJXOBDurYqf7jOaRjO5taPbd0XIW8UeUBcZrqG9a6g="
         }
       },
       "is_incremental": false,
@@ -496,6 +502,28 @@
       "output": {
         "resource": {
           "relative_path": "resources/ExampleScriptingApi.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example/MongoDB_Cert.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example/MongoDB_Cert.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/example/MongoDB_Cert_Folder.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/example/MongoDB_Cert_Folder.png"
         }
       },
       "is_incremental": false,
