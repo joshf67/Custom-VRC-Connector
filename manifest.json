@@ -335,6 +335,42 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "example/ExtraFunctionality.md",
+      "output": {
+        ".html": {
+          "relative_path": "example/ExtraFunctionality.html",
+          "hash": "YTeIhwTi34iK6AkVv/SxFxBYtpBpsxOhad/24g+mW4s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "example/Introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "example/Introduction.html",
+          "hash": "Wb7d/uE/kqddkh8EbBFa15e4cmjygaR2QhnEvR4gaDM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "example/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "example/toc.html",
+          "hash": "6k9YGJtspy+ATVRxPFDnehfOnVkfUDQvXenSKjcVQE4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "example_api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.yml",
       "output": {
@@ -506,7 +542,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "2z05L+IFc5Rmiqpe5NBKDwdK45txuS23425UCjNX3OM="
+          "hash": "kGAIx4zfFApGqsYCr5ntHNPh4gq2qgbn4sSTRXtk63g="
         }
       },
       "is_incremental": false,
@@ -527,7 +563,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
