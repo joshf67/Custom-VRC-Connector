@@ -263,21 +263,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
-      "type": "Toc",
-      "source_relative_path": "database-node-server/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "database-node-server/toc.html",
-          "hash": "jfSETwjqY++v3rOk+Ccu+YxdAB4SOQQupOWprBfZAOA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "example/Introduction.md",
       "output": {
@@ -542,15 +527,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "qWoaUlAITEvAL3io47icJjB/E5FTOYb3/1+oqivHP58="
+          "hash": "TYCGj00t1pFS6V1uXnB4FuVmHOw2wrjBWF4P/GUqyVQ="
         }
       },
       "is_incremental": false,
