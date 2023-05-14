@@ -1,10 +1,10 @@
 # VRC Server Connector Introduction
 
-[Skip to the API explanation?]
+[Skip to the API explanation?](APIIntroduction.md)
 
 ## What?
 
-VRC Server Connector is an API that allows your to send and recieve arbitrary messages to/from external servers
+VRC Server Connector is an API that allows your to send and recieve arbitrary messages to/from external servers.
 
 ## Why?
 
@@ -34,7 +34,7 @@ An external NodeJS server is set up to listen to requests from [String](https://
 
 - Small messages are not optimized due to the [String](https://docs.vrchat.com/docs/string-loading) loader being required for the first and last message to read the response.
 
-- Each bit of data that you want to send needs to be accounted for as a VRCUrl. This means that larger message sizes require exponentially more VRCUrls. This increases world build times and will increase the world filesize, From some initial tests each VRCUrl takes [0.02ms and 1.15 bytes to build](VRCUrlTesting.md)
+- Each bit of data that you want to send needs to be accounted for as a VRCUrl. This means that larger message sizes require exponentially more VRCUrls. This increases world build times and will increase the world filesize, From some initial tests each VRCUrl takes [0.02ms and 1.15 bytes to build](VRCUrlTesting.md).
 
 - Handling individual bits and trying to communicate with limited bandwidth requires some creative thinking and is not a drag-and-drop solution.
 
@@ -45,3 +45,15 @@ An external NodeJS server is set up to listen to requests from [String](https://
 - Currently only the [String](https://docs.vrchat.com/docs/string-loading) loader is used to handle responses, this means the first and last requests require it, so you have to wait 5s for them before starting a new message, and other slowdowns due to this.
 
 - Converting Objects aren't supported the best, this may cause some issues with custom data types that cannot fit inside DataTokens.
+
+## Credits:
+
+- Gorialis - [UdonHashLib](https://github.com/Gorialis/vrchat-udon-hashlib) used for hashing login data in the example project
+
+- Hax - For the initial MessagePacker script, original FFMPEG response (no longer used), general help and suggestions on methods to use
+
+- @Merlin - Creating UdonSharp and for general help with bugs/issues
+
+- @GlitchyDev, @Miner28 and @BocuD - [AvatarImageReader](https://github.com/Miner28/AvatarImageReader) code to read in data from a render texture (old video player method, no longer used, but thanks is still deserved)
+
+- The U# Discord for everyone that has made any suggestions or comments during the development of this API

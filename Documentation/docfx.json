@@ -12,7 +12,6 @@
                     ]
                 }
             ],
-            "filter": "filterConfig.yml",
             "dest": "api"
         },
         {
@@ -25,11 +24,7 @@
                 }
             ],
             "globalNamespaceId": "Joshf67.ServerConnector.Example",
-            "filter": "filterConfig.yml",
-            "dest": "example_api",
-            "references": [
-                "Unity/Assets/Scripts/ServerConnector/**.cs"
-            ]
+            "dest": "example_api"
         }
     ],
     "build": {
