@@ -2,5 +2,7 @@
   href: manual/
 - name: Scripting API
   href: api/
+- name: Example Manual
+  href: example/
 - name: Scripting Example API
   href: example_api/

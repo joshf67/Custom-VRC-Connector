@@ -44,9 +44,7 @@ app.use(nocache());
 app.use('/', indexRouter);
 
 //ignore favicon
-app.use("/favicon.ico", function() {
-  
-});
+app.use("/favicon.ico", function() {});
 
 //Bind all messages to custom server logic
 app.use('/sendMessage=*', ServerConnector.HandleConnection);

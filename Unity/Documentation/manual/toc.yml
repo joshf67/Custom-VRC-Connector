@@ -1,4 +1,6 @@
-- name: Coniunctis nec qui
-  href: coniunctis.md
-- name: Etiam nantemque exul
-  href: etiam.md
+- name: Introduction
+  href: Introduction.md
+- name: Configuring The Server
+  href: Server.md
+- name: Configuring VRC
+  href: VRC.md

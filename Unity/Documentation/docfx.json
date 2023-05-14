@@ -26,7 +26,10 @@
             ],
             "globalNamespaceId": "Joshf67.ServerConnector.Example",
             "filter": "filterConfig.yml",
-            "dest": "example_api"
+            "dest": "example_api",
+            "references": [
+                "Assets/Scripts/ServerConnector/**.cs"
+            ]
         }
     ],
     "build": {
@@ -43,6 +46,14 @@
                 ]
             },
             {
+                "src": "manual",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "manual"
+            },
+            {
                 "src": "api",
                 "files": [
                     "*.yml"
@@ -50,19 +61,19 @@
                 "dest": "api"
             },
             {
+                "src": "example",
+                "files": [
+                    "toc.yml",
+                    "*.md"
+                ],
+                "dest": "example"
+            },
+            {
                 "src": "example_api",
                 "files": [
                     "*.yml"
                 ],
                 "dest": "example_api"
-            },
-            {
-                "src": "manual",
-                "files": [
-                    "toc.yml",
-                    "*.md"
-                ],
-                "dest": "manual"
             }
         ],
         "overwrite": [
