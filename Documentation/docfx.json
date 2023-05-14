@@ -55,8 +55,9 @@
     "resource": [
       {
         "files": [
-            "resources/**/*",
-            "../nodejs-servers/**/docs/**/*"
+          "resources/**/*",
+          "base-server/**/*",
+          "database-server/**/*"
         ]
       }
     ],
