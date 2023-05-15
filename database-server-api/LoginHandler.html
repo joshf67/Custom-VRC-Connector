@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class exports
+    <title>Class LoginHandler
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class exports
+    <meta name="title" content="Class LoginHandler
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,87 +78,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="database-nodejs-server.module.exports">
+            <article class="content wrap" id="_content" data-uid="database-nodejs-server.LoginHandler">
   
   
-  <h1 id="database_nodejs_server_module_exports" data-uid="database-nodejs-server.module.exports">Class exports
+  <h1 id="database_nodejs_server_LoginHandler" data-uid="database-nodejs-server.LoginHandler">Class LoginHandler
   </h1>
-  <div class="markdown level0 summary"><p>Stores any user related data</p>
+  <div class="markdown level0 summary"><p>Class to handle building and handling login requests from the VRC client</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="database_nodejs_server_module_exports__ctor" data-uid="database-nodejs-server.module.exports.#ctor">exports()</h4>
+  <h4 id="database_nodejs_server_LoginHandler__ctor" data-uid="database-nodejs-server.LoginHandler.#ctor">LoginHandler()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">new exports()</code></pre>
+    <pre><code class="lang-js hljs">new LoginHandler()</code></pre>
   </div>
-  <h3 id="members">Members
-  </h3>
-  
-  
-  <h4 id="database_nodejs_server_module_exports_databaseData" data-uid="database-nodejs-server.module.exports#databaseData">databaseData</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">databaseData</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Document</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="database_nodejs_server_module_exports_Message" data-uid="database-nodejs-server.module.exports#Message">Message</h4>
-  <div class="markdown level1 summary"><p>Binary string</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">Message</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Array.&lt;String&gt;</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="functions">Functions
   </h3>
   
   
-  <h4 id="database_nodejs_server_module_exports_HandleResponse" data-uid="database-nodejs-server.module.exports#HandleResponse">HandleResponse(user, response, res)</h4>
-  <div class="markdown level1 summary"><p>Handles sending off a response to a user</p>
+  <h4 id="database_nodejs_server_LoginHandler_HandleInitialMessage" data-uid="database-nodejs-server.LoginHandler.HandleInitialMessage">HandleInitialMessage(user, res, message, creatingAccount)</h4>
+  <div class="markdown level1 summary"><p>Handles the first login related message and sets up a user&#39;s expecting data</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function HandleResponse(user, response, res)</code></pre>
+    <pre><code class="lang-js hljs">function HandleInitialMessage(user, res, message, creatingAccount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,19 +120,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">database-nodejs-server.UserConnectionData</span></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
         <td><em>user</em></td>
         <td>
-          <p>The user to send the response to</p>
-
-          
-        </td>
-      </tr>
-      <tr>
-        <td><span class="xref">database-nodejs-server.ResponseData</span></td>
-        <td><em>response</em></td>
-        <td>
-          <p>The response content</p>
+          <p>The user this message is for</p>
 
           
         </td>
@@ -192,7 +132,24 @@
         <td><span class="xref">database-nodejs-server.*</span></td>
         <td><em>res</em></td>
         <td>
-          <p>The express response</p>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="URLMessage.html#database_nodejs_server_URLMessage">URLMessage</a></td>
+        <td><em>message</em></td>
+        <td>
+          <p>The parsed message from the connection</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.bool</span></td>
+        <td><em>creatingAccount</em></td>
+        <td>
+          <p>Controls if the login hash will be used to create a new user</p>
 
           
         </td>
@@ -201,13 +158,13 @@
   </table>
   
   
-  <h4 id="database_nodejs_server_module_exports_SucceedResponse" data-uid="database-nodejs-server.module.exports#SucceedResponse">SucceedResponse(user, res)</h4>
-  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static succeed value</p>
+  <h4 id="database_nodejs_server_LoginHandler_HandleMessageUpdate" data-uid="database-nodejs-server.LoginHandler.HandleMessageUpdate">HandleMessageUpdate(user, res, bitsRemaining)</h4>
+  <div class="markdown level1 summary"><p>Handles login related messages that add to the login hash</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function SucceedResponse(user, res)</code></pre>
+    <pre><code class="lang-js hljs">function HandleMessageUpdate(user, res, bitsRemaining)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -220,10 +177,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">database-nodejs-server.UserConnectionData</span></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
         <td><em>user</em></td>
         <td>
-          <p>The user to send the response to</p>
+          <p>The user this message is for</p>
 
           
         </td>
@@ -233,6 +190,15 @@
         <td><em>res</em></td>
         <td>
           
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>bitsRemaining</em></td>
+        <td>
+          <p>The bits remaining until the message is complete</p>
+
           
         </td>
       </tr>
@@ -240,13 +206,13 @@
   </table>
   
   
-  <h4 id="database_nodejs_server_module_exports_FailResponse" data-uid="database-nodejs-server.module.exports#FailResponse">FailResponse(user, res)</h4>
-  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static failed value</p>
+  <h4 id="database_nodejs_server_LoginHandler_HandleMessageFinish" data-uid="database-nodejs-server.LoginHandler.HandleMessageFinish">HandleMessageFinish(user, res, fullMessageBits, options)</h4>
+  <div class="markdown level1 summary"><p>Handles finishing up login related messages to build up a user login hash</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function FailResponse(user, res)</code></pre>
+    <pre><code class="lang-js hljs">function HandleMessageFinish(user, res, fullMessageBits, options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,10 +225,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">database-nodejs-server.UserConnectionData</span></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
         <td><em>user</em></td>
         <td>
-          <p>The user to send the response to</p>
+          <p>The user this message is for</p>
 
           
         </td>
@@ -272,6 +238,24 @@
         <td><em>res</em></td>
         <td>
           
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.Array.&lt;string&gt;</span></td>
+        <td><em>fullMessageBits</em></td>
+        <td>
+          <p>The message in a string binary array</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>options</em></td>
+        <td>
+          <p>The options passed to the message builder on creation</p>
+
           
         </td>
       </tr>
@@ -279,13 +263,13 @@
   </table>
   
   
-  <h4 id="database_nodejs_server_module_exports_ResendResponse" data-uid="database-nodejs-server.module.exports#ResendResponse">ResendResponse(user, res)</h4>
-  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static resend value</p>
+  <h4 id="database_nodejs_server_LoginHandler_HandleLogin" data-uid="database-nodejs-server.LoginHandler.HandleLogin">HandleLogin(user, res)</h4>
+  <div class="markdown level1 summary"><p>Sends off a request to the database to get a user and responds with the result</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function ResendResponse(user, res)</code></pre>
+    <pre><code class="lang-js hljs">function HandleLogin(user, res)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -298,10 +282,10 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">database-nodejs-server.UserConnectionData</span></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
         <td><em>user</em></td>
         <td>
-          <p>The user to send the response to</p>
+          <p>The user data that contains all required info</p>
 
           
         </td>
@@ -310,7 +294,48 @@
         <td><span class="xref">database-nodejs-server.*</span></td>
         <td><em>res</em></td>
         <td>
+          <p>The express response for the user</p>
+
           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="database_nodejs_server_LoginHandler_HandleAccountCreation" data-uid="database-nodejs-server.LoginHandler.HandleAccountCreation">HandleAccountCreation(user, res)</h4>
+  <div class="markdown level1 summary"><p>Sends off a request to the database to generate a user and responds with the result</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function HandleAccountCreation(user, res)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user data that contains all required info</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          <p>The express response for the user</p>
+
           
         </td>
       </tr>

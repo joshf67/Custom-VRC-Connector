@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MessageHandler
+    <title>Class ResponseHandler
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MessageHandler
+    <meta name="title" content="Class ResponseHandler
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,36 +78,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="base-nodejs-server.MessageHandler">
+            <article class="content wrap" id="_content" data-uid="database-nodejs-server.ResponseHandler">
   
   
-  <h1 id="base_nodejs_server_MessageHandler" data-uid="base-nodejs-server.MessageHandler">Class MessageHandler
+  <h1 id="database_nodejs_server_ResponseHandler" data-uid="database-nodejs-server.ResponseHandler">Class ResponseHandler
   </h1>
-  <div class="markdown level0 summary"><p>Class that handles the entry point for a message from VRC to the Server</p>
+  <div class="markdown level0 summary"><p>Class that handles responding to a user</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="base_nodejs_server_MessageHandler__ctor" data-uid="base-nodejs-server.MessageHandler.#ctor">MessageHandler()</h4>
+  <h4 id="database_nodejs_server_ResponseHandler__ctor" data-uid="database-nodejs-server.ResponseHandler.#ctor">ResponseHandler()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">new MessageHandler()</code></pre>
+    <pre><code class="lang-js hljs">new ResponseHandler()</code></pre>
   </div>
   <h3 id="functions">Functions
   </h3>
   
   
-  <h4 id="base_nodejs_server_MessageHandler_HandleMessage" data-uid="base-nodejs-server.MessageHandler.HandleMessage">HandleMessage(user, req, res)</h4>
-  <div class="markdown level1 summary"><p>Entry for server handling message requests</p>
+  <h4 id="database_nodejs_server_ResponseHandler_HandleResponse" data-uid="database-nodejs-server.ResponseHandler.HandleResponse">HandleResponse(user, response, res)</h4>
+  <div class="markdown level1 summary"><p>Handles sending off a response to a user</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function HandleMessage(user, req, res)</code></pre>
+    <pre><code class="lang-js hljs">function HandleResponse(user, response, res)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -120,29 +120,146 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UserConnectionData.html#base_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
         <td><em>user</em></td>
         <td>
-          <p>The user data for this connected user</p>
+          <p>The user to send the response to</p>
 
           
         </td>
       </tr>
       <tr>
-        <td><span class="xref">base-nodejs-server.*</span></td>
-        <td><em>req</em></td>
+        <td><a class="xref" href="ResponseData.html#database_nodejs_server_ResponseData">ResponseData</a></td>
+        <td><em>response</em></td>
         <td>
-          <p>The current express request</p>
+          <p>The response content</p>
 
           
         </td>
       </tr>
       <tr>
-        <td><span class="xref">base-nodejs-server.*</span></td>
+        <td><span class="xref">database-nodejs-server.*</span></td>
         <td><em>res</em></td>
         <td>
           <p>The express response</p>
 
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="database_nodejs_server_ResponseHandler_SucceedResponse" data-uid="database-nodejs-server.ResponseHandler.SucceedResponse">SucceedResponse(user, res)</h4>
+  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static succeed value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function SucceedResponse(user, res)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user to send the response to</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="database_nodejs_server_ResponseHandler_FailResponse" data-uid="database-nodejs-server.ResponseHandler.FailResponse">FailResponse(user, res)</h4>
+  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static failed value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function FailResponse(user, res)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user to send the response to</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="database_nodejs_server_ResponseHandler_ResendResponse" data-uid="database-nodejs-server.ResponseHandler.ResendResponse">ResendResponse(user, res)</h4>
+  <div class="markdown level1 summary"><p>Responds to a user&#39;s request with a static resend value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function ResendResponse(user, res)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user to send the response to</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
           
         </td>
       </tr>

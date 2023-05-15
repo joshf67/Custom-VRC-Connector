@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MessageBuilder
+    <title>Class UserConnectionData
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MessageBuilder
+    <meta name="title" content="Class UserConnectionData
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,88 +78,25 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="base-nodejs-server.MessageBuilder">
+            <article class="content wrap" id="_content" data-uid="database-nodejs-server.UserConnectionData">
   
   
-  <h1 id="base_nodejs_server_MessageBuilder" data-uid="base-nodejs-server.MessageBuilder">Class MessageBuilder
+  <h1 id="database_nodejs_server_UserConnectionData" data-uid="database-nodejs-server.UserConnectionData">Class UserConnectionData
   </h1>
-  <div class="markdown level0 summary"><p>Stores data for a message&#39;s generation</p>
+  <div class="markdown level0 summary"><p>Stores any user related data</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="base_nodejs_server_MessageBuilder__ctor" data-uid="base-nodejs-server.MessageBuilder.#ctor">MessageBuilder()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">new MessageBuilder()</code></pre>
-  </div>
-  <h3 id="members">Members
-  </h3>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_updateCallback" data-uid="base-nodejs-server.MessageBuilder#updateCallback">updateCallback</h4>
-  <div class="markdown level1 summary"><p>Used to store the callback to call everytime the builder recieves a request</p>
+  <h4 id="database_nodejs_server_UserConnectionData__ctor" data-uid="database-nodejs-server.UserConnectionData.#ctor">UserConnectionData(ipHash)</h4>
+  <div class="markdown level1 summary"><p>Constructs a class to store all user connection data</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">updateCallback</code></pre>
-  </div>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_finishCallback" data-uid="base-nodejs-server.MessageBuilder#finishCallback">finishCallback</h4>
-  <div class="markdown level1 summary"><p>Used to store the final callback that will be called when the request is built</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">finishCallback</code></pre>
-  </div>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_messageBits" data-uid="base-nodejs-server.MessageBuilder#messageBits">messageBits</h4>
-  <div class="markdown level1 summary"><p>Used to store the request&#39;s bits that have been read</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">messageBits</code></pre>
-  </div>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_messageLength" data-uid="base-nodejs-server.MessageBuilder#messageLength">messageLength</h4>
-  <div class="markdown level1 summary"><p>Used to store how many bits this builder should read before finishing</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">messageLength</code></pre>
-  </div>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_options" data-uid="base-nodejs-server.MessageBuilder#options">options</h4>
-  <div class="markdown level1 summary"><p>Used to store any options to be passed to the final finishCallback</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">options</code></pre>
-  </div>
-  <h3 id="functions">Functions
-  </h3>
-  
-  
-  <h4 id="base_nodejs_server_MessageBuilder_AddMessageBytes" data-uid="base-nodejs-server.MessageBuilder#AddMessageBytes">AddMessageBytes(message)</h4>
-  <div class="markdown level1 summary"><p>Handles building up the message</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">function AddMessageBytes(message)</code></pre>
+    <pre><code class="lang-js hljs">new UserConnectionData(ipHash)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,16 +109,125 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">base-nodejs-server.Array.&lt;byte&gt;</span></td>
-        <td><em>message</em></td>
+        <td><span class="xref">string</span></td>
+        <td><em>ipHash</em></td>
         <td>
-          <p>the character bytes to add to the message</p>
+          <p>The IP of the user hashed to anonymize it</p>
 
           
         </td>
       </tr>
     </tbody>
   </table>
+  <h3 id="members">Members
+  </h3>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_ipHash" data-uid="database-nodejs-server.UserConnectionData#ipHash">ipHash</h4>
+  <div class="markdown level1 summary"><p>Stores a hashed version of the user&#39;s IP that randomizes every server restart</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">ipHash</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_lastMessageTime" data-uid="database-nodejs-server.UserConnectionData#lastMessageTime">lastMessageTime</h4>
+  <div class="markdown level1 summary"><p>Stores the last time that a server recieved a message from a user</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">lastMessageTime</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_lastMessage" data-uid="database-nodejs-server.UserConnectionData#lastMessage">lastMessage</h4>
+  <div class="markdown level1 summary"><p>Store the last sent response from the user incase it needs to be resent</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">lastMessage</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_expectingDataCallback" data-uid="database-nodejs-server.UserConnectionData#expectingDataCallback">expectingDataCallback</h4>
+  <div class="markdown level1 summary"><p>Store a function that allows the user to continue a response from multiple messages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">expectingDataCallback</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_clearExpectingDataCallback" data-uid="database-nodejs-server.UserConnectionData#clearExpectingDataCallback">clearExpectingDataCallback</h4>
+  <div class="markdown level1 summary"><p>Stores a function that allows the user to cleanup any expecting data functions if required</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">clearExpectingDataCallback</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_expectingDataState" data-uid="database-nodejs-server.UserConnectionData#expectingDataState">expectingDataState</h4>
+  <div class="markdown level1 summary"><p>Stores the current state of the user when the server is expecting data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">expectingDataState</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_userHash" data-uid="database-nodejs-server.UserConnectionData#userHash">userHash</h4>
+  <div class="markdown level1 summary"><p>Stores the user&#39;s database login details</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">userHash</code></pre>
+  </div>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_databaseData" data-uid="database-nodejs-server.UserConnectionData#databaseData">databaseData</h4>
+  <div class="markdown level1 summary"><p>Stores the user&#39;s mongoose database data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">databaseData</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Document</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="functions">Functions
+  </h3>
+  
+  
+  <h4 id="database_nodejs_server_UserConnectionData_ResetExpectingDataCallback" data-uid="database-nodejs-server.UserConnectionData#ResetExpectingDataCallback">ResetExpectingDataCallback()</h4>
+  <div class="markdown level1 summary"><p>Handle resetting any user connection data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function ResetExpectingDataCallback()</code></pre>
+  </div>
 </article>
           </div>
           

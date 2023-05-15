@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ConnectionHandler
+    <title>Class ItemHandler
    | Server Connector documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ConnectionHandler
+    <meta name="title" content="Class ItemHandler
    | Server Connector documentation ">
     <meta name="generator" content="docfx 2.59.4.0">
     
@@ -78,48 +78,36 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="database-nodejs-server.ConnectionHandler">
+            <article class="content wrap" id="_content" data-uid="database-nodejs-server.ItemHandler">
   
   
-  <h1 id="database_nodejs_server_ConnectionHandler" data-uid="database-nodejs-server.ConnectionHandler">Class ConnectionHandler
+  <h1 id="database_nodejs_server_ItemHandler" data-uid="database-nodejs-server.ItemHandler">Class ItemHandler
   </h1>
-  <div class="markdown level0 summary"><p>Class that handles all of the current active users on the server</p>
+  <div class="markdown level0 summary"><p>Class to handle building and handling item requests from the VRC client</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="database_nodejs_server_ConnectionHandler__ctor" data-uid="database-nodejs-server.ConnectionHandler.#ctor">ConnectionHandler()</h4>
+  <h4 id="database_nodejs_server_ItemHandler__ctor" data-uid="database-nodejs-server.ItemHandler.#ctor">ItemHandler()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">new ConnectionHandler()</code></pre>
-  </div>
-  <h3 id="members">Members
-  </h3>
-  
-  
-  <h4 id="database_nodejs_server_ConnectionHandler_Users" data-uid="database-nodejs-server.ConnectionHandler.Users">Users</h4>
-  <div class="markdown level1 summary"><p>Public static getter for the current users connected</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">Users</code></pre>
+    <pre><code class="lang-js hljs">new ItemHandler()</code></pre>
   </div>
   <h3 id="functions">Functions
   </h3>
   
   
-  <h4 id="database_nodejs_server_ConnectionHandler_AddUser" data-uid="database-nodejs-server.ConnectionHandler.AddUser">AddUser(ipHash)</h4>
-  <div class="markdown level1 summary"><p>Adds a user to the current users list</p>
+  <h4 id="database_nodejs_server_ItemHandler_HandleInitialMessage" data-uid="database-nodejs-server.ItemHandler.HandleInitialMessage">HandleInitialMessage(user, res, message)</h4>
+  <div class="markdown level1 summary"><p>Handles the first item related message and sets up a user&#39;s expecting data</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function AddUser(ipHash)</code></pre>
+    <pre><code class="lang-js hljs">function HandleInitialMessage(user, res, message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,41 +120,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">string</span></td>
-        <td><em>ipHash</em></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
         <td>
-          <p>The hashed version of the user&#39;s IP</p>
+          <p>The user this message is for</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.Array.&lt;String&gt;</span></td>
+        <td><em>message</em></td>
+        <td>
+          <p>The parsed message from the connection</p>
 
           
         </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td><p>the newly created UserConnectionData</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   
   
-  <h4 id="database_nodejs_server_ConnectionHandler_GetUser" data-uid="database-nodejs-server.ConnectionHandler.GetUser">GetUser(ipHash)</h4>
-  <div class="markdown level1 summary"><p>Gets a user from the current users lists</p>
+  <h4 id="database_nodejs_server_ItemHandler_HandleMessageUpdate" data-uid="database-nodejs-server.ItemHandler.HandleMessageUpdate">HandleMessageUpdate(user, res, bitsRemaining)</h4>
+  <div class="markdown level1 summary"><p>Handles item related messages</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function GetUser(ipHash)</code></pre>
+    <pre><code class="lang-js hljs">function HandleMessageUpdate(user, res, bitsRemaining)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -179,41 +168,42 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">string</span></td>
-        <td><em>ipHash</em></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
         <td>
-          <p>The hashed version of the user&#39;s IP</p>
+          <p>The user this message is for</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>bitsRemaining</em></td>
+        <td>
+          <p>The bits remaining until the message is complete</p>
 
           
         </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td><p>the UserConnectionData associated with the user</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   
   
-  <h4 id="database_nodejs_server_ConnectionHandler_RemoveUser" data-uid="database-nodejs-server.ConnectionHandler.RemoveUser">RemoveUser(ipHash)</h4>
-  <div class="markdown level1 summary"><p>Removes a user from the users list</p>
+  <h4 id="database_nodejs_server_ItemHandler_HandleMessageFinish" data-uid="database-nodejs-server.ItemHandler.HandleMessageFinish">HandleMessageFinish(user, res, fullMessageBits, options)</h4>
+  <div class="markdown level1 summary"><p>Handles finishing up item messages</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function RemoveUser(ipHash)</code></pre>
+    <pre><code class="lang-js hljs">function HandleMessageFinish(user, res, fullMessageBits, options)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,94 +216,138 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">string</span></td>
-        <td><em>ipHash</em></td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
         <td>
-          <p>The hashed version of the user&#39;s IP</p>
+          <p>The user this message is for</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.Array.&lt;string&gt;</span></td>
+        <td><em>fullMessageBits</em></td>
+        <td>
+          <p>The message in a string binary array</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>options</em></td>
+        <td>
+          <p>The options passed to the message builder on creation</p>
 
           
         </td>
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
+  
+  
+  <h4 id="database_nodejs_server_ItemHandler_AddItems" data-uid="database-nodejs-server.ItemHandler.AddItems">AddItems(user, res, items)</h4>
+  <div class="markdown level1 summary"><p>Handles item addition</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-js hljs">function AddItems(user, res, items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td></td>
-        <td><p>If the user was removed</p>
-</td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user this message is for</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.Array.&lt;ItemSchemaJS&gt;</span></td>
+        <td><em>items</em></td>
+        <td>
+          <p>The items to be added</p>
+
+          
+        </td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="database_nodejs_server_ConnectionHandler_GetConnectedUsers" data-uid="database-nodejs-server.ConnectionHandler.GetConnectedUsers">GetConnectedUsers()</h4>
-  <div class="markdown level1 summary"><p>Returns all of the currently connected users</p>
+  <h4 id="database_nodejs_server_ItemHandler_RemoveItems" data-uid="database-nodejs-server.ItemHandler.RemoveItems">RemoveItems(user, res, indices)</h4>
+  <div class="markdown level1 summary"><p>Handles item removal</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-js hljs">function GetConnectedUsers()</code></pre>
+    <pre><code class="lang-js hljs">function RemoveItems(user, res, indices)</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td></td>
-        <td><p>All the connected users&#39;s UserConnectionData</p>
-</td>
+        <td><a class="xref" href="UserConnectionData.html#database_nodejs_server_UserConnectionData">UserConnectionData</a></td>
+        <td><em>user</em></td>
+        <td>
+          <p>The user this message is for</p>
+
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.*</span></td>
+        <td><em>res</em></td>
+        <td>
+          
+          
+        </td>
+      </tr>
+      <tr>
+        <td><span class="xref">database-nodejs-server.Array.&lt;int&gt;</span></td>
+        <td><em>indices</em></td>
+        <td>
+          <p>The item indexes to be removed</p>
+
+          
+        </td>
       </tr>
     </tbody>
   </table>
-  
-  
-  <h4 id="database_nodejs_server_ConnectionHandler_GetConnectedUsersCount" data-uid="database-nodejs-server.ConnectionHandler.GetConnectedUsersCount">GetConnectedUsersCount()</h4>
-  <div class="markdown level1 summary"><p>Returns a count of all of the currently connected users</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">function GetConnectedUsersCount()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td><p>Count of all the connected users&#39;s UserConnectionData</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <h4 id="database_nodejs_server_ConnectionHandler_PruneInactiveUsers" data-uid="database-nodejs-server.ConnectionHandler.PruneInactiveUsers">PruneInactiveUsers()</h4>
-  <div class="markdown level1 summary"><p>Removes any users for the user list if they have been inactive for too long</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-js hljs">function PruneInactiveUsers()</code></pre>
-  </div>
 </article>
           </div>
           

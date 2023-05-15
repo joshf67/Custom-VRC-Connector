@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/ConnectionHandler.html",
-          "hash": "lrpJDYl7Uuw9HN9SL8ChxNj+ee++rROhbnCrWX2pT0k="
+          "hash": "Xk1t//rIhirzkULd2kcPEzNYAPaXFC9fsmoPMWZsy7o="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/MessageBuilder.html",
-          "hash": "qlF29NbCOMeQflI+akcmNpe+ekSrhxVzIgrSyOto3eo="
+          "hash": "va+GR9Sex1PmEVooIxLraG8p7Gd+UWz9Nk40y9yvLh4="
         }
       },
       "is_incremental": false,
@@ -292,7 +292,31 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/MessageHandler.html",
-          "hash": "TwkQGBB4OMvK/QXIDtAtJFCw5Smb6k1qoxcu2MR4AK0="
+          "hash": "J4o6GRACwWF5bi10LExMRWvLernXqsiJtEjzjiT9Mkk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/ResponseData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/ResponseData.html",
+          "hash": "G/9pwZxGIN0qO+LdBLIaAj0IZpASYXz0a95o+uF0blU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/ResponseHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/ResponseHandler.html",
+          "hash": "Av+z1a19ZtJ7vHoHscQx4r0kSHIIeBOWqb5bga+yijM="
         }
       },
       "is_incremental": false,
@@ -304,7 +328,31 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/ServerConnector.html",
-          "hash": "BTc9TJib0/ekDuy+yyQ0gRZDi878SSnfeH7kRQNCDls="
+          "hash": "umrr6FD78swltfCFBHAPsaLjfjK6RXssdM85u3G71as="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/URLMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/URLMessage.html",
+          "hash": "LEnRrzTEcM22viRb6N8YKWq8/l0tLAHzp5DH/1GSbq8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/UserConnectionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/UserConnectionData.html",
+          "hash": "eK2AGJlQHLMia7UolaPdQNYO6ZTvwwDlZtuWqA4M/jM="
         }
       },
       "is_incremental": false,
@@ -316,31 +364,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/index.html",
-          "hash": "tgkx2sJGqD3Ec7kjkEukJcdrrTkM9sy3EO7Sk4l2qCk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "UniversalReference",
-      "source_relative_path": "base-server-api/module.exports#module.exports.yml",
-      "output": {
-        ".html": {
-          "relative_path": "base-server-api/module.exports#module.exports.html",
-          "hash": "iKpj0MqZxQdh94SbxML7BvL2PQgMf3QlV0Q8dqEs6RY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "UniversalReference",
-      "source_relative_path": "base-server-api/module.exports.yml",
-      "output": {
-        ".html": {
-          "relative_path": "base-server-api/module.exports.html",
-          "hash": "yuaS67fD61jW5YYX4TayuQgKS11iwmjGXdfayp0keuw="
+          "hash": "XnLosFnXg9fb92QVy/1iyiz7m9rsAJGPFaMalgsgj2c="
         }
       },
       "is_incremental": false,
@@ -352,7 +376,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/toc.html",
-          "hash": "wCy2C41pQC2JJLbirxs/psRyVsQ5gUPIigwyAY5OK84="
+          "hash": "PoNQbWLQjdDvgAyCPoTppi3Z05f05uTvahwlPZlFaUA="
         }
       },
       "is_incremental": false,
@@ -364,7 +388,67 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/ConnectionHandler.html",
-          "hash": "lfNZmDwvsJTU8nb6RoYlUJTeIHnwgL5pJmDN509liy0="
+          "hash": "UVg5tRRsTVGTNqPQwjx57XOGe+AZmz6nkaXcSO5LYik="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/DatabaseHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/DatabaseHandler.html",
+          "hash": "Yf+KnQZdFAHS6J7CB5KRG7EnSkz32JIum4jeCsdigqA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/InventorySchemaJS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/InventorySchemaJS.html",
+          "hash": "NiRlYI9GSZ5bBgf24B7JcMwWxiUhHF/G4xWfUU8JyUo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ItemHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ItemHandler.html",
+          "hash": "Qj9g3tWMh62H2tTAI6omblpk7mWJtGv+B9vFVF5LbE8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ItemSchemaJS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ItemSchemaJS.html",
+          "hash": "6UtcPKc54mdIvNm9o07NFzgnHcMvOrEVtNgZvQfrhG4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/LoginHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/LoginHandler.html",
+          "hash": "f0fGkb92NOBaKNzutlGqmpMr6rx/il032SCEclM8jsk="
         }
       },
       "is_incremental": false,
@@ -376,7 +460,7 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/MessageBuilder.html",
-          "hash": "aeHFKcpaH2GDBm/Z0LL60J9jGMdvWRwMu8o3a4S2NMY="
+          "hash": "TtbHTEMJK4navRy9K3NEH593iypyoDYUO/oaS47/2F0="
         }
       },
       "is_incremental": false,
@@ -388,7 +472,31 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/MessageHandler.html",
-          "hash": "+UvfLXfdKpnIO3atMVKj2+nhpLW2kXqPR+aCnorGNbQ="
+          "hash": "2S+cPPpj1qIxhX6G0izsnKlSbI+DnVUgq6sFjw6W9Fk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ResponseData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ResponseData.html",
+          "hash": "uxeP0gTtHg+py7EHOioFnUWFzhxuAOP8uDquCGqbuxo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ResponseHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ResponseHandler.html",
+          "hash": "TM7kpLeQRZ4BE+bCyba2hTa79PbAWWexa1Op8OiyGXg="
         }
       },
       "is_incremental": false,
@@ -400,7 +508,43 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/ServerConnector.html",
-          "hash": "QrHb2TTw1mh5lpBzurmmuUAEsrJnH95R0QnIRfz8ydA="
+          "hash": "9gvXWqkcHcieYIlx4904eOhXsB1XlQ+TuukIIRvzLww="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/URLMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/URLMessage.html",
+          "hash": "2TgdCvFCwyj/4b8bWS3A/vM6Zs33+mCpyULU86yTHn8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/UserConnectionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/UserConnectionData.html",
+          "hash": "UvjRGJrxNLmKCn1nW8+nSX/zGF5REv32qxStSK0i6dI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/UserSchemaJS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/UserSchemaJS.html",
+          "hash": "z3we4nD1jV/24SpNpwfdGsluUyd1qYsvbApoX5VTV/o="
         }
       },
       "is_incremental": false,
@@ -412,31 +556,7 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/index.html",
-          "hash": "bsMfehYr03H+EhEOId8U5FU4pNIVQFh97qH/m+1I9r4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "UniversalReference",
-      "source_relative_path": "database-server-api/module.exports#module.exports.yml",
-      "output": {
-        ".html": {
-          "relative_path": "database-server-api/module.exports#module.exports.html",
-          "hash": "3C/y0BwHOFjgFkXutQKzGIkK+MY3GU8Uh37CRzd5alM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "UniversalReference",
-      "source_relative_path": "database-server-api/module.exports.yml",
-      "output": {
-        ".html": {
-          "relative_path": "database-server-api/module.exports.html",
-          "hash": "NePHfCi8ID7wtLWTP+CdAq4EDpgIIK/c13KUIZRbpL4="
+          "hash": "9/E8XiRrCfbpTDwklIbdzi3rod3AYyoTEDvo2q4AJJ4="
         }
       },
       "is_incremental": false,
@@ -448,7 +568,7 @@
       "output": {
         ".html": {
           "relative_path": "database-server-api/toc.html",
-          "hash": "70Ri4oFArjY64uwQAIskEE2MKSDrX8QmSoD8KrZZAb0="
+          "hash": "ak0Psv4izSJItmiqXlDwcMNFz+O6jBSzfk4eJVEVcHU="
         }
       },
       "is_incremental": false,
