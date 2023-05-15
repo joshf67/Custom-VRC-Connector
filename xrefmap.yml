@@ -1,6 +1,216 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: base-nodejs-server
+  name: base-nodejs-server
+  href: base-server-api/index.html
+- uid: base-nodejs-server.ConnectionHandler
+  name: ConnectionHandler
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler
+  fullName: base-nodejs-server.ConnectionHandler
+- uid: base-nodejs-server.ConnectionHandler.#ctor
+  name: ConnectionHandler()
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler__ctor
+  fullName: base-nodejs-server.ConnectionHandler.ConnectionHandler()
+- uid: base-nodejs-server.ConnectionHandler.AddUser
+  name: AddUser(ipHash)
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_AddUser
+  fullName: base-nodejs-server.ConnectionHandler.AddUser(ipHash)
+- uid: base-nodejs-server.ConnectionHandler.GetConnectedUsers
+  name: GetConnectedUsers()
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_GetConnectedUsers
+  fullName: base-nodejs-server.ConnectionHandler.GetConnectedUsers()
+- uid: base-nodejs-server.ConnectionHandler.GetConnectedUsersCount
+  name: GetConnectedUsersCount()
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_GetConnectedUsersCount
+  fullName: base-nodejs-server.ConnectionHandler.GetConnectedUsersCount()
+- uid: base-nodejs-server.ConnectionHandler.GetUser
+  name: GetUser(ipHash)
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_GetUser
+  fullName: base-nodejs-server.ConnectionHandler.GetUser(ipHash)
+- uid: base-nodejs-server.ConnectionHandler.PruneInactiveUsers
+  name: PruneInactiveUsers()
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_PruneInactiveUsers
+  fullName: base-nodejs-server.ConnectionHandler.PruneInactiveUsers()
+- uid: base-nodejs-server.ConnectionHandler.RemoveUser
+  name: RemoveUser(ipHash)
+  href: base-server-api/ConnectionHandler.html#base_nodejs_server_ConnectionHandler_RemoveUser
+  fullName: base-nodejs-server.ConnectionHandler.RemoveUser(ipHash)
+- uid: base-nodejs-server.MessageBuilder
+  name: MessageBuilder
+  href: base-server-api/MessageBuilder.html#base_nodejs_server_MessageBuilder
+  fullName: base-nodejs-server.MessageBuilder
+- uid: base-nodejs-server.MessageBuilder#AddMessageBytes
+  name: AddMessageBytes(message)
+  href: base-server-api/MessageBuilder.html#base_nodejs_server_MessageBuilder_AddMessageBytes
+  fullName: base-nodejs-server.MessageBuilder.AddMessageBytes(message)
+- uid: base-nodejs-server.MessageBuilder.#ctor
+  name: MessageBuilder()
+  href: base-server-api/MessageBuilder.html#base_nodejs_server_MessageBuilder__ctor
+  fullName: base-nodejs-server.MessageBuilder.MessageBuilder()
+- uid: base-nodejs-server.MessageHandler
+  name: MessageHandler
+  href: base-server-api/MessageHandler.html#base_nodejs_server_MessageHandler
+  fullName: base-nodejs-server.MessageHandler
+- uid: base-nodejs-server.MessageHandler.#ctor
+  name: MessageHandler()
+  href: base-server-api/MessageHandler.html#base_nodejs_server_MessageHandler__ctor
+  fullName: base-nodejs-server.MessageHandler.MessageHandler()
+- uid: base-nodejs-server.MessageHandler.HandleMessage
+  name: HandleMessage(user, req, res)
+  href: base-server-api/MessageHandler.html#base_nodejs_server_MessageHandler_HandleMessage
+  fullName: base-nodejs-server.MessageHandler.HandleMessage(user, req, res)
+- uid: base-nodejs-server.module.exports
+  name: exports
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports
+  fullName: base-nodejs-server.exports
+- uid: base-nodejs-server.module.exports#FailResponse
+  name: FailResponse(user, res)
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports_FailResponse
+  fullName: base-nodejs-server.module.exports.FailResponse(user, res)
+- uid: base-nodejs-server.module.exports#HandleResponse
+  name: HandleResponse(user, response, res)
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports_HandleResponse
+  fullName: base-nodejs-server.module.exports.HandleResponse(user, response, res)
+- uid: base-nodejs-server.module.exports#Message
+  name: Message
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports_Message
+  fullName: base-nodejs-server.module.exports.Message
+- uid: base-nodejs-server.module.exports#module.exports
+  name: exports
+  href: base-server-api/module.exports%23module.exports.html#base_nodejs_server_module_exports_module_exports
+  fullName: base-nodejs-server.exports
+- uid: base-nodejs-server.module.exports#module.exports.#ctor
+  name: exports(ipHash)
+  href: base-server-api/module.exports%23module.exports.html#base_nodejs_server_module_exports_module_exports__ctor
+  fullName: base-nodejs-server.exports.exports(ipHash)
+- uid: base-nodejs-server.module.exports#ResendResponse
+  name: ResendResponse(user, res)
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports_ResendResponse
+  fullName: base-nodejs-server.module.exports.ResendResponse(user, res)
+- uid: base-nodejs-server.module.exports#SucceedResponse
+  name: SucceedResponse(user, res)
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports_SucceedResponse
+  fullName: base-nodejs-server.module.exports.SucceedResponse(user, res)
+- uid: base-nodejs-server.module.exports.#ctor
+  name: exports()
+  href: base-server-api/module.exports.html#base_nodejs_server_module_exports__ctor
+  fullName: base-nodejs-server.exports.exports()
+- uid: base-nodejs-server.ServerConnector
+  name: ServerConnector
+  href: base-server-api/ServerConnector.html#base_nodejs_server_ServerConnector
+  fullName: base-nodejs-server.ServerConnector
+- uid: base-nodejs-server.ServerConnector.#ctor
+  name: ServerConnector()
+  href: base-server-api/ServerConnector.html#base_nodejs_server_ServerConnector__ctor
+  fullName: base-nodejs-server.ServerConnector.ServerConnector()
+- uid: database-nodejs-server
+  name: database-nodejs-server
+  href: database-server-api/index.html
+- uid: database-nodejs-server.ConnectionHandler
+  name: ConnectionHandler
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler
+  fullName: database-nodejs-server.ConnectionHandler
+- uid: database-nodejs-server.ConnectionHandler.#ctor
+  name: ConnectionHandler()
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler__ctor
+  fullName: database-nodejs-server.ConnectionHandler.ConnectionHandler()
+- uid: database-nodejs-server.ConnectionHandler.AddUser
+  name: AddUser(ipHash)
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_AddUser
+  fullName: database-nodejs-server.ConnectionHandler.AddUser(ipHash)
+- uid: database-nodejs-server.ConnectionHandler.GetConnectedUsers
+  name: GetConnectedUsers()
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_GetConnectedUsers
+  fullName: database-nodejs-server.ConnectionHandler.GetConnectedUsers()
+- uid: database-nodejs-server.ConnectionHandler.GetConnectedUsersCount
+  name: GetConnectedUsersCount()
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_GetConnectedUsersCount
+  fullName: database-nodejs-server.ConnectionHandler.GetConnectedUsersCount()
+- uid: database-nodejs-server.ConnectionHandler.GetUser
+  name: GetUser(ipHash)
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_GetUser
+  fullName: database-nodejs-server.ConnectionHandler.GetUser(ipHash)
+- uid: database-nodejs-server.ConnectionHandler.PruneInactiveUsers
+  name: PruneInactiveUsers()
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_PruneInactiveUsers
+  fullName: database-nodejs-server.ConnectionHandler.PruneInactiveUsers()
+- uid: database-nodejs-server.ConnectionHandler.RemoveUser
+  name: RemoveUser(ipHash)
+  href: database-server-api/ConnectionHandler.html#database_nodejs_server_ConnectionHandler_RemoveUser
+  fullName: database-nodejs-server.ConnectionHandler.RemoveUser(ipHash)
+- uid: database-nodejs-server.MessageBuilder
+  name: MessageBuilder
+  href: database-server-api/MessageBuilder.html#database_nodejs_server_MessageBuilder
+  fullName: database-nodejs-server.MessageBuilder
+- uid: database-nodejs-server.MessageBuilder#AddMessageBytes
+  name: AddMessageBytes(message)
+  href: database-server-api/MessageBuilder.html#database_nodejs_server_MessageBuilder_AddMessageBytes
+  fullName: database-nodejs-server.MessageBuilder.AddMessageBytes(message)
+- uid: database-nodejs-server.MessageBuilder.#ctor
+  name: MessageBuilder()
+  href: database-server-api/MessageBuilder.html#database_nodejs_server_MessageBuilder__ctor
+  fullName: database-nodejs-server.MessageBuilder.MessageBuilder()
+- uid: database-nodejs-server.MessageHandler
+  name: MessageHandler
+  href: database-server-api/MessageHandler.html#database_nodejs_server_MessageHandler
+  fullName: database-nodejs-server.MessageHandler
+- uid: database-nodejs-server.MessageHandler.#ctor
+  name: MessageHandler()
+  href: database-server-api/MessageHandler.html#database_nodejs_server_MessageHandler__ctor
+  fullName: database-nodejs-server.MessageHandler.MessageHandler()
+- uid: database-nodejs-server.MessageHandler.HandleMessage
+  name: HandleMessage(user, req, res)
+  href: database-server-api/MessageHandler.html#database_nodejs_server_MessageHandler_HandleMessage
+  fullName: database-nodejs-server.MessageHandler.HandleMessage(user, req, res)
+- uid: database-nodejs-server.module.exports
+  name: exports
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports
+  fullName: database-nodejs-server.exports
+- uid: database-nodejs-server.module.exports#databaseData
+  name: databaseData
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_databaseData
+  fullName: database-nodejs-server.module.exports.databaseData
+- uid: database-nodejs-server.module.exports#FailResponse
+  name: FailResponse(user, res)
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_FailResponse
+  fullName: database-nodejs-server.module.exports.FailResponse(user, res)
+- uid: database-nodejs-server.module.exports#HandleResponse
+  name: HandleResponse(user, response, res)
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_HandleResponse
+  fullName: database-nodejs-server.module.exports.HandleResponse(user, response, res)
+- uid: database-nodejs-server.module.exports#Message
+  name: Message
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_Message
+  fullName: database-nodejs-server.module.exports.Message
+- uid: database-nodejs-server.module.exports#module.exports
+  name: exports
+  href: database-server-api/module.exports%23module.exports.html#database_nodejs_server_module_exports_module_exports
+  fullName: database-nodejs-server.exports
+- uid: database-nodejs-server.module.exports#module.exports.#ctor
+  name: exports(ipHash)
+  href: database-server-api/module.exports%23module.exports.html#database_nodejs_server_module_exports_module_exports__ctor
+  fullName: database-nodejs-server.exports.exports(ipHash)
+- uid: database-nodejs-server.module.exports#ResendResponse
+  name: ResendResponse(user, res)
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_ResendResponse
+  fullName: database-nodejs-server.module.exports.ResendResponse(user, res)
+- uid: database-nodejs-server.module.exports#SucceedResponse
+  name: SucceedResponse(user, res)
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports_SucceedResponse
+  fullName: database-nodejs-server.module.exports.SucceedResponse(user, res)
+- uid: database-nodejs-server.module.exports.#ctor
+  name: exports()
+  href: database-server-api/module.exports.html#database_nodejs_server_module_exports__ctor
+  fullName: database-nodejs-server.exports.exports()
+- uid: database-nodejs-server.ServerConnector
+  name: ServerConnector
+  href: database-server-api/ServerConnector.html#database_nodejs_server_ServerConnector
+  fullName: database-nodejs-server.ServerConnector
+- uid: database-nodejs-server.ServerConnector.#ctor
+  name: ServerConnector()
+  href: database-server-api/ServerConnector.html#database_nodejs_server_ServerConnector__ctor
+  fullName: database-nodejs-server.ServerConnector.ServerConnector()
 - uid: Joshf67.ServerConnector
   name: Joshf67.ServerConnector
   href: api/Joshf67.ServerConnector.html

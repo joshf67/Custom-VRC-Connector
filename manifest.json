@@ -263,6 +263,198 @@
       "version": ""
     },
     {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/ConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/ConnectionHandler.html",
+          "hash": "lrpJDYl7Uuw9HN9SL8ChxNj+ee++rROhbnCrWX2pT0k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/MessageBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/MessageBuilder.html",
+          "hash": "qlF29NbCOMeQflI+akcmNpe+ekSrhxVzIgrSyOto3eo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/MessageHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/MessageHandler.html",
+          "hash": "TwkQGBB4OMvK/QXIDtAtJFCw5Smb6k1qoxcu2MR4AK0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/ServerConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/ServerConnector.html",
+          "hash": "BTc9TJib0/ekDuy+yyQ0gRZDi878SSnfeH7kRQNCDls="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/index.html",
+          "hash": "tgkx2sJGqD3Ec7kjkEukJcdrrTkM9sy3EO7Sk4l2qCk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/module.exports#module.exports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/module.exports#module.exports.html",
+          "hash": "iKpj0MqZxQdh94SbxML7BvL2PQgMf3QlV0Q8dqEs6RY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "base-server-api/module.exports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/module.exports.html",
+          "hash": "yuaS67fD61jW5YYX4TayuQgKS11iwmjGXdfayp0keuw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "base-server-api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "base-server-api/toc.html",
+          "hash": "wCy2C41pQC2JJLbirxs/psRyVsQ5gUPIigwyAY5OK84="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ConnectionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ConnectionHandler.html",
+          "hash": "lfNZmDwvsJTU8nb6RoYlUJTeIHnwgL5pJmDN509liy0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/MessageBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/MessageBuilder.html",
+          "hash": "aeHFKcpaH2GDBm/Z0LL60J9jGMdvWRwMu8o3a4S2NMY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/MessageHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/MessageHandler.html",
+          "hash": "+UvfLXfdKpnIO3atMVKj2+nhpLW2kXqPR+aCnorGNbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/ServerConnector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/ServerConnector.html",
+          "hash": "QrHb2TTw1mh5lpBzurmmuUAEsrJnH95R0QnIRfz8ydA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/index.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/index.html",
+          "hash": "bsMfehYr03H+EhEOId8U5FU4pNIVQFh97qH/m+1I9r4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/module.exports#module.exports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/module.exports#module.exports.html",
+          "hash": "3C/y0BwHOFjgFkXutQKzGIkK+MY3GU8Uh37CRzd5alM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "UniversalReference",
+      "source_relative_path": "database-server-api/module.exports.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/module.exports.html",
+          "hash": "NePHfCi8ID7wtLWTP+CdAq4EDpgIIK/c13KUIZRbpL4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "database-server-api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "database-server-api/toc.html",
+          "hash": "70Ri4oFArjY64uwQAIskEE2MKSDrX8QmSoD8KrZZAb0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "example/Introduction.md",
       "output": {
@@ -1026,6 +1218,13 @@
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "UniversalReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor UniversalReferenceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0

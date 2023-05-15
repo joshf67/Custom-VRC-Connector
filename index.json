@@ -94,6 +94,76 @@
     "title": "Enum ServerResponseType | Server Connector documentation",
     "keywords": "Enum ServerResponseType Used to determine the response type from a server Namespace : Joshf67.ServerConnector.Server Assembly : cs.temp.dll.dll Syntax public enum ServerResponseType Fields Name Description Account_Creation_Complete The server was able to create a user for the built login hash Added_Item The server has updated a user's inventory items to add the new items Failed The server failed to recieve and handle the message for some reason Failed_To_Parse The server was unable to parse the message Item_Updated The server has recieved an update to the item related message Login_Complete The server managed to find a user for the built login hash Login_Failed The server failed to find a user for the built login hash Login_Updated The login hash was updated None The server did not respond with a type Removed_Item The server has updated a user's inventory items to remove the requested items Server_Error The server encountered an error with the request Succeeded The server succeeded in recieving and handling the message Type_Fail The server was expecting a message with a different type Unexpected_Request The server was not expecting a response User_Not_Logged_In The user is not currently logged in when making a request"
   },
+  "base-server-api/ConnectionHandler.html": {
+    "href": "base-server-api/ConnectionHandler.html",
+    "title": "Class ConnectionHandler | Server Connector documentation",
+    "keywords": "Class ConnectionHandler Class that handles all of the current active users on the server Constructors ConnectionHandler() Declaration new ConnectionHandler() Functions AddUser(ipHash) Adds a user to the current users list Declaration function AddUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description the newly created UserConnectionData GetUser(ipHash) Gets a user from the current users lists Declaration function GetUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description the UserConnectionData associated with the user RemoveUser(ipHash) Removes a user from the users list Declaration function RemoveUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description If the user was removed GetConnectedUsers() Returns all of the currently connected users Declaration function GetConnectedUsers() Returns Type Description All the connected users's UserConnectionData GetConnectedUsersCount() Returns a count of all of the currently connected users Declaration function GetConnectedUsersCount() Returns Type Description Count of all the connected users's UserConnectionData PruneInactiveUsers() Removes any users for the user list if they have been inactive for too long Declaration function PruneInactiveUsers()"
+  },
+  "base-server-api/index.html": {
+    "href": "base-server-api/index.html",
+    "title": "Package base-nodejs-server | Server Connector documentation",
+    "keywords": "Package base-nodejs-server Classes ServerConnector Class that handles the entry point for a connection from VRC to the Server MessageHandler Class that handles the entry point for a message from VRC to the Server MessageBuilder Stores data for a message's generation exports Constructs a class to store all user connection data exports Stores any user related data ConnectionHandler Class that handles all of the current active users on the server"
+  },
+  "base-server-api/MessageBuilder.html": {
+    "href": "base-server-api/MessageBuilder.html",
+    "title": "Class MessageBuilder | Server Connector documentation",
+    "keywords": "Class MessageBuilder Stores data for a message's generation Constructors MessageBuilder() Declaration new MessageBuilder() Functions AddMessageBytes(message) Handles building up the message Declaration function AddMessageBytes(message) Parameters Type Name Description base-nodejs-server.Array.<byte> message the character bytes to add to the message"
+  },
+  "base-server-api/MessageHandler.html": {
+    "href": "base-server-api/MessageHandler.html",
+    "title": "Class MessageHandler | Server Connector documentation",
+    "keywords": "Class MessageHandler Class that handles the entry point for a message from VRC to the Server Constructors MessageHandler() Declaration new MessageHandler() Functions HandleMessage(user, req, res) Entry for server handling message requests Declaration function HandleMessage(user, req, res) Parameters Type Name Description base-nodejs-server.UserConnectionData user The user data for this connected user base-nodejs-server.* req The current express request base-nodejs-server.* res The express response"
+  },
+  "base-server-api/module.exports#module.exports.html": {
+    "href": "base-server-api/module.exports#module.exports.html",
+    "title": "Class exports | Server Connector documentation",
+    "keywords": "Class exports Constructs a class to store all user connection data Constructors exports(ipHash) Constructs a class to store all user connection data Declaration new exports(ipHash) Parameters Type Name Description string ipHash The IP of the user hashed to anonymize it"
+  },
+  "base-server-api/module.exports.html": {
+    "href": "base-server-api/module.exports.html",
+    "title": "Class exports | Server Connector documentation",
+    "keywords": "Class exports Stores any user related data Constructors exports() Declaration new exports() Members Message Binary string Declaration Message Returns Type Description Array.<String> Functions HandleResponse(user, response, res) Handles sending off a response to a user Declaration function HandleResponse(user, response, res) Parameters Type Name Description base-nodejs-server.UserConnectionData user The user to send the response to base-nodejs-server.ResponseData response The response content base-nodejs-server.* res The express response SucceedResponse(user, res) Responds to a user's request with a static succeed value Declaration function SucceedResponse(user, res) Parameters Type Name Description base-nodejs-server.UserConnectionData user The user to send the response to base-nodejs-server.* res FailResponse(user, res) Responds to a user's request with a static failed value Declaration function FailResponse(user, res) Parameters Type Name Description base-nodejs-server.UserConnectionData user The user to send the response to base-nodejs-server.* res ResendResponse(user, res) Responds to a user's request with a static resend value Declaration function ResendResponse(user, res) Parameters Type Name Description base-nodejs-server.UserConnectionData user The user to send the response to base-nodejs-server.* res"
+  },
+  "base-server-api/ServerConnector.html": {
+    "href": "base-server-api/ServerConnector.html",
+    "title": "Class ServerConnector | Server Connector documentation",
+    "keywords": "Class ServerConnector Class that handles the entry point for a connection from VRC to the Server Constructors ServerConnector() Declaration new ServerConnector()"
+  },
+  "database-server-api/ConnectionHandler.html": {
+    "href": "database-server-api/ConnectionHandler.html",
+    "title": "Class ConnectionHandler | Server Connector documentation",
+    "keywords": "Class ConnectionHandler Class that handles all of the current active users on the server Constructors ConnectionHandler() Declaration new ConnectionHandler() Functions AddUser(ipHash) Adds a user to the current users list Declaration function AddUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description the newly created UserConnectionData GetUser(ipHash) Gets a user from the current users lists Declaration function GetUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description the UserConnectionData associated with the user RemoveUser(ipHash) Removes a user from the users list Declaration function RemoveUser(ipHash) Parameters Type Name Description string ipHash The hashed version of the user's IP Returns Type Description If the user was removed GetConnectedUsers() Returns all of the currently connected users Declaration function GetConnectedUsers() Returns Type Description All the connected users's UserConnectionData GetConnectedUsersCount() Returns a count of all of the currently connected users Declaration function GetConnectedUsersCount() Returns Type Description Count of all the connected users's UserConnectionData PruneInactiveUsers() Removes any users for the user list if they have been inactive for too long Declaration function PruneInactiveUsers()"
+  },
+  "database-server-api/index.html": {
+    "href": "database-server-api/index.html",
+    "title": "Package database-nodejs-server | Server Connector documentation",
+    "keywords": "Package database-nodejs-server Classes ServerConnector Class that handles the entry point for a connection from VRC to the Server MessageHandler Class that handles the entry point for a message from VRC to the Server MessageBuilder Stores data for a message's generation exports Constructs a class to store all user connection data exports Stores any user related data ConnectionHandler Class that handles all of the current active users on the server"
+  },
+  "database-server-api/MessageBuilder.html": {
+    "href": "database-server-api/MessageBuilder.html",
+    "title": "Class MessageBuilder | Server Connector documentation",
+    "keywords": "Class MessageBuilder Stores data for a message's generation Constructors MessageBuilder() Declaration new MessageBuilder() Functions AddMessageBytes(message) Handles building up the message Declaration function AddMessageBytes(message) Parameters Type Name Description database-nodejs-server.Array.<byte> message the character bytes to add to the message"
+  },
+  "database-server-api/MessageHandler.html": {
+    "href": "database-server-api/MessageHandler.html",
+    "title": "Class MessageHandler | Server Connector documentation",
+    "keywords": "Class MessageHandler Class that handles the entry point for a message from VRC to the Server Constructors MessageHandler() Declaration new MessageHandler() Functions HandleMessage(user, req, res) Entry for server handling message requests Declaration function HandleMessage(user, req, res) Parameters Type Name Description database-nodejs-server.UserConnectionData user The user data for this connected user database-nodejs-server.* req The current express request database-nodejs-server.* res The express response"
+  },
+  "database-server-api/module.exports#module.exports.html": {
+    "href": "database-server-api/module.exports#module.exports.html",
+    "title": "Class exports | Server Connector documentation",
+    "keywords": "Class exports Constructs a class to store all user connection data Constructors exports(ipHash) Constructs a class to store all user connection data Declaration new exports(ipHash) Parameters Type Name Description string ipHash The IP of the user hashed to anonymize it"
+  },
+  "database-server-api/module.exports.html": {
+    "href": "database-server-api/module.exports.html",
+    "title": "Class exports | Server Connector documentation",
+    "keywords": "Class exports Stores any user related data Constructors exports() Declaration new exports() Members databaseData Declaration databaseData Returns Type Description Document Message Binary string Declaration Message Returns Type Description Array.<String> Functions HandleResponse(user, response, res) Handles sending off a response to a user Declaration function HandleResponse(user, response, res) Parameters Type Name Description database-nodejs-server.UserConnectionData user The user to send the response to database-nodejs-server.ResponseData response The response content database-nodejs-server.* res The express response SucceedResponse(user, res) Responds to a user's request with a static succeed value Declaration function SucceedResponse(user, res) Parameters Type Name Description database-nodejs-server.UserConnectionData user The user to send the response to database-nodejs-server.* res FailResponse(user, res) Responds to a user's request with a static failed value Declaration function FailResponse(user, res) Parameters Type Name Description database-nodejs-server.UserConnectionData user The user to send the response to database-nodejs-server.* res ResendResponse(user, res) Responds to a user's request with a static resend value Declaration function ResendResponse(user, res) Parameters Type Name Description database-nodejs-server.UserConnectionData user The user to send the response to database-nodejs-server.* res"
+  },
+  "database-server-api/ServerConnector.html": {
+    "href": "database-server-api/ServerConnector.html",
+    "title": "Class ServerConnector | Server Connector documentation",
+    "keywords": "Class ServerConnector Class that handles the entry point for a connection from VRC to the Server Constructors ServerConnector() Declaration new ServerConnector()"
+  },
   "example/Introduction.html": {
     "href": "example/Introduction.html",
     "title": "MongoDB Connector Example | Server Connector documentation",
