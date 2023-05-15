@@ -40,7 +40,7 @@ module.exports = class ResponseHandler {
    * Handles sending off a response to a user
    * @param {UserConnectionData} user - The user to send the response to
    * @param {ResponseData} response - The response content
-   * @param {*} res - The express response
+   * @param {Object} res - The express response
    */
   static HandleResponse(user, res, response) {
     //Add try catch to reset the current user if it fails
@@ -63,7 +63,7 @@ module.exports = class ResponseHandler {
   /**
    * Responds to a user's request with a static succeed value
    * @param {UserConnectionData} user - The user to send the response to
-   * @param {*} res
+   * @param {Object} res
    */
   static SucceedResponse(user, res) {
     ResponseHandler.HandleResponse(
@@ -76,7 +76,7 @@ module.exports = class ResponseHandler {
   /**
    * Responds to a user's request with a static failed value
    * @param {UserConnectionData} user - The user to send the response to
-   * @param {*} res
+   * @param {Object} res
    */
   static FailResponse(user, res) {
     ResponseHandler.HandleResponse(
@@ -89,7 +89,7 @@ module.exports = class ResponseHandler {
   /**
    * Responds to a user's request with a static resend value
    * @param {UserConnectionData} user - The user to send the response to
-   * @param {*} res
+   * @param {Object} res
    */
   static ResendResponse(user, res) {
     ResponseHandler.HandleResponse(

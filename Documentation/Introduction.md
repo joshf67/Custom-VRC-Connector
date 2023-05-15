@@ -38,7 +38,7 @@ An external NodeJS server is set up to listen to requests from [String](https://
 
 - Small messages are not optimized due to the [String](https://docs.vrchat.com/docs/string-loading) loader being required for the first and last message to read the response.
 
-- Each bit of data that you want to send needs to be accounted for as a VRCUrl. This means that larger message sizes require exponentially more VRCUrls. This increases world build times and will increase the world filesize, From some initial tests each VRCUrl takes [0.02ms and 1.15 bytes to build](VRCUrlTesting.md).
+- Each bit of data that you want to send needs to be accounted for as a VRCUrl. This means that larger message sizes require exponentially more VRCUrls. This increases world build times and will increase the world filesize, From some initial tests each VRCUrl takes [0.02ms and 1.15 bytes to build](manual/VRCUrlTesting.md).
 
 - Handling individual bits and trying to communicate with limited bandwidth requires some creative thinking and is not a drag-and-drop solution, this can become very complex very fast.
 

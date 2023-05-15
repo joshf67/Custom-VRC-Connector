@@ -223,3 +223,6 @@ Unity/Assets/UdonSharp/UtilityScripts/Synced/GlobalToggleObject.asset
 Unity/Assets/UdonSharp/UtilityScripts/Synced/MasterToggleObject.asset
 Unity/Assets/UdonSharp/UtilityScripts/TrackingDataFollower.asset
 Unity/Assets/UdonSharp/UtilityScripts/WorldAudioSettings.asset
+nodejs-servers/**/Mongodb/**
+nodejs-servers/database-example/Mongodb/**
+nodejs-servers/database-example/Mongodb/mongo.pem

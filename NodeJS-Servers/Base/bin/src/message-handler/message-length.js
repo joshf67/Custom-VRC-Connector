@@ -1,6 +1,6 @@
-const MessageLength = Object.freeze({
-    Login: process.env.LOGIN_HASH_CHARACTERS * 8,
-    Item: 8,
-    ItemIndex: 8
-});
+/**
+ * Enum to allow the use of non-magic numbers for response bit sizes
+ */
+const MessageLength = Object.freeze({});
+
 module.exports.MessageLength = MessageLength;

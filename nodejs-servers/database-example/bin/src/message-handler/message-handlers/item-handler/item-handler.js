@@ -9,11 +9,14 @@ const {
   ItemSchemaJS,
 } = require("../../../database-handler/database-schema/inventory/item-schema");
 
+/**
+ * Class to handle building and handling item requests from the VRC client
+ */
 class ItemHandler {
   /**
    * Handles the first item related message and sets up a user's expecting data
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {String[]} message - The parsed message from the connection
    */
   static HandleInitialMessage(user, res, message) {
@@ -44,7 +47,7 @@ class ItemHandler {
   /**
    * Handles item related messages
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {*} bitsRemaining - The bits remaining until the message is complete
    */
   static HandleMessageUpdate(user, res, bitsRemaining) {
@@ -62,7 +65,7 @@ class ItemHandler {
   /**
    * Handles finishing up item messages
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {string[]} fullMessageBits - The message in a string binary array
    * @param {*} options - The options passed to the message builder on creation
    */
@@ -99,7 +102,7 @@ class ItemHandler {
   /**
    * Handles item addition
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {ItemSchemaJS[]} items - The items to be added
    */
   static AddItems(user, res, items) {
@@ -131,7 +134,7 @@ class ItemHandler {
   /**
    * Handles item removal
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {int[]} indices - The item indexes to be removed
    */
   static RemoveItems(user, res, indices) {

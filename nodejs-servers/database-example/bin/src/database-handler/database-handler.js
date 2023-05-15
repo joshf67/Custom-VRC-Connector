@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const path = require("path");
 const logger = require("../logger");
 
-//Remove excess data not needed from the database
+/**
+ * Remove excess data not needed from the database requests
+ */
 mongoose.plugin((schema) => {
   schema.options.toJSON = {
     virtuals: true,
@@ -14,8 +16,14 @@ mongoose.plugin((schema) => {
   };
 });
 
+/**
+ * Stores the MongoDB schema for a user's data
+ */
 const UserModel = require("./database-schema/user/user-model");
 
+/**
+ * Helper functions to connect to and modify the MongoDB instance
+ */
 class DatabaseHandler {
   client;
 

@@ -4,7 +4,15 @@ var UserConnectionData = require("./user-connection-data");
  * Class that handles all of the current active users on the server
  */
 class ConnectionHandler {
+
+  /**
+   * Store all of the users in a single static location
+   */
   static _users = new Map();
+  
+  /**
+   * Public static getter for the current users connected
+   */
   static get Users() {
     return ConnectionHandler._users;
   }

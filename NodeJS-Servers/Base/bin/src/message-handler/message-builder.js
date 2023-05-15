@@ -1,11 +1,31 @@
 /**
- * Stores data for a message's generation
+ * Allows for requests to be read and build up a message over time
  */
 class MessageBuilder {
+
+  /**
+   * Used to store the callback to call everytime the builder recieves a request
+   */
   updateCallback = null;
+
+  /**
+   * Used to store the final callback that will be called when the request is built
+   */
   finishCallback = null;
+  
+  /**
+   * Used to store the request's bits that have been read
+   */
   messageBits = [];
+  
+  /**
+   * Used to store how many bits this builder should read before finishing
+   */
   messageLength = 0;
+  
+  /**
+   * Used to store any options to be passed to the final finishCallback
+   */
   options = null;
 
   /**

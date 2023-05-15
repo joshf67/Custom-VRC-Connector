@@ -234,7 +234,7 @@ That is all that is required on the client side to send off the required request
 
 ## Step 4. Handling VRC client messages on the NodeJS server
 
-The first step was to implement the type on the main [message-handler]() section:
+The first step was to implement the type on the main [message-handler](xref:database-nodejs-server.MessageHandler) section:
 
 ```javascript
 //Switch statement that handles all different types of messages
@@ -258,7 +258,7 @@ The first step was to implement the type on the main [message-handler]() section
     }
 ```
 
-next is to implement a builder to accept the above requests and awaits for the 9 login hash characters until continuing:
+next is to implement a custom message builder to accept the above requests and awaits for the 9 login hash characters until continuing:
 
 ```javascript
 const logger = require("../../../logger");
@@ -275,7 +275,7 @@ class LoginHandler {
   /**
    * Handles the first login related message and sets up a user's expecting data
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {URLMessage} message - The parsed message from the connection
    * @param {bool} creatingAccount - Controls if the login hash will be used to create a new user
    */
@@ -297,7 +297,7 @@ class LoginHandler {
   /**
    * Handles login related messages that add to the login hash
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {*} bitsRemaining - The bits remaining until the message is complete
    */
   static HandleMessageUpdate(user, res, bitsRemaining) {
@@ -320,7 +320,7 @@ class LoginHandler {
   /**
    * Handles finishing up login related messages to build up a user login hash
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {string[]} fullMessageBits - The message in a string binary array
    * @param {*} options - The options passed to the message builder on creation
    */
@@ -347,13 +347,13 @@ class LoginHandler {
 
 ```
 
-This Initial message handler sets up all of the parameters of the [message builder]() class to wait for 9 login character's worth of bytes before continuing onto either loggin in or creating an account depending on the message type:
+This Initial message handler sets up all of the parameters of the [message builder](xref:database-nodejs-server.MessageBuilder) class to wait for 9 login character's worth of bytes before continuing onto either loggin in or creating an account depending on the message type:
 
 ```javascript
   /**
    * Sends off a request to the database to get a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user
+   * @param {Object} res - The express response for the user
    */
   static HandleLogin(user, res) {
     DatabaseHandler.getUserData(user.userHash)
@@ -381,7 +381,7 @@ This Initial message handler sets up all of the parameters of the [message build
   /**
    * Sends off a request to the database to generate a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user
+   * @param {Object} res - The express response for the user
    */
   static HandleAccountCreation(user, res) {
     DatabaseHandler.addUserData(user.userHash)
@@ -465,7 +465,7 @@ Because I am trying to do both adding/removing by only using a single type I nee
 
 ## Step 6. Modifying a client's items
 
-The first part is to add another type to our main [message-handler]() logic:
+The first part is to add another type to our main [message-handler](xref:database-nodejs-server.MessageHandler) logic:
 
 ```javascript
 case MessageTypes.ModifyItem:
@@ -495,7 +495,7 @@ class ItemHandler {
   /**
    * Handles the first item related message and sets up a user's expecting data
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {String[]} message - The parsed message from the connection
    */
   static HandleInitialMessage(user, res, message) {
@@ -526,7 +526,7 @@ class ItemHandler {
   /**
    * Handles item related messages
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {*} bitsRemaining - The bits remaining until the message is complete
    */
   static HandleMessageUpdate(user, res, bitsRemaining) {
@@ -544,7 +544,7 @@ class ItemHandler {
   /**
    * Handles finishing up item messages
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {string[]} fullMessageBits - The message in a string binary array
    * @param {*} options - The options passed to the message builder on creation
    */
@@ -582,7 +582,7 @@ class ItemHandler {
 
 This time I decided to pass a few encoded messages inside the initial message, the first part is to tell the server what type of message this adding or removing, I do this by using the first bit in the message, I then follow that up with the next 7 bits being for the amount of actions this message should be expecting (In this example it's how many actions to remove/add will follow), after this I plan to send a single byte per action (0-255).
 
-The [message-builder]() class has a parameter for any options that you wish to pass to the final message function, in this case we store how many actions are in the message and wether we are removing or adding items.
+The [message builder](xref:database-nodejs-server.MessageBuilder) class has a parameter for any options that you wish to pass to the final message function, in this case we store how many actions are in the message and wether we are removing or adding items.
 
 After the message has been fully built out, we can call a function to either add or remove:
 
@@ -590,7 +590,7 @@ After the message has been fully built out, we can call a function to either add
   /**
    * Handles item addition
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {ItemSchemaJS[]} items - The items to be added
    */
   static AddItems(user, res, items) {
@@ -622,7 +622,7 @@ After the message has been fully built out, we can call a function to either add
   /**
    * Handles item removal
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {int[]} indices - The item indexes to be removed
    */
   static RemoveItems(user, res, indices) {

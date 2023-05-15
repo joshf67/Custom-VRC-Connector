@@ -8,11 +8,14 @@ const { ResponseTypes } = require("../../../response-handler/response-types");
 const MessageBuilder = require("../../message-builder");
 const { MessageLength } = require("../../message-length");
 
+/**
+ * Class to handle building and handling login requests from the VRC client
+ */
 class LoginHandler {
   /**
    * Handles the first login related message and sets up a user's expecting data
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {URLMessage} message - The parsed message from the connection
    * @param {bool} creatingAccount - Controls if the login hash will be used to create a new user
    */
@@ -34,7 +37,7 @@ class LoginHandler {
   /**
    * Handles login related messages that add to the login hash
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {*} bitsRemaining - The bits remaining until the message is complete
    */
   static HandleMessageUpdate(user, res, bitsRemaining) {
@@ -57,7 +60,7 @@ class LoginHandler {
   /**
    * Handles finishing up login related messages to build up a user login hash
    * @param {UserConnectionData} user - The user this message is for
-   * @param {*} res
+   * @param {Object} res
    * @param {string[]} fullMessageBits - The message in a string binary array
    * @param {*} options - The options passed to the message builder on creation
    */
@@ -85,7 +88,7 @@ class LoginHandler {
   /**
    * Sends off a request to the database to get a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user
+   * @param {Object} res - The express response for the user
    */
   static HandleLogin(user, res) {
     DatabaseHandler.getUserData(user.userHash)
@@ -113,7 +116,7 @@ class LoginHandler {
   /**
    * Sends off a request to the database to generate a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
-   * @param {*} res - The express response for the user
+   * @param {Object} res - The express response for the user
    */
   static HandleAccountCreation(user, res) {
     DatabaseHandler.addUserData(user.userHash)

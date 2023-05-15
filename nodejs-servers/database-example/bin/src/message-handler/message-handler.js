@@ -18,8 +18,8 @@ class MessageHandler {
   /**
    * Entry for server handling message requests
    * @param {UserConnectionData} user - The user data for this connected user
-   * @param {*} req - The current express request
-   * @param {*} res - The express response
+   * @param {Object} req - The current express request
+   * @param {Object} res - The express response
    */
   static HandleMessage(user, req, res) {
     logger.log(`${user.ipHash} has tried to send a message`);
@@ -30,7 +30,7 @@ class MessageHandler {
 
       let unpackedMessage = UnpackHexMessage(req.params["0"]);
 
-      //TODO check if the response includes a type, if so ignore the last request and continue
+      //check if the response includes a type, if so ignore the last request and continue
       if (user.expectingDataCallback != null) {
         if (unpackedMessage.Type == null) {
           return user.expectingDataCallback(
