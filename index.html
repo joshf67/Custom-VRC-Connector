@@ -95,6 +95,8 @@
 </ul>
 <h2 id="negatives">Negatives</h2>
 <ul>
+<li><p>Relies on IP address to reference user which means any user in a location that has multiple connections from the same IP will collide with eachother&#39;s messages and fail to work.</p>
+</li>
 <li><p>Due to relying on the <a href="https://docs.vrchat.com/docs/string-loading">String</a>/<a href="https://docs.vrchat.com/docs/image-loading">Image</a> under the hood, the upload rate is very slow. Using the default message length of 21 bits, each loader used has an effective rate of ~4 bits/s (initial overheads means longer messages are more efficient), as you can see this is very limited on what you can send so you need to be clever with your requests.</p>
 </li>
 <li><p>Small messages are not optimized due to the <a href="https://docs.vrchat.com/docs/string-loading">String</a> loader being required for the first and last message to read the response.</p>
