@@ -276,7 +276,7 @@ function Connect(uri, cert) {
     }
 </code></pre><p>That is all that is required on the client side to send off the required requests to the server, next was to handle everything on the NodeJS server.</p>
 <h2 id="step-4-handling-vrc-client-messages-on-the-nodejs-server">Step 4. Handling VRC client messages on the NodeJS server</h2>
-<p>The first step was to implement the type on the main <a href="">message-handler</a> section:</p>
+<p>The first step was to implement the type on the main <a class="xref" href="../database-server-api/MessageHandler.html#database_nodejs_server_MessageHandler">message-handler</a> section:</p>
 <pre><code class="lang-javascript">//Switch statement that handles all different types of messages
     switch (unpackedMessage.Type) {
         case MessageTypes.Login:
@@ -296,7 +296,7 @@ function Connect(uri, cert) {
             break;
         ...
     }
-</code></pre><p>next is to implement a builder to accept the above requests and awaits for the 9 login hash characters until continuing:</p>
+</code></pre><p>next is to implement a custom message builder to accept the above requests and awaits for the 9 login hash characters until continuing:</p>
 <pre><code class="lang-javascript">const logger = require(&quot;../../../logger&quot;);
 const DatabaseHandler = require(&quot;../../../database-handler/database-handler&quot;);
 const UserConnectionData = require(&quot;../../../connection-handler/user-connection-data&quot;);
@@ -380,7 +380,7 @@ class LoginHandler {
 
     return LoginHandler.HandleLogin(user, res);
   }
-</code></pre><p>This Initial message handler sets up all of the parameters of the <a href="">message builder</a> class to wait for 9 login character&#39;s worth of bytes before continuing onto either loggin in or creating an account depending on the message type:</p>
+</code></pre><p>This Initial message handler sets up all of the parameters of the <a class="xref" href="../database-server-api/MessageBuilder.html#database_nodejs_server_MessageBuilder">message builder</a> class to wait for 9 login character&#39;s worth of bytes before continuing onto either loggin in or creating an account depending on the message type:</p>
 <pre><code class="lang-javascript">  /**
    * Sends off a request to the database to get a user and responds with the result
    * @param {UserConnectionData} user - The user data that contains all required info
@@ -486,7 +486,7 @@ class LoginHandler {
     }
 </code></pre><p>Because I am trying to do both adding/removing by only using a single type I needed to package my messages a little bit more complicated, I started off by using the first bit of a message to indicate if it was adding or removing, then the next 7 bits to indicate how many actions the server should wait for when building up the message. Finally I pack the item indices/ids as bytes one after another, this will be parsed using the action count in the 7 bits.</p>
 <h2 id="step-6-modifying-a-clients-items">Step 6. Modifying a client&#39;s items</h2>
-<p>The first part is to add another type to our main <a href="">message-handler</a> logic:</p>
+<p>The first part is to add another type to our main <a class="xref" href="../database-server-api/MessageHandler.html#database_nodejs_server_MessageHandler">message-handler</a> logic:</p>
 <pre><code class="lang-javascript">case MessageTypes.ModifyItem:
     return ItemHandler.HandleInitialMessage(
         user,
@@ -594,7 +594,7 @@ class ItemHandler {
   }
   ...
 </code></pre><p>This time I decided to pass a few encoded messages inside the initial message, the first part is to tell the server what type of message this adding or removing, I do this by using the first bit in the message, I then follow that up with the next 7 bits being for the amount of actions this message should be expecting (In this example it&#39;s how many actions to remove/add will follow), after this I plan to send a single byte per action (0-255).</p>
-<p>The <a href="">message-builder</a> class has a parameter for any options that you wish to pass to the final message function, in this case we store how many actions are in the message and wether we are removing or adding items.</p>
+<p>The <a class="xref" href="../database-server-api/MessageBuilder.html#database_nodejs_server_MessageBuilder">message builder</a> class has a parameter for any options that you wish to pass to the final message function, in this case we store how many actions are in the message and wether we are removing or adding items.</p>
 <p>After the message has been fully built out, we can call a function to either add or remove:</p>
 <pre><code class="lang-javascript">  /**
    * Handles item addition

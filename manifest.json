@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/MessageBuilder.html",
-          "hash": "va+GR9Sex1PmEVooIxLraG8p7Gd+UWz9Nk40y9yvLh4="
+          "hash": "tOYqCuYM0I6JJu6b7L23ovEoVazVtSEEVXwZMk4TLZI="
         }
       },
       "is_incremental": false,
@@ -364,7 +364,7 @@
       "output": {
         ".html": {
           "relative_path": "base-server-api/index.html",
-          "hash": "XnLosFnXg9fb92QVy/1iyiz7m9rsAJGPFaMalgsgj2c="
+          "hash": "B8iA+zPiYXfZMESdLv2KV0Ki5RZ6nkDOXlRz9C2PIhY="
         }
       },
       "is_incremental": false,
@@ -580,7 +580,7 @@
       "output": {
         ".html": {
           "relative_path": "example/Introduction.html",
-          "hash": "f/VgFRshxZTLHuF74fIUymYFCgA8APpYAxbTZp3ub64="
+          "hash": "x1KTP7OKLhOT4S/K7InpvUXn2r+mhxuQlOjDuosJVhI="
         }
       },
       "is_incremental": false,
@@ -711,15 +711,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "G3VH8dzlFjrF1/cNM6BPc5/NbFLuacwTtsK8qR60J84="
+          "hash": "u946zKw5Eya2CucA1C39yu3koB4ZWqXlvr6TcjCNOb0="
         }
       },
       "is_incremental": false,
@@ -727,14 +724,15 @@
     },
     {
       "log_codes": [
-        "InvalidFileLink"
+        "InvalidFileLink",
+        "UidNotFound"
       ],
       "type": "Conceptual",
       "source_relative_path": "manual/APIIntroduction.md",
       "output": {
         ".html": {
           "relative_path": "manual/APIIntroduction.html",
-          "hash": "krEvrs9zM6y0iTbQZXVlFrjrZpMNoJS1QppfXiKet4Y="
+          "hash": "qwvKlPbV2GI1gLx7CmackCL/ERfKwKdWmjPUiblAYs8="
         }
       },
       "is_incremental": false,
