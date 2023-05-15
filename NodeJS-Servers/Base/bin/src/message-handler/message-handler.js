@@ -1,11 +1,11 @@
 const logger = require("../logger");
-const { UnpackHexMessage } = require("./message-unpacker");
+const UnpackHexMessage = require("./message-unpacker");
 const UserConnectionData = require("../connection-handler/user-connection-data");
-const { MessageTypes } = require("./message-types");
+const MessageTypes = require("./message-types");
 
 const ResponseHandler = require("../response-handler/response-handler");
 const ResponseData = require("../response-handler/response-data");
-const { ResponseTypes } = require("../response-handler/response-types");
+const ResponseTypes = require("../response-handler/response-types");
 
 /**
  * Class that handles the entry point for a message from VRC to the Server
@@ -24,11 +24,17 @@ class MessageHandler {
     try {
       let unpackedMessage = UnpackHexMessage(req.params["0"]);
 
-      //check if the response includes a type, if so ignore the last request and continue
+      //Check to see if this is a partial request, if so continue building
       if (user.expectingDataCallback != null) {
         if (unpackedMessage.Type == null) {
-          return user.expectingDataCallback(user, res, unpackedMessage.Message);
-        } else {
+          return user.expectingDataCallback(
+            user,
+            res,
+            unpackedMessage.Message
+          );
+        } 
+        //check if the response includes a type, if so ignore the last request and continue
+        else {
           //Handle resetting user's expecting data because something has gone wrong
           user.ResetExpectingDataCallback();
         }

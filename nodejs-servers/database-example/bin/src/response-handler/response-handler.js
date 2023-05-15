@@ -1,6 +1,6 @@
 const ResponseData = require("./response-data");
 const UserConnectionData = require("../connection-handler/user-connection-data");
-const { ResponseTypes } = require("./response-types");
+const ResponseTypes = require("./response-types");
 
 /**
  * The default response to make whenever something goes wrong

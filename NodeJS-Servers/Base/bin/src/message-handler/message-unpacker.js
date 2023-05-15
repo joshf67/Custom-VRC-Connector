@@ -8,9 +8,14 @@ const URLMessage = require("./url-message");
  */
 function UnpackHexMessage(message) {
   /**
-   * Convert the hex URL into the binary representation
+   * Convert the hex URL into the binary representation and
+   * Pack message to be the same length as MESSAGE_BITS_LENGTH to
+   * combat 0s being removed from end
    */
   messageBitArray = parseInt(message, 16).toString(2).split("");
+  messageBitArray = Array(
+    parseInt(process.env.MESSAGE_BITS_LENGTH) - messageBitArray.length
+  ).fill("0").concat(messageBitArray)
 
   /**
    * If the type is included then parse out the message and the type
@@ -33,15 +38,10 @@ function UnpackHexMessage(message) {
     );
   } else {
     /**
-     * Pack message to be the same length as MESSAGE_BITS_LENGTH to
-     * combat 0s being removed from end and remove 1 bit for no type included
+     * remove 1 bit for no type included
      */
-    return new URLMessage(
-      Array(
-        parseInt(process.env.MESSAGE_BITS_LENGTH) - messageBitArray.length - 1
-      ).fill("0").concat(messageBitArray)
-    );
+    return new URLMessage(messageBitArray.slice(1));
   }
 };
 
-module.exports.UnpackHexMessage = UnpackHexMessage;
+module.exports = UnpackHexMessage;

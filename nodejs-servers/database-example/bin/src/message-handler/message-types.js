@@ -38,5 +38,5 @@ const MessageTypes = Object.freeze({
     MessageFinished: 15,
   });
   
-  module.exports.MessageTypes = MessageTypes;
+  module.exports = MessageTypes;
   

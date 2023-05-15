@@ -18,5 +18,5 @@ const MessageLength = Object.freeze({
     ItemIndex: 8,
   });
   
-  module.exports.MessageLength = MessageLength;
+  module.exports = MessageLength;
   

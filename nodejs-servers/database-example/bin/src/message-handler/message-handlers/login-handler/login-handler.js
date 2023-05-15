@@ -4,9 +4,9 @@ const UserConnectionData = require("../../../connection-handler/user-connection-
 const URLMessage = require("../../url-message");
 const ResponseHandler = require("../../../response-handler/response-handler");
 const ResponseData = require("../../../response-handler/response-data");
-const { ResponseTypes } = require("../../../response-handler/response-types");
+const ResponseTypes = require("../../../response-handler/response-types");
 const MessageBuilder = require("../../message-builder");
-const { MessageLength } = require("../../message-length");
+const MessageLength = require("../../message-length");
 
 /**
  * Class to handle building and handling login requests from the VRC client

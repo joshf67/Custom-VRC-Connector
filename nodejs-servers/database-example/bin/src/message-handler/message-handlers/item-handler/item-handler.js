@@ -2,8 +2,8 @@ const logger = require("../../../logger");
 const UserConnectionData = require("../../../connection-handler/user-connection-data");
 const ResponseHandler = require("../../../response-handler/response-handler");
 const ResponseData = require("../../../response-handler/response-data");
-const { ResponseTypes } = require("../../../response-handler/response-types");
-const { MessageLength } = require("../../message-length");
+const ResponseTypes = require("../../../response-handler/response-types");
+const MessageLength = require("../../message-length");
 const MessageBuilder = require("../../message-builder");
 const {
   ItemSchemaJS,

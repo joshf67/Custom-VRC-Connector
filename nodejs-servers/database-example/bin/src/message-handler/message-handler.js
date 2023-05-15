@@ -1,11 +1,11 @@
 const logger = require("../logger");
-const { UnpackHexMessage } = require("./message-unpacker");
+const UnpackHexMessage = require("./message-unpacker");
 const UserConnectionData = require("../connection-handler/user-connection-data");
-const { MessageTypes } = require("./message-types");
+const MessageTypes = require("./message-types");
 
 const ResponseHandler = require("../response-handler/response-handler");
 const ResponseData = require("../response-handler/response-data");
-const { ResponseTypes } = require("../response-handler/response-types");
+const ResponseTypes = require("../response-handler/response-types");
 
 //Message handlers
 const LoginHandler = require("./message-handlers/login-handler/login-handler");
@@ -26,11 +26,9 @@ class MessageHandler {
 
     //Enclose the message handler inside a try catch to always return a valid value even if the message fails
     try {
-      //ResponseHandler.HandleResponse(user, res, new ResponseData(ResponseTypes.Unexpected_Request));
-
       let unpackedMessage = UnpackHexMessage(req.params["0"]);
 
-      //check if the response includes a type, if so ignore the last request and continue
+      //Check to see if this is a partial request, if so continue building
       if (user.expectingDataCallback != null) {
         if (unpackedMessage.Type == null) {
           return user.expectingDataCallback(
@@ -38,7 +36,9 @@ class MessageHandler {
             res,
             unpackedMessage.Message
           );
-        } else {
+        } 
+        //check if the response includes a type, if so ignore the last request and continue
+        else {
           //Handle resetting user's expecting data because something has gone wrong
           user.ResetExpectingDataCallback();
         }

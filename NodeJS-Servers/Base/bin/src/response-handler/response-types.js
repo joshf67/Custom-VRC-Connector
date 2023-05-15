@@ -44,4 +44,4 @@ const ResponseTypes = Object.freeze({
     Succeeded: 0
 });
 
-module.exports.ResponseTypes = ResponseTypes;
+module.exports = ResponseTypes;

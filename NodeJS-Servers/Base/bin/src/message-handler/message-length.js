@@ -3,4 +3,4 @@
  */
 const MessageLength = Object.freeze({});
 
-module.exports.MessageLength = MessageLength;
+module.exports = MessageLength;

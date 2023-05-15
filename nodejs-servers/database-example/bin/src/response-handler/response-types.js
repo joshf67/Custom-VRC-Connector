@@ -80,4 +80,4 @@ const ResponseTypes = Object.freeze({
     Removed_item: 7
 });
 
-module.exports.ResponseTypes = ResponseTypes;
+module.exports = ResponseTypes;
