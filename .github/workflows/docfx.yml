@@ -15,10 +15,14 @@ jobs:
         # with:
         #   submodules: true
 
-      - name: Install DocFX and JSDoc
-        run: |
-          choco install -y docfx
-          npm install -g jsdoc
+      - name: Install DocFX
+        run: choco install -y docfx
+
+      - name: Run node2docfx on base server
+        run: npx node2docfx Documentation/base-node2docfx.json
+
+      - name: Run node2docfx on datebase server
+        run: npx node2docfx Documentation/database-node2docfx.json
 
       - name: Use Introduction.md as index.md
         run: cp Documentation/Introduction.md Documentation/index.md

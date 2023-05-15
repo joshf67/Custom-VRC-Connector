@@ -42,6 +42,11 @@
         "dest": "api"
       },
       {
+        "src": "base-server-api",
+        "files": ["*.yml"],
+        "dest": "base-server-api"
+      },
+      {
         "src": "example",
         "files": ["toc.yml", "*.md"],
         "dest": "example"
@@ -50,14 +55,17 @@
         "src": "example_api",
         "files": ["*.yml"],
         "dest": "example_api"
+      },
+      {
+        "src": "database-server-api",
+        "files": ["*.yml"],
+        "dest": "database-server-api"
       }
     ],
     "resource": [
       {
         "files": [
-          "resources/**/*",
-          "base-server/**/*",
-          "database-server/**/*"
+          "resources/**/*"
         ]
       }
     ],

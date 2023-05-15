@@ -3,10 +3,10 @@
 - name: Scripting API
   href: api/
 - name: Base Server API
-  href: base-server/index.html
+  href: base-server-api
 - name: Example Manual
   href: example/
 - name: Scripting Example API
   href: example_api/
 - name: Database Server API
-  href: database-server/index.html
+  href: database-server-api

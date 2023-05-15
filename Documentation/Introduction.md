@@ -32,6 +32,8 @@ An external NodeJS server is set up to listen to requests from [String](https://
 
 ## Negatives
 
+- Relies on IP address to reference user which means any user in a location that has multiple connections from the same IP will collide with eachother's messages and fail to work.
+
 - Due to relying on the [String](https://docs.vrchat.com/docs/string-loading)/[Image](https://docs.vrchat.com/docs/image-loading) under the hood, the upload rate is very slow. Using the default message length of 21 bits, each loader used has an effective rate of ~4 bits/s (initial overheads means longer messages are more efficient), as you can see this is very limited on what you can send so you need to be clever with your requests.
 
 - Small messages are not optimized due to the [String](https://docs.vrchat.com/docs/string-loading) loader being required for the first and last message to read the response.

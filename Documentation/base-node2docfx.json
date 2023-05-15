@@ -1,0 +1,7 @@
+{
+  "source": {
+    "include": ["../nodejs-servers/base/bin/src/"]
+  },
+  "package": "../nodejs-servers/base/package.json",
+  "destination": "base-server-api"
+}

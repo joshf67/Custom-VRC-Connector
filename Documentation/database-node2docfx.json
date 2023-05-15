@@ -1,0 +1,7 @@
+{
+  "source": {
+    "include": ["../nodejs-servers/database-example/bin/src/"]
+  },
+  "package": "../nodejs-servers/database-example/package.json",
+  "destination": "database-server-api"
+} 
