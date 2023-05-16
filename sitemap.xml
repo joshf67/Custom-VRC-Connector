@@ -2,343 +2,343 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Connector.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.ConnectorMessageType.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Development.DevelopmentManager.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Development.DevelopmentMode.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Development.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.ConnectorUrlTool.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.ConnectorUrlToolManager.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.DownloaderMessageStatus.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.ImageDownloaderListener.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.StringDownloaderListener.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Downloader.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Packing.ByteConverter.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Packing.MessagePacker.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Packing.PackingType.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Packing.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Server.ServerResponse.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Server.ServerResponseType.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.Server.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/api/Joshf67.ServerConnector.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/ConnectionHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/index.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/MessageBuilder.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/MessageHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/ResponseData.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/ResponseHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/ServerConnector.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/URLMessage.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/base-server-api/UserConnectionData.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ConnectionHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/DatabaseHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/index.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/InventorySchemaJS.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ItemHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ItemSchemaJS.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/LoginHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/MessageBuilder.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/MessageHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ResponseData.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ResponseHandler.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/ServerConnector.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/URLMessage.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/UserConnectionData.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/database-server-api/UserSchemaJS.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example/Introduction.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example/Server.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.ExampleDatabaseConnector.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.ExampleServerResponse.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.InvetorySchema.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.ItemSchema.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.UdonHashLib.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.UserSchema.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/example_api/Joshf67.ServerConnector.Example.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/index.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/APIIntroduction.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/Server.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/VRC.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://joshf67.github.io/Custom-VRC-Connector/manual/VRCUrlTesting.html</loc>
-    <lastmod>2023-05-15T11:43:18+00:00</lastmod>
+    <lastmod>2023-05-16T12:30:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
