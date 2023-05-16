@@ -1,0 +1,14 @@
+{
+  "name": "com.joshf67.server-connector",
+  "version": "0.0.1",
+  "description": "API for passing arbitrary data in/out of VRC",
+  "url": "https://github.com/joshf67/Custom-VRC-Connector",
+  "displayName": "VRC External Server Connector",
+  "author": {
+    "name": "Josh"
+  },
+  "vpmDependencies": {
+    "com.vrchat.udonsharp": "1.x.x"
+  },
+  "license": "MIT"  
+}

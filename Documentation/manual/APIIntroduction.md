@@ -32,7 +32,7 @@ If you are interacting with this manually then it's probably because you want ma
 
 This is the class that you will will use to respond to the VRC client with a correctly formatted response.
 
-## [ResponseTypes](xref:base-nodejs-server.ResponseTypes)
+## ResponseTypes
 
 This is the enum that you will modify to add extra responses for the [response handler](xref:base-nodejs-server.ResponseHandler).
 
@@ -40,7 +40,7 @@ This is the enum that you will modify to add extra responses for the [response h
 
 This class provides helper functions to make building a message from a bunch of requests easier.
 
-## [MessageTypes](xref:base-nodejs-server.MessageTypes)
+## MessageTypes
 
 This is the enum that you will modify to allow more types to be handled in the [message handler](xref:base-nodejs-server.MessageHandler).
 

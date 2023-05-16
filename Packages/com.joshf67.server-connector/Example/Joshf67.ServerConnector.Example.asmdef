@@ -1,0 +1,19 @@
+{
+    "name": "Joshf67.ServerConnector.Example",
+    "references": [
+        "UdonSharp.Runtime",
+        "VRC.SDK3",
+        "VRC.Udon",
+        "UdonSharp.Editor",
+        "Joshf67.ServerConnector"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
