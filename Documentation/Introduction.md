@@ -4,6 +4,10 @@
 
 [Go to the Github Repository?](https://github.com/joshf67/Custom-VRC-Connector)
 
+<span style="font-size: 20px; font-weight: bold; color: red;"> Implementation of GDPR rules  (if required) are left up to the user of this API </span>
+
+<span style="color: red"> The NodeJS server attempts to align with GDPR by only using the client's IP and hashing it using a random salt that is generated every time the server restarts, this way no user identifiable data is stored on the server and as long as it is refreshed enough it should be considered anonymous. </span>
+
 ## What?
 
 VRC Server Connector is an API that allows your to send and recieve arbitrary messages to/from external servers.
