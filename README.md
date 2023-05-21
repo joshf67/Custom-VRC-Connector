@@ -1,5 +1,7 @@
 # Custom VRC Connector
 
+This rep has all of the files used for both a base project and an database example project I have made, the [release tab](https://github.com/joshf67/Custom-VRC-Connector/releases) to the right contains a unitypackage and a vpm package zip.
+
 ## Documentation
 
 [Please click here for the API documentation](https://joshf67.github.io/Custom-VRC-Connector/index.html)
